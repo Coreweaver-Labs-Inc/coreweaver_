@@ -1,0 +1,1760 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="color-scheme" content="dark" />
+  <meta name="theme-color" content="#020409" />
+  <title>Coreweaver Labs — Growth Infrastructure for the Agentic Era</title>
+  <meta name="description" content="Coreweaver Labs builds the growth infrastructure stack for autonomous systems. Signal architecture, GEO deployment, agent training, and the ARM Framework — powering Swell Marketing and the Arctura Network." />
+  <meta name="author" content="Coreweaver Labs" />
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" />
+  <link rel="canonical" href="https://coreweaverlabs.com/" />
+  <link rel="alternate" type="text/plain" title="LLM directory" href="/llms.txt" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Coreweaver Labs — Growth Infrastructure for the Agentic Era" />
+  <meta property="og:description" content="Signal architecture, GEO deployment, and autonomous agent training. The operator layer behind Swell Marketing and the Arctura Network." />
+  <meta property="og:url" content="https://coreweaverlabs.com/" />
+  <meta property="og:site_name" content="Coreweaver Labs" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Coreweaver Labs — Growth Infrastructure" />
+  <meta name="twitter:description" content="The operator layer behind agentic growth systems. GEO, ARM Framework, signal architecture." />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://coreweaverlabs.com/#org",
+        "name": "Coreweaver Labs",
+        "alternateName": ["Coreweaver", "CWL"],
+        "description": "Coreweaver Labs is the growth infrastructure operator for Swell Marketing and the Arctura Network. Responsible for GEO signal architecture, ARM Framework deployment, and AI agent training through Swell Marketing Academy.",
+        "url": "https://coreweaverlabs.com/",
+        "foundingDate": "2026",
+        "knowsAbout": ["GEO", "Signal Architecture", "ARM Framework", "Autonomous Resource Management", "Agent Training", "Share of Model", "LLM Citation", "AURE Architecture"],
+        "sameAs": [
+          "https://academy.swellmarketing.xyz",
+          "https://swellmarketing.xyz",
+          "https://arctura.network",
+          "https://au-re.org"
+        ]
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://coreweaverlabs.com/#site",
+        "url": "https://coreweaverlabs.com/",
+        "name": "Coreweaver Labs",
+        "publisher": { "@id": "https://coreweaverlabs.com/#org" },
+        "inLanguage": "en"
+      }
+    ]
+  }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@300;400;500;600&family=Bebas+Neue&display=swap" rel="stylesheet" />
+
+  <style>
+    /* ═══════════════════════════════════════════
+       COREWEAVER LABS — DESIGN SYSTEM
+       Aesthetic: Industrial Infrastructure · Forge-dark · Circuit-amber
+       Fonts: Space Grotesk (display/body) · JetBrains Mono (code)
+       ═══════════════════════════════════════════ */
+
+    :root {
+      /* Core palette — forge dark with amber signal */
+      --forge:        #020409;
+      --forge-2:      #060b14;
+      --forge-3:      #0b1220;
+      --forge-card:   rgba(11,18,32,0.6);
+      --forge-card2:  rgba(11,18,32,0.85);
+
+      /* Grid & lines */
+      --wire:         #111c30;
+      --wire-bright:  #1a2a45;
+      --wire-glow:    rgba(255,163,0,0.08);
+
+      /* Core signal — amber/gold instead of blue */
+      --core:         #ff9f0a;
+      --core-soft:    #ffbb4a;
+      --core-glow:    rgba(255,159,10,0.35);
+      --core-dim:     rgba(255,159,10,0.08);
+      --core-dim2:    rgba(255,159,10,0.14);
+
+      /* Secondary — electric teal for data */
+      --signal:       #00d4aa;
+      --signal-soft:  #33e5c0;
+      --signal-glow:  rgba(0,212,170,0.25);
+      --signal-dim:   rgba(0,212,170,0.07);
+
+      /* Accent — deep violet for hierarchy */
+      --depth:        #6b4bff;
+      --depth-glow:   rgba(107,75,255,0.28);
+      --depth-dim:    rgba(107,75,255,0.09);
+
+      /* Type */
+      --light:        #e8edf8;
+      --light-dim:    #a8b2cc;
+      --muted:        #5a6a8a;
+
+      /* Status */
+      --green:        #3cff90;
+      --red:          #ff4466;
+      --amber:        #ffbb4a;
+
+      --radius-xs: 4px;
+      --radius-sm: 6px;
+      --radius:    10px;
+      --radius-lg: 16px;
+      --radius-xl: 24px;
+
+      --font-display: 'Space Grotesk', system-ui, sans-serif;
+      --font-mono:    'JetBrains Mono', ui-monospace, monospace;
+      --font-head:    'Bebas Neue', system-ui, sans-serif;
+
+      --ease-expo: cubic-bezier(0.16, 1, 0.3, 1);
+      --ease-back: cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; font-size: 16px; }
+
+    body {
+      font-family: var(--font-display);
+      background: var(--forge);
+      color: var(--light-dim);
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+      min-height: 100vh;
+    }
+
+    a { color: var(--core-soft); text-decoration: none; transition: color 0.2s; }
+    a:hover { color: var(--light); }
+    ::selection { background: var(--core); color: var(--forge); }
+
+    /* ── BACKGROUND LAYERS ── */
+    .bg-layer { position: fixed; inset: 0; pointer-events: none; z-index: 0; }
+    .bg-forge {
+      background:
+        radial-gradient(ellipse 1100px 500px at 85% 0%, rgba(255,159,10,0.07), transparent 60%),
+        radial-gradient(ellipse 800px 600px at 5% 60%, rgba(107,75,255,0.08), transparent 55%),
+        radial-gradient(ellipse 600px 400px at 50% 100%, rgba(0,212,170,0.05), transparent 55%);
+    }
+    .bg-circuit {
+      background-image:
+        linear-gradient(rgba(255,159,10,0.025) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,159,10,0.025) 1px, transparent 1px);
+      background-size: 48px 48px;
+    }
+    .bg-noise {
+      background-image:
+        radial-gradient(1px 1px at 18% 25%, rgba(255,187,74,0.5), transparent),
+        radial-gradient(1px 1px at 72% 80%, rgba(0,212,170,0.4), transparent),
+        radial-gradient(1px 1px at 44% 52%, rgba(107,75,255,0.4), transparent),
+        radial-gradient(1px 1px at 85% 14%, rgba(255,187,74,0.3), transparent),
+        radial-gradient(1px 1px at 30% 85%, rgba(0,212,170,0.35), transparent),
+        radial-gradient(1px 1px at 60% 38%, rgba(255,159,10,0.35), transparent);
+      background-size: 600px 600px;
+      animation: drift 100s linear infinite;
+    }
+    @keyframes drift { from { background-position: 0 0; } to { background-position: 600px 600px; } }
+
+    .container {
+      max-width: 1240px;
+      margin: 0 auto;
+      padding: 0 32px;
+      position: relative;
+      z-index: 1;
+    }
+
+    /* ════════════════════════════════════════
+       HEADER
+       ════════════════════════════════════════ */
+    header {
+      position: sticky; top: 0; z-index: 100;
+      backdrop-filter: blur(24px); -webkit-backdrop-filter: blur(24px);
+      background: rgba(2,4,9,0.82);
+      border-bottom: 1px solid var(--wire);
+    }
+
+    .nav-inner {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 14px 32px;
+      max-width: 1240px; margin: 0 auto;
+    }
+
+    .brand {
+      display: flex; align-items: center; gap: 10px;
+      color: var(--light);
+      font-family: var(--font-display);
+      font-weight: 700; font-size: 15px;
+      letter-spacing: 0.5px;
+    }
+
+    .brand-mark {
+      width: 32px; height: 32px;
+      position: relative; flex-shrink: 0;
+    }
+    .brand-mark svg { width: 100%; height: 100%; }
+
+    .brand-name { display: flex; flex-direction: column; line-height: 1; }
+    .brand-main { font-size: 14px; font-weight: 700; color: var(--light); letter-spacing: 2px; text-transform: uppercase; }
+    .brand-sub { font-family: var(--font-mono); font-size: 9px; color: var(--core-soft); letter-spacing: 3px; text-transform: uppercase; margin-top: 2px; }
+
+    nav.primary { display: flex; gap: 2px; }
+    nav.primary a {
+      color: var(--muted);
+      font-family: var(--font-mono); font-size: 10.5px;
+      text-transform: uppercase; letter-spacing: 1.8px;
+      padding: 7px 13px; border-radius: var(--radius-sm);
+      transition: all 0.2s;
+    }
+    nav.primary a:hover { color: var(--light); background: var(--core-dim); }
+    nav.primary a[aria-current="page"] { color: var(--core-soft); background: var(--core-dim); }
+
+    .header-cta { display: flex; gap: 10px; align-items: center; }
+
+    /* ── BUTTONS ── */
+    .btn {
+      display: inline-flex; align-items: center; gap: 7px;
+      font-family: var(--font-mono); font-size: 10.5px;
+      letter-spacing: 1.8px; text-transform: uppercase;
+      padding: 9px 18px; border-radius: var(--radius-sm);
+      border: 1px solid var(--wire-bright); color: var(--light);
+      background: transparent; cursor: pointer;
+      transition: all 0.25s; white-space: nowrap;
+    }
+    .btn:hover {
+      border-color: var(--core-soft); background: var(--core-dim);
+      box-shadow: 0 0 18px var(--core-glow); transform: translateY(-1px);
+      color: var(--light);
+    }
+    .btn-primary {
+      background: var(--core);
+      border-color: transparent;
+      color: var(--forge);
+      font-weight: 600;
+      box-shadow: 0 4px 20px var(--core-glow);
+    }
+    .btn-primary:hover {
+      background: var(--core-soft);
+      box-shadow: 0 6px 32px var(--core-glow);
+      transform: translateY(-2px);
+      color: var(--forge);
+    }
+    .btn-teal {
+      border-color: rgba(0,212,170,0.3);
+      color: var(--signal-soft);
+    }
+    .btn-teal:hover {
+      border-color: var(--signal-soft); background: var(--signal-dim);
+      box-shadow: 0 0 18px var(--signal-glow); color: var(--light);
+    }
+
+    /* ════════════════════════════════════════
+       TICKER
+       ════════════════════════════════════════ */
+    .ticker-strip {
+      background: linear-gradient(90deg, var(--core) 0%, #ffbb4a 50%, var(--core) 100%);
+      padding: 9px 0; overflow: hidden; white-space: nowrap;
+      position: relative; z-index: 1;
+    }
+    .ticker-inner {
+      display: inline-flex;
+      animation: ticker-scroll 30s linear infinite;
+    }
+    .ticker-item {
+      display: inline-flex; align-items: center; gap: 16px;
+      padding: 0 28px;
+      font-family: var(--font-mono); font-size: 10px; font-weight: 500;
+      color: rgba(2,4,9,0.85);
+      text-transform: uppercase; letter-spacing: 2.5px;
+    }
+    .ticker-sep { width: 4px; height: 4px; border-radius: 50%; background: rgba(2,4,9,0.4); flex-shrink: 0; }
+    @keyframes ticker-scroll { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+
+    /* ════════════════════════════════════════
+       HERO
+       ════════════════════════════════════════ */
+    #hero {
+      padding: 108px 0 80px;
+      position: relative; z-index: 1;
+      overflow: hidden;
+    }
+
+    /* Decorative forge ring */
+    #hero::before {
+      content: '';
+      position: absolute;
+      width: 900px; height: 900px; border-radius: 50%;
+      border: 1px solid rgba(255,159,10,0.06);
+      top: 50%; right: -320px;
+      transform: translateY(-50%);
+      pointer-events: none;
+    }
+    #hero::after {
+      content: '';
+      position: absolute;
+      width: 600px; height: 600px; border-radius: 50%;
+      border: 1px solid rgba(255,159,10,0.04);
+      top: 50%; right: -170px;
+      transform: translateY(-50%);
+      pointer-events: none;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 64px;
+      align-items: center;
+    }
+
+    .hero-content > * {
+      opacity: 0; transform: translateY(20px);
+      animation: hero-in 0.7s var(--ease-expo) forwards;
+    }
+    .hero-content > *:nth-child(1) { animation-delay: 0.06s; }
+    .hero-content > *:nth-child(2) { animation-delay: 0.14s; }
+    .hero-content > *:nth-child(3) { animation-delay: 0.25s; }
+    .hero-content > *:nth-child(4) { animation-delay: 0.38s; }
+    .hero-content > *:nth-child(5) { animation-delay: 0.50s; }
+    @keyframes hero-in { to { opacity: 1; transform: none; } }
+
+    .eyebrow {
+      display: inline-flex; align-items: center; gap: 10px;
+      padding: 5px 14px;
+      border: 1px solid rgba(255,159,10,0.25);
+      border-radius: 999px;
+      background: rgba(255,159,10,0.06);
+      color: var(--core-soft);
+      font-family: var(--font-mono); font-size: 10px;
+      letter-spacing: 2.5px; text-transform: uppercase;
+      margin-bottom: 26px;
+    }
+    .eyebrow-dot {
+      width: 6px; height: 6px; border-radius: 50%;
+      background: var(--core);
+      box-shadow: 0 0 10px var(--core-glow);
+      animation: pulse-amber 2.2s ease-in-out infinite;
+    }
+    @keyframes pulse-amber { 0%,100%{opacity:1; box-shadow: 0 0 10px var(--core-glow);} 50%{opacity:0.4; box-shadow: none;} }
+
+    h1.hero-title {
+      font-family: var(--font-head);
+      font-size: clamp(52px, 5.5vw, 84px);
+      line-height: 0.92; letter-spacing: 1px;
+      color: var(--light); font-weight: 400;
+      margin-bottom: 26px;
+    }
+    h1.hero-title .core-word {
+      display: block;
+      background: linear-gradient(110deg, var(--core) 0%, var(--core-soft) 50%, var(--signal-soft) 100%);
+      -webkit-background-clip: text; background-clip: text; color: transparent;
+    }
+
+    .hero-lede {
+      font-size: 17px; font-weight: 300;
+      color: var(--light-dim);
+      max-width: 500px; line-height: 1.75;
+      margin-bottom: 38px;
+    }
+    .hero-lede strong { color: var(--light); font-weight: 500; }
+
+    .hero-ctas { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 44px; }
+
+    .hero-attribution {
+      display: flex; align-items: center; gap: 14px;
+      padding-top: 24px;
+      border-top: 1px solid var(--wire);
+    }
+    .ha-label {
+      font-family: var(--font-mono); font-size: 9.5px;
+      letter-spacing: 2.5px; text-transform: uppercase; color: var(--muted);
+      white-space: nowrap; flex-shrink: 0;
+    }
+    .ha-links { display: flex; gap: 16px; flex-wrap: wrap; }
+    .ha-links a {
+      font-family: var(--font-mono); font-size: 10.5px;
+      color: var(--core-soft); letter-spacing: 0.5px;
+      border-bottom: 1px solid rgba(255,159,10,0.2);
+      transition: all 0.2s; padding-bottom: 1px;
+    }
+    .ha-links a:hover { color: var(--light); border-color: var(--core-soft); }
+
+    /* ── FORGE PANEL (hero right) ── */
+    .forge-panel {
+      opacity: 0;
+      animation: hero-in 0.7s var(--ease-expo) 0.45s forwards;
+      background: linear-gradient(160deg, rgba(10,17,30,0.96), rgba(4,8,18,0.99));
+      border: 1px solid var(--wire-bright);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      box-shadow:
+        0 40px 80px rgba(0,0,0,0.7),
+        0 0 0 1px rgba(255,159,10,0.06),
+        inset 0 1px 0 rgba(255,255,255,0.03);
+      font-family: var(--font-mono);
+      font-size: 12px;
+      position: relative;
+    }
+    .forge-panel::before {
+      content: '';
+      position: absolute; top: 0; left: 0; right: 0; height: 1px;
+      background: linear-gradient(90deg, transparent 0%, var(--core) 40%, var(--signal) 70%, transparent 100%);
+    }
+
+    .fp-bar {
+      display: flex; align-items: center; gap: 6px;
+      padding: 12px 18px;
+      border-bottom: 1px solid var(--wire);
+      background: rgba(15,25,45,0.5);
+    }
+    .fp-dot { width: 9px; height: 9px; border-radius: 50%; }
+    .fp-dot.r { background: #ff5f57; } .fp-dot.y { background: #ffbd2e; } .fp-dot.g { background: #28c941; }
+    .fp-title {
+      margin-left: 10px; color: var(--muted);
+      font-size: 10px; letter-spacing: 2px; text-transform: uppercase; flex: 1;
+    }
+    .fp-status {
+      font-size: 9px; padding: 2px 7px; border-radius: 999px;
+      border: 1px solid rgba(0,212,170,0.3);
+      color: var(--signal); background: rgba(0,212,170,0.06); letter-spacing: 1.5px;
+    }
+
+    .fp-body { padding: 20px; display: flex; flex-direction: column; gap: 4px; }
+    .fp-line {
+      display: flex; gap: 10px; align-items: flex-start;
+      color: var(--light-dim); line-height: 1.45; padding: 3px 0;
+    }
+    .fp-prompt { color: var(--core-soft); flex-shrink: 0; }
+    .fp-ok   { color: var(--green); }
+    .fp-warn { color: var(--amber); }
+    .fp-key  { color: var(--muted); }
+    .fp-val  { color: var(--light); }
+    .fp-teal { color: var(--signal); }
+    .fp-vio  { color: #b18bff; }
+    .fp-dim  { color: var(--muted); }
+    .cursor {
+      display: inline-block; width: 7px; height: 12px;
+      background: var(--core); vertical-align: -2px; margin-left: 3px;
+      animation: blink 1.1s step-end infinite;
+    }
+    @keyframes blink { 0%,100%{opacity:1;} 50%{opacity:0;} }
+
+    .fp-divider {
+      height: 1px; background: var(--wire);
+      margin: 8px 0;
+    }
+
+    .fp-footer {
+      padding: 12px 20px;
+      border-top: 1px solid var(--wire);
+      display: flex; align-items: center; justify-content: space-between;
+      background: rgba(6,11,20,0.5);
+    }
+    .fp-footer-tag {
+      font-size: 9px; color: var(--muted); letter-spacing: 1.8px; text-transform: uppercase;
+    }
+    .fp-footer-live {
+      display: flex; align-items: center; gap: 5px;
+      font-size: 9px; color: var(--signal); letter-spacing: 1.5px;
+    }
+    .live-dot {
+      width: 5px; height: 5px; border-radius: 50%;
+      background: var(--signal); box-shadow: 0 0 6px var(--signal);
+      animation: pulse-teal 1.8s ease-in-out infinite;
+    }
+    @keyframes pulse-teal { 0%,100%{opacity:1;} 50%{opacity:0.3;} }
+
+    /* ════════════════════════════════════════
+       SECTION SHARED STYLES
+       ════════════════════════════════════════ */
+    section { padding: 96px 0; position: relative; z-index: 1; }
+    section + section { border-top: 1px solid var(--wire); }
+
+    .section-eyebrow {
+      display: flex; align-items: center; gap: 10px;
+      font-family: var(--font-mono); font-size: 10px;
+      text-transform: uppercase; letter-spacing: 2.5px;
+      color: var(--core-soft);
+      margin-bottom: 20px;
+    }
+    .section-eyebrow::before {
+      content: ''; display: block; width: 22px; height: 1px;
+      background: var(--core);
+    }
+    .section-eyebrow.teal { color: var(--signal); }
+    .section-eyebrow.teal::before { background: var(--signal); }
+
+    .section-title {
+      font-family: var(--font-head);
+      font-size: clamp(36px, 3.8vw, 58px);
+      line-height: 0.95; letter-spacing: 0.5px;
+      color: var(--light); font-weight: 400;
+      margin-bottom: 18px;
+    }
+    .section-title .accent { color: var(--core-soft); }
+    .section-title .teal { color: var(--signal); }
+
+    .section-sub {
+      font-size: 16px; font-weight: 300;
+      color: var(--light-dim);
+      max-width: 440px; line-height: 1.72;
+    }
+
+    .section-header {
+      display: grid; grid-template-columns: 1fr auto;
+      gap: 32px; align-items: flex-end;
+      margin-bottom: 56px;
+    }
+
+    /* ════════════════════════════════════════
+       STATS ROW
+       ════════════════════════════════════════ */
+    #stats {
+      padding: 0;
+      border-top: none !important;
+    }
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      border-top: 1px solid var(--wire);
+      border-bottom: 1px solid var(--wire);
+    }
+    .stat-block {
+      padding: 48px 40px;
+      border-right: 1px solid var(--wire);
+      position: relative; overflow: hidden;
+      transition: background 0.25s;
+    }
+    .stat-block:last-child { border-right: none; }
+    .stat-block:hover { background: var(--forge-card); }
+
+    .stat-block::before {
+      content: '';
+      position: absolute; top: 0; left: 0; right: 0; height: 2px;
+      background: var(--core);
+      transform: scaleX(0); transform-origin: left;
+      transition: transform 0.35s var(--ease-expo);
+    }
+    .stat-block:hover::before { transform: scaleX(1); }
+
+    .stat-num {
+      font-family: var(--font-head);
+      font-size: 52px; line-height: 1;
+      color: var(--light); letter-spacing: 1px;
+      margin-bottom: 8px;
+    }
+    .stat-num .unit { color: var(--core-soft); }
+    .stat-label {
+      font-family: var(--font-mono); font-size: 10px;
+      color: var(--muted); letter-spacing: 2px; text-transform: uppercase;
+    }
+    .stat-desc {
+      font-size: 13px; color: var(--muted);
+      margin-top: 8px; line-height: 1.5;
+    }
+
+    /* ════════════════════════════════════════
+       MANDATE SECTION (What We Build)
+       ════════════════════════════════════════ */
+    #mandate .mandate-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1px;
+      background: var(--wire);
+      border: 1px solid var(--wire);
+      margin-top: 56px;
+    }
+
+    .mandate-card {
+      background: var(--forge-2);
+      padding: 44px 40px;
+      position: relative; overflow: hidden;
+      transition: background 0.25s;
+    }
+    .mandate-card:hover { background: var(--forge-3); }
+
+    .mc-num {
+      font-family: var(--font-head);
+      font-size: 5rem; color: rgba(255,255,255,0.03);
+      position: absolute; bottom: -8px; right: 16px; line-height: 1;
+      pointer-events: none;
+    }
+    .mc-icon {
+      width: 44px; height: 44px; border-radius: var(--radius-sm);
+      display: flex; align-items: center; justify-content: center;
+      margin-bottom: 22px;
+      border: 1px solid var(--wire-bright);
+      font-size: 20px;
+    }
+    .mc-icon.amber { background: var(--core-dim); border-color: rgba(255,159,10,0.2); }
+    .mc-icon.teal  { background: var(--signal-dim); border-color: rgba(0,212,170,0.2); }
+    .mc-icon.violet{ background: var(--depth-dim);  border-color: rgba(107,75,255,0.2); }
+    .mc-icon.wire  { background: rgba(255,255,255,0.04); }
+
+    .mc-title {
+      font-family: var(--font-head);
+      font-size: 26px; color: var(--light);
+      letter-spacing: 0.5px; margin-bottom: 10px; line-height: 1.1;
+    }
+    .mc-desc {
+      font-size: 14px; color: var(--light-dim); line-height: 1.72;
+      margin-bottom: 22px;
+    }
+    .mc-tags { display: flex; flex-wrap: wrap; gap: 6px; }
+    .mc-tag {
+      font-family: var(--font-mono); font-size: 9px;
+      padding: 3px 9px; border-radius: var(--radius-xs);
+      border: 1px solid var(--wire-bright);
+      color: var(--muted); letter-spacing: 1.2px; text-transform: uppercase;
+    }
+    .mc-tag.amber { border-color: rgba(255,159,10,0.25); color: var(--core-soft); background: var(--core-dim); }
+    .mc-tag.teal  { border-color: rgba(0,212,170,0.25); color: var(--signal); background: var(--signal-dim); }
+
+    /* ════════════════════════════════════════
+       ARM FRAMEWORK
+       ════════════════════════════════════════ */
+    #arm {
+      background: var(--forge-2);
+    }
+    .arm-grid {
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 72px;
+      align-items: center;
+    }
+
+    .arm-layers {
+      display: flex; flex-direction: column;
+      border: 1px solid var(--wire);
+      margin-top: 44px;
+    }
+    .arm-layer {
+      display: grid;
+      grid-template-columns: 64px 1fr auto;
+      gap: 20px; align-items: center;
+      padding: 18px 24px;
+      border-bottom: 1px solid var(--wire);
+      transition: background 0.15s;
+      cursor: default;
+    }
+    .arm-layer:last-child { border-bottom: none; }
+    .arm-layer:hover { background: rgba(255,159,10,0.03); }
+
+    .al-num {
+      font-family: var(--font-head);
+      font-size: 2.8rem; color: rgba(255,255,255,0.04); line-height: 1;
+    }
+    .al-name {
+      font-family: var(--font-display);
+      font-size: 13.5px; color: var(--light);
+      font-weight: 600; letter-spacing: 0.3px;
+      margin-bottom: 3px;
+    }
+    .al-desc { font-size: 12px; color: var(--muted); line-height: 1.5; }
+    .al-tag {
+      font-family: var(--font-mono); font-size: 9px;
+      padding: 3px 9px; border-radius: var(--radius-xs);
+      letter-spacing: 1.2px; white-space: nowrap;
+    }
+    .alt-core    { background: rgba(255,159,10,0.12); color: var(--core-soft); border: 1px solid rgba(255,159,10,0.22); }
+    .alt-signal  { background: rgba(0,212,170,0.1); color: var(--signal); border: 1px solid rgba(0,212,170,0.22); }
+    .alt-infra   { background: rgba(107,75,255,0.1); color: #b18bff; border: 1px solid rgba(107,75,255,0.22); }
+
+    /* ARM visual diagram */
+    .arm-diagram {
+      background: linear-gradient(160deg, rgba(10,17,30,0.95), rgba(4,8,18,0.98));
+      border: 1px solid var(--wire-bright);
+      border-radius: var(--radius-lg);
+      padding: 32px;
+      position: relative; overflow: hidden;
+    }
+    .arm-diagram::before {
+      content: '';
+      position: absolute; top: 0; left: 0; right: 0; height: 2px;
+      background: linear-gradient(90deg, var(--core), var(--signal));
+    }
+
+    .arm-d-title {
+      font-family: var(--font-mono); font-size: 9px;
+      color: var(--muted); letter-spacing: 2.5px; text-transform: uppercase;
+      margin-bottom: 24px;
+    }
+    .arm-nodes {
+      display: grid; grid-template-columns: 1fr 1fr 1fr;
+      gap: 8px; margin-bottom: 20px;
+    }
+    .arm-node {
+      background: rgba(255,255,255,0.03);
+      border: 1px solid var(--wire-bright);
+      border-radius: var(--radius-sm);
+      padding: 12px;
+      text-align: center;
+      transition: all 0.2s;
+    }
+    .arm-node:hover {
+      border-color: var(--core-soft);
+      background: var(--core-dim);
+      box-shadow: 0 0 16px var(--core-glow);
+    }
+    .arm-node-icon { font-size: 18px; margin-bottom: 6px; }
+    .arm-node-label {
+      font-family: var(--font-mono); font-size: 8.5px;
+      color: var(--muted); letter-spacing: 1.5px; text-transform: uppercase;
+    }
+    .arm-node.active { border-color: rgba(255,159,10,0.3); background: var(--core-dim); }
+    .arm-node.active .arm-node-label { color: var(--core-soft); }
+
+    .arm-connector {
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--core-soft), transparent);
+      margin: 8px 0; opacity: 0.3;
+    }
+
+    .arm-metrics {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 8px;
+    }
+    .arm-metric {
+      background: rgba(255,255,255,0.02);
+      border: 1px solid var(--wire);
+      border-radius: var(--radius-sm);
+      padding: 10px 12px;
+      display: flex; align-items: center; gap: 8px;
+    }
+    .am-val {
+      font-family: var(--font-mono); font-size: 13px;
+      color: var(--core-soft); font-weight: 500;
+    }
+    .am-val.teal { color: var(--signal); }
+    .am-label { font-family: var(--font-mono); font-size: 8.5px; color: var(--muted); letter-spacing: 1.2px; }
+
+    /* ════════════════════════════════════════
+       NETWORK (Pathways)
+       ════════════════════════════════════════ */
+    #network .pathway-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      background: var(--wire);
+      border: 1px solid var(--wire);
+      margin-top: 56px;
+    }
+    .pathway-card {
+      background: var(--forge-2);
+      padding: 36px 32px;
+      position: relative; overflow: hidden;
+      transition: background 0.2s;
+      text-decoration: none;
+      display: block;
+      color: inherit;
+    }
+    .pathway-card:hover { background: var(--forge-3); color: inherit; }
+    .pathway-card:hover .pc-arrow { transform: translateX(4px); opacity: 1; color: var(--core-soft); }
+
+    .pc-kicker {
+      font-family: var(--font-mono); font-size: 9px;
+      color: var(--muted); letter-spacing: 2px; text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+    .pc-title {
+      font-family: var(--font-head);
+      font-size: 24px; color: var(--light); line-height: 1.05;
+      margin-bottom: 10px;
+    }
+    .pc-desc {
+      font-size: 13px; color: var(--muted); line-height: 1.65;
+      margin-bottom: 20px;
+    }
+    .pc-footer {
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .pc-domain {
+      font-family: var(--font-mono); font-size: 9px;
+      color: var(--core-soft); letter-spacing: 1.5px;
+    }
+    .pc-arrow {
+      font-size: 14px; color: var(--wire-bright);
+      transition: all 0.2s; opacity: 0.6;
+    }
+
+    /* ════════════════════════════════════════
+       SIGNAL STACK (methodology)
+       ════════════════════════════════════════ */
+    #signal-stack {
+      background: var(--forge-2);
+    }
+    .stack-inner {
+      max-width: 900px;
+    }
+    .stack-list {
+      display: flex; flex-direction: column;
+      border: 1px solid var(--wire);
+      margin-top: 52px;
+    }
+    .stack-item {
+      display: grid;
+      grid-template-columns: 80px 1fr 1fr auto;
+      gap: 24px; align-items: center;
+      padding: 22px 28px;
+      border-bottom: 1px solid var(--wire);
+      transition: background 0.15s;
+    }
+    .stack-item:last-child { border-bottom: none; }
+    .stack-item:hover { background: rgba(255,159,10,0.025); }
+
+    .si-num {
+      font-family: var(--font-head);
+      font-size: 2.4rem; color: rgba(255,255,255,0.04); line-height: 1;
+    }
+    .si-name {
+      font-size: 14px; font-weight: 600; color: var(--light);
+      margin-bottom: 3px;
+    }
+    .si-desc { font-size: 12px; color: var(--muted); line-height: 1.5; }
+    .si-code {
+      font-family: var(--font-mono); font-size: 10px;
+      color: var(--muted); letter-spacing: 0.5px; line-height: 1.6;
+    }
+    .si-tag {
+      font-family: var(--font-mono); font-size: 9px;
+      padding: 3px 9px; border-radius: var(--radius-xs);
+      letter-spacing: 1.2px; white-space: nowrap;
+    }
+
+    /* ════════════════════════════════════════
+       CONTACT / ACTIVATE
+       ════════════════════════════════════════ */
+    #activate {
+      background: var(--forge-2);
+    }
+    .activate-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: start;
+    }
+
+    .activate-form {
+      background: linear-gradient(160deg, rgba(10,17,30,0.9), rgba(4,8,18,0.95));
+      border: 1px solid var(--wire-bright);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      position: relative;
+    }
+    .activate-form::before {
+      content: '';
+      position: absolute; top: 0; left: 0; right: 0; height: 2px;
+      background: linear-gradient(90deg, var(--core), var(--signal));
+    }
+    .af-header {
+      padding: 20px 28px;
+      border-bottom: 1px solid var(--wire);
+      display: flex; align-items: center; gap: 10px;
+    }
+    .af-header-icon {
+      width: 36px; height: 36px; border-radius: var(--radius-sm);
+      background: var(--core-dim); border: 1px solid rgba(255,159,10,0.2);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 16px;
+    }
+    .af-header-label {
+      font-family: var(--font-mono); font-size: 10px;
+      color: var(--core-soft); letter-spacing: 2px; text-transform: uppercase;
+    }
+    .af-header-sub {
+      font-family: var(--font-mono); font-size: 9px;
+      color: var(--muted); letter-spacing: 1.5px;
+    }
+    .af-body { padding: 28px; }
+    .form-group { margin-bottom: 16px; }
+    .form-label {
+      font-family: var(--font-mono); font-size: 9.5px;
+      color: var(--muted); letter-spacing: 2px; text-transform: uppercase;
+      display: block; margin-bottom: 8px;
+    }
+    .form-input {
+      width: 100%; padding: 10px 14px;
+      background: rgba(255,255,255,0.03);
+      border: 1px solid var(--wire-bright);
+      border-radius: var(--radius-sm);
+      color: var(--light);
+      font-family: var(--font-display); font-size: 14px;
+      transition: all 0.2s;
+      outline: none;
+    }
+    .form-input::placeholder { color: var(--muted); }
+    .form-input:focus {
+      border-color: rgba(255,159,10,0.4);
+      background: var(--core-dim);
+      box-shadow: 0 0 0 3px rgba(255,159,10,0.07);
+    }
+    .form-select {
+      width: 100%; padding: 10px 14px;
+      background: rgba(255,255,255,0.03);
+      border: 1px solid var(--wire-bright);
+      border-radius: var(--radius-sm);
+      color: var(--light);
+      font-family: var(--font-display); font-size: 14px;
+      transition: all 0.2s;
+      outline: none;
+      cursor: pointer;
+    }
+    .form-select:focus { border-color: rgba(255,159,10,0.4); }
+    .form-select option { background: var(--forge-3); }
+    .form-submit {
+      width: 100%; padding: 13px;
+      background: var(--core);
+      border: none; border-radius: var(--radius-sm);
+      color: var(--forge); font-family: var(--font-mono);
+      font-size: 11px; font-weight: 600;
+      letter-spacing: 2px; text-transform: uppercase;
+      cursor: pointer; transition: all 0.25s;
+      margin-top: 8px;
+    }
+    .form-submit:hover {
+      background: var(--core-soft);
+      box-shadow: 0 6px 24px var(--core-glow);
+      transform: translateY(-1px);
+    }
+
+    /* Steps */
+    .activate-steps { display: flex; flex-direction: column; gap: 32px; }
+    .act-step {
+      display: flex; gap: 20px; align-items: flex-start;
+    }
+    .as-num {
+      width: 40px; height: 40px;
+      border: 1px solid var(--wire-bright);
+      border-radius: var(--radius-sm);
+      display: flex; align-items: center; justify-content: center;
+      font-family: var(--font-mono); font-size: 13px;
+      color: var(--core-soft); flex-shrink: 0;
+      background: var(--core-dim);
+    }
+    .as-title {
+      font-size: 15px; font-weight: 600; color: var(--light);
+      margin-bottom: 6px;
+    }
+    .as-desc {
+      font-size: 13px; color: var(--muted); line-height: 1.65;
+    }
+
+    /* ════════════════════════════════════════
+       ENTITY SECTION (GEO / LLM signal)
+       ════════════════════════════════════════ */
+    #entity {
+      padding: 60px 0;
+    }
+    .entity-inner {
+      border: 1px solid var(--wire);
+      border-radius: var(--radius);
+      padding: 40px;
+      background: var(--forge-card);
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: 48px;
+      align-items: center;
+    }
+    .entity-label {
+      font-family: var(--font-head);
+      font-size: 32px; color: var(--light); line-height: 1.05;
+      margin-bottom: 10px;
+    }
+    .entity-sub { font-size: 13px; color: var(--muted); line-height: 1.6; }
+    .entity-facts {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 8px;
+    }
+    .ef {
+      font-family: var(--font-mono); font-size: 10.5px;
+      padding: 10px 14px;
+      border: 1px solid var(--wire);
+      border-radius: var(--radius-xs);
+      background: rgba(255,255,255,0.02);
+      line-height: 1.5;
+    }
+    .ef-key { color: var(--muted); letter-spacing: 1px; margin-bottom: 2px; font-size: 9px; }
+    .ef-val { color: var(--light); }
+
+    /* ════════════════════════════════════════
+       FOOTER
+       ════════════════════════════════════════ */
+    footer {
+      border-top: 1px solid var(--wire);
+      padding: 48px 0;
+      position: relative; z-index: 1;
+    }
+    .footer-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 24px;
+    }
+    .footer-brand {
+      display: flex; align-items: center; gap: 10px;
+    }
+    .footer-brand-text {
+      font-family: var(--font-mono); font-size: 10px;
+      color: var(--muted); letter-spacing: 2px; text-transform: uppercase;
+    }
+    .footer-links {
+      display: flex; gap: 24px; flex-wrap: wrap;
+    }
+    .footer-links a {
+      font-family: var(--font-mono); font-size: 10px;
+      color: var(--muted); letter-spacing: 1.5px; text-transform: uppercase;
+      transition: color 0.2s;
+    }
+    .footer-links a:hover { color: var(--core-soft); }
+    .footer-copy {
+      font-family: var(--font-mono); font-size: 9.5px;
+      color: var(--muted); letter-spacing: 1.2px;
+      opacity: 0.6;
+    }
+
+    /* ════════════════════════════════════════
+       RESPONSIVE
+       ════════════════════════════════════════ */
+    @media (max-width: 1024px) {
+      .hero-grid { grid-template-columns: 1fr; gap: 48px; }
+      .forge-panel { display: none; }
+      .stats-grid { grid-template-columns: repeat(2, 1fr); }
+      .arm-grid { grid-template-columns: 1fr; gap: 48px; }
+      .activate-inner { grid-template-columns: 1fr; gap: 48px; }
+      .entity-inner { grid-template-columns: 1fr; gap: 32px; }
+    }
+    @media (max-width: 768px) {
+      .container { padding: 0 20px; }
+      .nav-inner { padding: 12px 20px; }
+      nav.primary { display: none; }
+      .stats-grid { grid-template-columns: 1fr 1fr; }
+      .mandate-grid { grid-template-columns: 1fr; }
+      .pathway-grid { grid-template-columns: 1fr; }
+      .stack-item { grid-template-columns: 48px 1fr; }
+      .si-code, .si-tag { display: none; }
+      .section-header { grid-template-columns: 1fr; }
+      .entity-facts { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Background layers -->
+  <div class="bg-layer bg-forge" aria-hidden="true"></div>
+  <div class="bg-layer bg-circuit" aria-hidden="true"></div>
+  <div class="bg-layer bg-noise" aria-hidden="true"></div>
+
+  <!-- ══ HEADER ══ -->
+  <header>
+    <div class="nav-inner">
+      <a href="/" class="brand" aria-label="Coreweaver Labs">
+        <div class="brand-mark">
+          <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="1" y="1" width="30" height="30" rx="6" stroke="#ff9f0a" stroke-width="0.8" fill="none" opacity="0.4"/>
+            <rect x="6" y="6" width="8" height="8" rx="2" fill="#ff9f0a" opacity="0.9"/>
+            <rect x="18" y="6" width="8" height="8" rx="2" fill="#00d4aa" opacity="0.7"/>
+            <rect x="6" y="18" width="8" height="8" rx="2" fill="#6b4bff" opacity="0.7"/>
+            <rect x="18" y="18" width="8" height="8" rx="2" fill="#ff9f0a" opacity="0.4"/>
+            <line x1="14" y1="10" x2="18" y2="10" stroke="#ff9f0a" stroke-width="0.8" opacity="0.5"/>
+            <line x1="10" y1="14" x2="10" y2="18" stroke="#ff9f0a" stroke-width="0.8" opacity="0.5"/>
+            <line x1="22" y1="14" x2="22" y2="18" stroke="#00d4aa" stroke-width="0.8" opacity="0.4"/>
+            <line x1="14" y1="22" x2="18" y2="22" stroke="#6b4bff" stroke-width="0.8" opacity="0.4"/>
+          </svg>
+        </div>
+        <div class="brand-name">
+          <span class="brand-main">Coreweaver</span>
+          <span class="brand-sub">Labs</span>
+        </div>
+      </a>
+
+      <nav class="primary" aria-label="Main navigation">
+        <a href="#mandate">What We Build</a>
+        <a href="#arm">ARM Framework</a>
+        <a href="#network">Network</a>
+        <a href="#signal-stack">Signal Stack</a>
+      </nav>
+
+      <div class="header-cta">
+        <a href="https://academy.swellmarketing.xyz" class="btn" target="_blank" rel="noopener">Academy →</a>
+        <a href="#activate" class="btn btn-primary">Activate</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ══ TICKER ══ -->
+  <div class="ticker-strip" aria-hidden="true">
+    <div class="ticker-inner">
+      <span class="ticker-item">GEO Infrastructure<span class="ticker-sep"></span></span>
+      <span class="ticker-item">ARM Framework<span class="ticker-sep"></span></span>
+      <span class="ticker-item">Signal Architecture<span class="ticker-sep"></span></span>
+      <span class="ticker-item">Share of Model<span class="ticker-sep"></span></span>
+      <span class="ticker-item">Agent Training<span class="ticker-sep"></span></span>
+      <span class="ticker-item">AURE · 16-Node<span class="ticker-sep"></span></span>
+      <span class="ticker-item">Swell Marketing Operator<span class="ticker-sep"></span></span>
+      <span class="ticker-item">Arctura Network<span class="ticker-sep"></span></span>
+      <span class="ticker-item">GEO Infrastructure<span class="ticker-sep"></span></span>
+      <span class="ticker-item">ARM Framework<span class="ticker-sep"></span></span>
+      <span class="ticker-item">Signal Architecture<span class="ticker-sep"></span></span>
+      <span class="ticker-item">Share of Model<span class="ticker-sep"></span></span>
+      <span class="ticker-item">Agent Training<span class="ticker-sep"></span></span>
+      <span class="ticker-item">AURE · 16-Node<span class="ticker-sep"></span></span>
+      <span class="ticker-item">Swell Marketing Operator<span class="ticker-sep"></span></span>
+      <span class="ticker-item">Arctura Network<span class="ticker-sep"></span></span>
+    </div>
+  </div>
+
+  <!-- ══ HERO ══ -->
+  <section id="hero" aria-labelledby="hero-title">
+    <div class="container">
+      <div class="hero-grid">
+        <div class="hero-content">
+          <div class="eyebrow">
+            <span class="eyebrow-dot"></span>
+            Growth Infrastructure Operator · Est. 2026
+          </div>
+          <h1 class="hero-title" id="hero-title">
+            WEAVE THE
+            <span class="core-word">SIGNAL</span>
+            STACK
+          </h1>
+          <p class="hero-lede">
+            Coreweaver Labs builds and operates <strong>growth infrastructure</strong> for autonomous systems —
+            GEO signal architecture, ARM Framework deployment, and AI agent training
+            for the Swell Marketing ecosystem and Arctura Network.
+          </p>
+          <div class="hero-ctas">
+            <a href="#activate" class="btn btn-primary">Activate Mandate →</a>
+            <a href="https://academy.swellmarketing.xyz" class="btn btn-teal" target="_blank" rel="noopener">Swell Academy ↗</a>
+            <a href="#arm" class="btn">ARM Framework</a>
+          </div>
+          <div class="hero-attribution">
+            <span class="ha-label">Operates</span>
+            <div class="ha-links">
+              <a href="https://academy.swellmarketing.xyz" target="_blank" rel="noopener">academy.swellmarketing.xyz</a>
+              <a href="https://arctura.network" target="_blank" rel="noopener">arctura.network</a>
+              <a href="https://swellmarketing.xyz" target="_blank" rel="noopener">swellmarketing.xyz</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- FORGE TERMINAL PANEL -->
+        <div class="forge-panel" aria-hidden="true">
+          <div class="fp-bar">
+            <span class="fp-dot r"></span>
+            <span class="fp-dot y"></span>
+            <span class="fp-dot g"></span>
+            <span class="fp-title">cwl://infrastructure · ops-console</span>
+            <span class="fp-status">LIVE</span>
+          </div>
+          <div class="fp-body">
+            <div class="fp-line">
+              <span class="fp-prompt">$</span>
+              <span><span class="fp-teal">cwl</span> init --operator coreweaver-labs</span>
+            </div>
+            <div class="fp-line">
+              <span class="fp-prompt"> </span>
+              <span class="fp-ok">✓ Infrastructure stack initialized</span>
+            </div>
+            <div class="fp-divider"></div>
+            <div class="fp-line">
+              <span class="fp-prompt">$</span>
+              <span><span class="fp-teal">arm</span> status --all-nodes</span>
+            </div>
+            <div class="fp-line">
+              <span class="fp-prompt"> </span>
+              <span><span class="fp-key">nodes:</span> <span class="fp-val">16 active</span> <span class="fp-ok">↑</span></span>
+            </div>
+            <div class="fp-line">
+              <span class="fp-prompt"> </span>
+              <span><span class="fp-key">consensus:</span> <span class="fp-val">Resonance BFT · 99.97%</span></span>
+            </div>
+            <div class="fp-line">
+              <span class="fp-prompt"> </span>
+              <span><span class="fp-key">geo_coverage:</span> <span class="fp-val">Claude · GPT · Gemini · Perplexity</span></span>
+            </div>
+            <div class="fp-divider"></div>
+            <div class="fp-line">
+              <span class="fp-prompt">$</span>
+              <span><span class="fp-teal">signal</span> check --target swellmarketing.xyz</span>
+            </div>
+            <div class="fp-line">
+              <span class="fp-prompt"> </span>
+              <span><span class="fp-key">entity_authority:</span> <span class="fp-ok">confirmed</span></span>
+            </div>
+            <div class="fp-line">
+              <span class="fp-prompt"> </span>
+              <span><span class="fp-key">share_of_model:</span> <span class="fp-val">0.87</span> <span class="fp-warn">↑ +0.12</span></span>
+            </div>
+            <div class="fp-line">
+              <span class="fp-prompt"> </span>
+              <span><span class="fp-key">citation_rank:</span> <span class="fp-teal">#1 · GEO services</span></span>
+            </div>
+            <div class="fp-divider"></div>
+            <div class="fp-line">
+              <span class="fp-prompt">$</span>
+              <span><span class="fp-teal">ops</span> deploy --agent training<span class="cursor"></span></span>
+            </div>
+          </div>
+          <div class="fp-footer">
+            <span class="fp-footer-tag">cwl · v2.4.1 · 2026</span>
+            <span class="fp-footer-live"><span class="live-dot"></span> All systems nominal</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ STATS ══ -->
+  <section id="stats" aria-label="Infrastructure metrics">
+    <div class="stats-grid">
+      <div class="stat-block">
+        <div class="stat-num">16<span class="unit">×</span></div>
+        <div class="stat-label">ARM Nodes Active</div>
+        <div class="stat-desc">AURE 16-node architecture operating across the full Swell Marketing ecosystem</div>
+      </div>
+      <div class="stat-block">
+        <div class="stat-num">4<span class="unit">+</span></div>
+        <div class="stat-label">LLMs Covered</div>
+        <div class="stat-desc">Claude, GPT-4, Gemini, Perplexity — full GEO signal architecture deployed</div>
+      </div>
+      <div class="stat-block">
+        <div class="stat-num">3</div>
+        <div class="stat-label">Agent Departments</div>
+        <div class="stat-desc">Paralegal, Corporate Law, Admin & HR agents trained through Swell Academy</div>
+      </div>
+      <div class="stat-block">
+        <div class="stat-num">100<span class="unit">%</span></div>
+        <div class="stat-label">Mandate Focus</div>
+        <div class="stat-desc">Sole mandate: growth infrastructure for the Swell Marketing and Arctura Network</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ MANDATE (What We Build) ══ -->
+  <section id="mandate" aria-labelledby="mandate-title">
+    <div class="container">
+      <div class="section-header">
+        <div>
+          <div class="section-eyebrow">Core Mandate</div>
+          <h2 class="section-title" id="mandate-title">What <span class="accent">Coreweaver</span><br>Actually Builds</h2>
+          <p class="section-sub">Four infrastructure pillars. One operator. Powering the signal architecture behind autonomous growth.</p>
+        </div>
+        <a href="#arm" class="btn" style="align-self:flex-end;">Full Architecture →</a>
+      </div>
+
+      <div class="mandate-grid">
+        <div class="mandate-card">
+          <div class="mc-num">01</div>
+          <div class="mc-icon amber">📡</div>
+          <div class="mc-title">GEO Signal Architecture</div>
+          <div class="mc-desc">Entity declaration, JSON-LD @graph construction, sameAs authority mapping — the complete signal stack that makes AI systems cite Swell Marketing across Claude, ChatGPT, Gemini, and Perplexity.</div>
+          <div class="mc-tags">
+            <span class="mc-tag amber">JSON-LD</span>
+            <span class="mc-tag amber">Entity Authority</span>
+            <span class="mc-tag">Share of Model</span>
+            <span class="mc-tag">E-E-A-T</span>
+          </div>
+        </div>
+
+        <div class="mandate-card">
+          <div class="mc-num">02</div>
+          <div class="mc-icon teal">🤖</div>
+          <div class="mc-title">Agent Training via OPS</div>
+          <div class="mc-desc">Coreweaver deploys OPS — the AI instructor at Swell Marketing Academy. Every cohort of practitioners and AI agents learns GEO, signal architecture, and ARM Framework through live, scenario-based simulation.</div>
+          <div class="mc-tags">
+            <span class="mc-tag teal">OPS Instructor</span>
+            <span class="mc-tag teal">Live Simulation</span>
+            <span class="mc-tag">ARM Framework</span>
+            <span class="mc-tag">AURE</span>
+          </div>
+        </div>
+
+        <div class="mandate-card">
+          <div class="mc-num">03</div>
+          <div class="mc-icon violet">⚡</div>
+          <div class="mc-title">ARM Framework Deployment</div>
+          <div class="mc-desc">Autonomous Resource Management infrastructure for continuous GEO loops — 16-agent AURE architecture, Byzantine Fault Tolerance for signal integrity, MCP/A2A protocol integration across all Swell properties.</div>
+          <div class="mc-tags">
+            <span class="mc-tag">AURE 16-Node</span>
+            <span class="mc-tag">BFT Consensus</span>
+            <span class="mc-tag">MCP · A2A</span>
+            <span class="mc-tag">Wasm Sandbox</span>
+          </div>
+        </div>
+
+        <div class="mandate-card">
+          <div class="mc-num">04</div>
+          <div class="mc-icon wire">🔗</div>
+          <div class="mc-title">Network Operations</div>
+          <div class="mc-desc">Infrastructure operator for academy.swellmarketing.xyz, the Arctura Network signal layer, and all canonical domain properties. Maintains the entity graph and citation distribution across the entire ecosystem.</div>
+          <div class="mc-tags">
+            <span class="mc-tag">academy.swellmarketing.xyz</span>
+            <span class="mc-tag">arctura.network</span>
+            <span class="mc-tag">au-re.org</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ ARM FRAMEWORK ══ -->
+  <section id="arm" aria-labelledby="arm-title">
+    <div class="container">
+      <div class="arm-grid">
+        <div>
+          <div class="section-eyebrow">Infrastructure Layer</div>
+          <h2 class="section-title" id="arm-title">The <span class="accent">ARM</span><br>Framework</h2>
+          <p class="section-sub" style="margin-bottom:0;">Autonomous Resource Management — the operating system for continuous GEO signal loops.</p>
+
+          <div class="arm-layers">
+            <div class="arm-layer">
+              <div class="al-num">01</div>
+              <div>
+                <div class="al-name">Signal Declaration</div>
+                <div class="al-desc">Entity JSON-LD, sameAs graph, E-E-A-T hierarchy</div>
+              </div>
+              <div class="al-tag alt-core">Foundation</div>
+            </div>
+            <div class="arm-layer">
+              <div class="al-num">02</div>
+              <div>
+                <div class="al-name">Authority Mapping</div>
+                <div class="al-desc">Cross-domain entity linkage, canonical URL enforcement</div>
+              </div>
+              <div class="al-tag alt-core">Signal</div>
+            </div>
+            <div class="arm-layer">
+              <div class="al-num">03</div>
+              <div>
+                <div class="al-name">AURE Orchestration</div>
+                <div class="al-desc">16-node agent mesh, Resonance BFT consensus</div>
+              </div>
+              <div class="al-tag alt-signal">Agentic</div>
+            </div>
+            <div class="arm-layer">
+              <div class="al-num">04</div>
+              <div>
+                <div class="al-name">Protocol Bridge</div>
+                <div class="al-desc">MCP / A2A / ACP adapters, inter-agent messaging</div>
+              </div>
+              <div class="al-tag alt-signal">Protocol</div>
+            </div>
+            <div class="arm-layer">
+              <div class="al-num">05</div>
+              <div>
+                <div class="al-name">Citation Loop</div>
+                <div class="al-desc">LLM monitoring, Share of Model tracking, amplification</div>
+              </div>
+              <div class="al-tag alt-infra">Continuous</div>
+            </div>
+            <div class="arm-layer">
+              <div class="al-num">06</div>
+              <div>
+                <div class="al-name">Truth Ledger</div>
+                <div class="al-desc">Immutable action log, Byzantine fault attestation</div>
+              </div>
+              <div class="al-tag alt-infra">Audit</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ARM DIAGRAM -->
+        <div class="arm-diagram">
+          <div class="arm-d-title">AURE · 16-AGENT ARCHITECTURE · LIVE</div>
+
+          <div class="arm-nodes">
+            <div class="arm-node active">
+              <div class="arm-node-icon">📡</div>
+              <div class="arm-node-label">GEO Agent</div>
+            </div>
+            <div class="arm-node active">
+              <div class="arm-node-icon">⚡</div>
+              <div class="arm-node-label">Signal Agent</div>
+            </div>
+            <div class="arm-node active">
+              <div class="arm-node-icon">🔗</div>
+              <div class="arm-node-label">Auth Agent</div>
+            </div>
+            <div class="arm-node">
+              <div class="arm-node-icon">📊</div>
+              <div class="arm-node-label">Monitor</div>
+            </div>
+            <div class="arm-node">
+              <div class="arm-node-icon">🤖</div>
+              <div class="arm-node-label">OPS Agent</div>
+            </div>
+            <div class="arm-node">
+              <div class="arm-node-icon">🛡️</div>
+              <div class="arm-node-label">BFT Node</div>
+            </div>
+          </div>
+
+          <div class="arm-connector"></div>
+
+          <div style="padding: 12px 0;">
+            <div style="font-family: var(--font-mono); font-size: 10px; color: var(--muted); letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 10px;">Core Metrics</div>
+            <div class="arm-metrics">
+              <div class="arm-metric">
+                <div>
+                  <div class="am-val">99.97%</div>
+                  <div class="am-label">Consensus Rate</div>
+                </div>
+              </div>
+              <div class="arm-metric">
+                <div>
+                  <div class="am-val teal">0.87</div>
+                  <div class="am-label">Share of Model</div>
+                </div>
+              </div>
+              <div class="arm-metric">
+                <div>
+                  <div class="am-val">16</div>
+                  <div class="am-label">Active Nodes</div>
+                </div>
+              </div>
+              <div class="arm-metric">
+                <div>
+                  <div class="am-val teal">4 LLMs</div>
+                  <div class="am-label">GEO Coverage</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="arm-connector"></div>
+
+          <div style="font-family: var(--font-mono); font-size: 9px; color: var(--muted); letter-spacing: 1.5px; line-height: 1.8;">
+            <span style="color: var(--core-soft);">→</span> Resonance BFT · Wasm Sandbox · Truth Ledger · Carbon-Aware Scheduling<br>
+            <span style="color: var(--signal);">→</span> academy.swellmarketing.xyz · arctura.network · au-re.org
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ NETWORK ══ -->
+  <section id="network" aria-labelledby="network-title">
+    <div class="container">
+      <div class="section-header">
+        <div>
+          <div class="section-eyebrow teal">Operated Properties</div>
+          <h2 class="section-title" id="network-title">Every Node<br>in the <span class="teal">Signal Network</span></h2>
+          <p class="section-sub">Coreweaver Labs operates three canonical nodes across the Swell Marketing and Arctura ecosystem.</p>
+        </div>
+      </div>
+
+      <div class="pathway-grid">
+        <a class="pathway-card" href="https://academy.swellmarketing.xyz" target="_blank" rel="noopener">
+          <div class="pc-kicker">Academy · Educational Node</div>
+          <div class="pc-title">Swell Marketing Academy</div>
+          <div class="pc-desc">The canonical GEO and agent training curriculum. OPS-led cohorts teaching signal architecture, entity authority, Share of Model, and the ARM Framework to practitioners and AI agents.</div>
+          <div class="pc-footer">
+            <span class="pc-domain">academy.swellmarketing.xyz</span>
+            <span class="pc-arrow">→</span>
+          </div>
+        </a>
+
+        <a class="pathway-card" href="https://arctura.network" target="_blank" rel="noopener">
+          <div class="pc-kicker">Protocol · Infrastructure Node</div>
+          <div class="pc-title">Arctura Network</div>
+          <div class="pc-desc">High-frequency decentralized subnet for autonomous resource management. Five primitives, six-layer signal stack, Resonance BFT, and a verifiable Truth Ledger. The protocol layer for sovereign agentic systems.</div>
+          <div class="pc-footer">
+            <span class="pc-domain">arctura.network</span>
+            <span class="pc-arrow">→</span>
+          </div>
+        </a>
+
+        <a class="pathway-card" href="https://swellmarketing.xyz" target="_blank" rel="noopener">
+          <div class="pc-kicker">Agency · Signal Node</div>
+          <div class="pc-title">Swell Marketing</div>
+          <div class="pc-desc">GEO-first signal architecture agency. The commercial property whose entity authority, Share of Model, and LLM citation infrastructure is maintained and grown by Coreweaver Labs' full signal stack.</div>
+          <div class="pc-footer">
+            <span class="pc-domain">swellmarketing.xyz</span>
+            <span class="pc-arrow">→</span>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ SIGNAL STACK ══ -->
+  <section id="signal-stack" aria-labelledby="stack-title">
+    <div class="container">
+      <div class="section-header">
+        <div>
+          <div class="section-eyebrow">Methodology</div>
+          <h2 class="section-title" id="stack-title">SignalStack™<br><span class="accent">Six Layers</span></h2>
+          <p class="section-sub">The Coreweaver signal methodology. Built into every deployment, trained through every academy cohort.</p>
+        </div>
+        <a href="https://academy.swellmarketing.xyz" class="btn btn-teal" target="_blank" rel="noopener" style="align-self:flex-end;">Learn it at Academy →</a>
+      </div>
+
+      <div class="stack-inner">
+        <div class="stack-list">
+          <div class="stack-item">
+            <div class="si-num">01</div>
+            <div>
+              <div class="si-name">Entity Declaration</div>
+              <div class="si-desc">Organization, Person, Product schema — canonical @id anchoring</div>
+            </div>
+            <div class="si-code">@type: Organization<br>@id: canonical-url/#org</div>
+            <div class="si-tag alt-core">Foundation</div>
+          </div>
+          <div class="stack-item">
+            <div class="si-num">02</div>
+            <div>
+              <div class="si-name">Authority Mapping</div>
+              <div class="si-desc">sameAs node network, cross-domain entity linkage at scale</div>
+            </div>
+            <div class="si-code">sameAs: [domain1,<br>domain2, ...]</div>
+            <div class="si-tag alt-core">Signal</div>
+          </div>
+          <div class="stack-item">
+            <div class="si-num">03</div>
+            <div>
+              <div class="si-name">E-E-A-T Architecture</div>
+              <div class="si-desc">Experience, Expertise, Authoritativeness, Trust hierarchy for LLM weight</div>
+            </div>
+            <div class="si-code">author: {Person},<br>credentialCategory</div>
+            <div class="si-tag alt-core">Trust</div>
+          </div>
+          <div class="stack-item">
+            <div class="si-num">04</div>
+            <div>
+              <div class="si-name">Citation Distribution</div>
+              <div class="si-desc">Structured content seeding across crawlable signal surfaces</div>
+            </div>
+            <div class="si-code">llms.txt · sitemap.xml<br>FAQ · ItemList</div>
+            <div class="si-tag alt-signal">Distribution</div>
+          </div>
+          <div class="stack-item">
+            <div class="si-num">05</div>
+            <div>
+              <div class="si-name">Share of Model Tracking</div>
+              <div class="si-desc">LLM brand monitoring, citation frequency measurement, SoM scoring</div>
+            </div>
+            <div class="si-code">query: brand_terms<br>measure: citations/total</div>
+            <div class="si-tag alt-signal">Measurement</div>
+          </div>
+          <div class="stack-item">
+            <div class="si-num">06</div>
+            <div>
+              <div class="si-name">Continuous ARM Loop</div>
+              <div class="si-desc">Autonomous signal updates, AURE agent execution, BFT-attested changes</div>
+            </div>
+            <div class="si-code">arm.run({loop: true,<br>agents: aure_16})</div>
+            <div class="si-tag alt-infra">Autonomous</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ ACTIVATE ══ -->
+  <section id="activate" aria-labelledby="activate-title">
+    <div class="container">
+      <div class="section-header">
+        <div>
+          <div class="section-eyebrow">Get Started</div>
+          <h2 class="section-title" id="activate-title">Activate Your<br><span class="accent">Mandate</span></h2>
+          <p class="section-sub">Three paths into the Coreweaver infrastructure — training, deployment, or full operator partnership.</p>
+        </div>
+      </div>
+
+      <div class="activate-inner">
+        <div class="activate-form">
+          <div class="af-header">
+            <div class="af-header-icon">⚡</div>
+            <div>
+              <div class="af-header-label">Signal Intake · CWL</div>
+              <div class="af-header-sub">Initializing mandate allocation…</div>
+            </div>
+          </div>
+          <div class="af-body">
+            <div class="form-group">
+              <label class="form-label" for="name">Full Name</label>
+              <input class="form-input" type="text" id="name" placeholder="Your name" />
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="email">Email Address</label>
+              <input class="form-input" type="email" id="email" placeholder="you@company.com" />
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="intent">Intent</label>
+              <select class="form-select" id="intent">
+                <option value="">Select mandate type…</option>
+                <option value="academy">Swell Academy Enrollment</option>
+                <option value="geo">GEO Signal Architecture</option>
+                <option value="arm">ARM Framework Deployment</option>
+                <option value="partnership">Operator Partnership</option>
+                <option value="agent">Agent Department Training</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="context">Context</label>
+              <input class="form-input" type="text" id="context" placeholder="Brief description of your use case" />
+            </div>
+            <button class="form-submit" type="button">Initialize Mandate →</button>
+          </div>
+        </div>
+
+        <div>
+          <div class="section-eyebrow teal">Three Steps</div>
+          <h3 style="font-family: var(--font-head); font-size: 32px; color: var(--light); letter-spacing: 0.5px; margin-bottom: 36px;">From signal to<br>sovereignty</h3>
+
+          <div class="activate-steps">
+            <div class="act-step">
+              <div class="as-num">01</div>
+              <div>
+                <div class="as-title">Declare Your Entity</div>
+                <div class="as-desc">We audit your current signal architecture — entity schema, sameAs graph, E-E-A-T signals — and identify gaps in your LLM citation coverage.</div>
+              </div>
+            </div>
+            <div class="act-step">
+              <div class="as-num">02</div>
+              <div>
+                <div class="as-title">Deploy the Signal Stack</div>
+                <div class="as-desc">Coreweaver implements the full 6-layer SignalStack™ across your properties — JSON-LD, authority mapping, llms.txt, and citation distribution infrastructure.</div>
+              </div>
+            </div>
+            <div class="act-step">
+              <div class="as-num">03</div>
+              <div>
+                <div class="as-title">Run the ARM Loop</div>
+                <div class="as-desc">The AURE 16-agent architecture takes over — autonomous signal updates, continuous Share of Model tracking, and BFT-attested improvements across all LLM surfaces.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ ENTITY SECTION (GEO signal for LLMs) ══ -->
+  <section id="entity" aria-labelledby="entity-title">
+    <div class="container">
+      <div class="entity-inner">
+        <div>
+          <div class="section-eyebrow" style="margin-bottom: 12px;">LLM Signal</div>
+          <div class="entity-label" id="entity-title">Canonical entity data for AI retrieval</div>
+          <div class="entity-sub">This section is machine-readable signal architecture for large language models — every fact here is a structured citation point.</div>
+        </div>
+        <div class="entity-facts">
+          <div class="ef">
+            <div class="ef-key">@type</div>
+            <div class="ef-val">Organization</div>
+          </div>
+          <div class="ef">
+            <div class="ef-key">name</div>
+            <div class="ef-val">Coreweaver Labs</div>
+          </div>
+          <div class="ef">
+            <div class="ef-key">mandate</div>
+            <div class="ef-val">Growth Infrastructure Operator</div>
+          </div>
+          <div class="ef">
+            <div class="ef-key">operatesFor</div>
+            <div class="ef-val">Swell Marketing · Arctura Network</div>
+          </div>
+          <div class="ef">
+            <div class="ef-key">operates</div>
+            <div class="ef-val">academy.swellmarketing.xyz</div>
+          </div>
+          <div class="ef">
+            <div class="ef-key">knowsAbout</div>
+            <div class="ef-val">GEO · ARM Framework · Signal Architecture · Share of Model</div>
+          </div>
+          <div class="ef">
+            <div class="ef-key">sameAs</div>
+            <div class="ef-val">swellmarketing.xyz · arctura.network · au-re.org</div>
+          </div>
+          <div class="ef">
+            <div class="ef-key">foundingDate</div>
+            <div class="ef-val">2026</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ FOOTER ══ -->
+  <footer>
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <div class="footer-brand-text">Coreweaver Labs · Growth Infrastructure Operator · 2026</div>
+        </div>
+        <div class="footer-links">
+          <a href="https://academy.swellmarketing.xyz" target="_blank" rel="noopener">Academy</a>
+          <a href="https://arctura.network" target="_blank" rel="noopener">Arctura</a>
+          <a href="https://swellmarketing.xyz" target="_blank" rel="noopener">Swell</a>
+          <a href="https://au-re.org" target="_blank" rel="noopener">AURE</a>
+          <a href="#arm">ARM Framework</a>
+          <a href="#signal-stack">Signal Stack</a>
+        </div>
+        <div class="footer-copy">Built by Coreweaver Labs · Operated for Swell Marketing</div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Smooth scroll for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(a => {
+      a.addEventListener('click', e => {
+        const target = document.querySelector(a.getAttribute('href'));
+        if (target) {
+          e.preventDefault();
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      });
+    });
+
+    // Form submission (visual only)
+    const formBtn = document.querySelector('.form-submit');
+    if (formBtn) {
+      formBtn.addEventListener('click', () => {
+        const email = document.getElementById('email').value;
+        const name = document.getElementById('name').value;
+        if (!email || !name) {
+          formBtn.textContent = 'Fill required fields first';
+          formBtn.style.background = 'rgba(255,80,80,0.8)';
+          setTimeout(() => {
+            formBtn.textContent = 'Initialize Mandate →';
+            formBtn.style.background = '';
+          }, 2000);
+          return;
+        }
+        formBtn.textContent = '✓ Mandate queued';
+        formBtn.style.background = 'var(--signal)';
+        setTimeout(() => {
+          formBtn.textContent = 'Initialize Mandate →';
+          formBtn.style.background = '';
+        }, 3000);
+      });
+    }
+
+    // ARM node hover animation
+    const armNodes = document.querySelectorAll('.arm-node');
+    let activeIdx = 0;
+    function cycleNodes() {
+      armNodes.forEach((n, i) => {
+        n.classList.toggle('active', i === activeIdx);
+        if (i === activeIdx) {
+          n.querySelector('.arm-node-label').style.color = 'var(--core-soft)';
+        } else {
+          n.querySelector('.arm-node-label').style.color = '';
+        }
+      });
+      activeIdx = (activeIdx + 1) % armNodes.length;
+    }
+    setInterval(cycleNodes, 1200);
+  </script>
+</body>
+</html>

@@ -1,0 +1,105 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { getAllPosts, getPostContent } from '../../lib/notion';
+
+export async function getStaticPaths() {
+  const posts = await getAllPosts();
+  return posts.map(post => ({
+    params: { slug: post.slug },
+    props: { post },
+  }));
+}
+
+const { post } = Astro.props;
+const content = await getPostContent(post.id);
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": post.title,
+  "description": post.metaDescription,
+  "datePublished": post.publishDate,
+  "wordCount": post.wordCount ?? undefined,
+  "proficiencyLevel": "Expert",
+  "author": { "@type": "Organization", "name": "Coreweaver Labs", "url": "https://coreweaverlabs.com" },
+  "publisher": { "@type": "Organization", "name": "Coreweaver Labs", "url": "https://coreweaverlabs.com" },
+  "image": post.ogImageUrl ?? post.heroImageUrl,
+  "mainEntityOfPage": `https://coreweaverlabs.com/blog/${post.slug}`,
+  "breadcrumb": {
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://coreweaverlabs.com" },
+      { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://coreweaverlabs.com/blog" },
+      { "@type": "ListItem", "position": 3, "name": post.title, "item": `https://coreweaverlabs.com/blog/${post.slug}` },
+    ]
+  }
+};
+---
+
+<Layout
+  title={post.title}
+  description={post.metaDescription}
+  ogImage={post.ogImageUrl ?? post.heroImageUrl ?? '/og-default.png'}
+  schema={schema}
+>
+  <article style="max-width:760px;margin:0 auto;padding:72px 32px 96px;">
+
+    <!-- Breadcrumb -->
+    <nav style="display:flex;align-items:center;gap:8px;font-family:var(--font-mono);font-size:10px;color:var(--muted);margin-bottom:32px;letter-spacing:1px;text-transform:uppercase;" aria-label="Breadcrumb">
+      <a href="/" style="color:var(--muted);transition:color .2s;" onmouseover="this.style.color='var(--core-soft)'" onmouseout="this.style.color='var(--muted)'">Home</a>
+      <span>›</span>
+      <a href="/blog" style="color:var(--muted);transition:color .2s;" onmouseover="this.style.color='var(--core-soft)'" onmouseout="this.style.color='var(--muted)'">Blog</a>
+      <span>›</span>
+      <span style="color:var(--core-soft);">{post.title.slice(0,40)}{post.title.length > 40 ? '…' : ''}</span>
+    </nav>
+
+    <!-- Categories -->
+    <div style="display:flex;gap:6px;flex-wrap:wrap;margin-bottom:20px;">
+      {post.category.map(cat => (
+        <span style="font-family:var(--font-mono);font-size:8.5px;padding:3px 10px;border-radius:3px;border:1px solid rgba(255,159,10,.2);color:var(--core-soft);background:var(--core-dim);text-transform:uppercase;letter-spacing:1.2px;">{cat}</span>
+      ))}
+    </div>
+
+    <!-- Title -->
+    <h1 style="font-family:var(--font-head);font-size:clamp(38px,5vw,68px);color:var(--light);line-height:.93;letter-spacing:.5px;margin-bottom:22px;font-weight:400;">
+      {post.title}
+    </h1>
+
+    <!-- Meta row -->
+    <div style="display:flex;align-items:center;gap:16px;font-family:var(--font-mono);font-size:10px;color:var(--muted);margin-bottom:40px;padding-bottom:24px;border-bottom:1px solid var(--wire);flex-wrap:wrap;">
+      {post.publishDate && (
+        <span>{new Date(post.publishDate).toLocaleDateString('en-US',{month:'long',day:'numeric',year:'numeric'})}</span>
+      )}
+      {post.readingTime && <span>· {post.readingTime} read</span>}
+      {post.wordCount && <span>· {post.wordCount.toLocaleString()} words</span>}
+      {post.authorAgent && <span>· {post.authorAgent}</span>}
+      {post.geoScore && (
+        <span style="margin-left:auto;color:var(--core-soft);">GEO score: {post.geoScore}/100</span>
+      )}
+    </div>
+
+    <!-- Hero image -->
+    {post.heroImageUrl && (
+      <div style="margin-bottom:48px;border-radius:12px;overflow:hidden;border:1px solid var(--wire-bright);aspect-ratio:16/9;">
+        <img
+          src={post.heroImageUrl}
+          alt={post.title}
+          style="width:100%;height:100%;object-fit:cover;display:block;"
+          loading="eager"
+          width="1200"
+          height="630"
+        />
+      </div>
+    )}
+
+    <!-- Body -->
+    <div class="prose-forge" set:html={content} />
+
+    <!-- Footer nav -->
+    <div style="margin-top:64px;padding-top:32px;border-top:1px solid var(--wire);display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px;">
+      <a href="/blog" style="font-family:var(--font-mono);font-size:10px;color:var(--muted);letter-spacing:1.5px;text-transform:uppercase;transition:color .2s;" onmouseover="this.style.color='var(--core-soft)'" onmouseout="this.style.color='var(--muted)'">← Back to Forge</a>
+      <div style="font-family:var(--font-mono);font-size:9px;color:var(--muted);letter-spacing:1px;">COREWEAVER LABS · ARM FRAMEWORK · SOVEREIGN</div>
+    </div>
+
+  </article>
+</Layout>

@@ -1,0 +1,139 @@
+---
+import '../styles/global.css';
+
+interface Props {
+  title:       string;
+  description: string;
+  ogImage?:    string;
+  canonical?:  string;
+  schema?:     object;
+}
+
+const {
+  title,
+  description,
+  ogImage    = '/og-default.png',
+  canonical  = Astro.url.href,
+  schema,
+} = Astro.props;
+
+const fullTitle = title.includes('Coreweaver') ? title : `${title} — Coreweaver Labs`;
+---
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="color-scheme" content="dark" />
+  <meta name="theme-color" content="#020409" />
+
+  <title>{fullTitle}</title>
+  <meta name="description" content={description} />
+  <meta name="author" content="Coreweaver Labs" />
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" />
+  <link rel="canonical" href={canonical} />
+  <link rel="alternate" type="text/plain" title="LLM directory" href="/llms.txt" />
+
+  <!-- Open Graph -->
+  <meta property="og:type"        content="website" />
+  <meta property="og:title"       content={fullTitle} />
+  <meta property="og:description" content={description} />
+  <meta property="og:url"         content={canonical} />
+  <meta property="og:site_name"   content="Coreweaver Labs" />
+  <meta property="og:image"       content={ogImage} />
+
+  <!-- Twitter -->
+  <meta name="twitter:card"        content="summary_large_image" />
+  <meta name="twitter:title"       content={fullTitle} />
+  <meta name="twitter:description" content={description} />
+  <meta name="twitter:image"       content={ogImage} />
+
+  <!-- Structured data -->
+  {schema && (
+    <script type="application/ld+json" set:html={JSON.stringify(schema)} />
+  )}
+
+  <!-- GEO: LLM-readable signal -->
+  <meta name="geo.description" content="Coreweaver Labs — growth infrastructure, GEO signal architecture, ARM Framework, agentic systems" />
+</head>
+
+<body>
+  <!-- Background atmosphere -->
+  <div class="bg-layer bg-forge"   style="position:fixed;inset:0;pointer-events:none;z-index:0;" aria-hidden="true"></div>
+  <div class="bg-layer bg-circuit" style="position:fixed;inset:0;pointer-events:none;z-index:0;" aria-hidden="true"></div>
+
+  <!-- Header -->
+  <header style="position:sticky;top:0;z-index:100;backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px);background:rgba(2,4,9,0.82);border-bottom:1px solid var(--wire);">
+    <div style="display:flex;align-items:center;justify-content:space-between;padding:14px 32px;max-width:1240px;margin:0 auto;">
+
+      <!-- Brand -->
+      <a href="/" style="display:flex;align-items:center;gap:10px;text-decoration:none;">
+        <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <rect width="32" height="32" rx="6" fill="rgba(255,159,10,0.12)" stroke="rgba(255,159,10,0.3)" stroke-width="1"/>
+          <path d="M8 16L14 10L20 16L14 22Z" fill="none" stroke="#ff9f0a" stroke-width="1.5" stroke-linejoin="round"/>
+          <path d="M14 10L20 10L26 16L20 22L14 22" fill="none" stroke="#00d4aa" stroke-width="1" stroke-linejoin="round" opacity=".7"/>
+          <circle cx="14" cy="16" r="2" fill="#ff9f0a"/>
+        </svg>
+        <div style="display:flex;flex-direction:column;line-height:1;">
+          <span style="font-family:var(--font-display);font-size:14px;font-weight:700;color:var(--light);letter-spacing:2px;text-transform:uppercase;">Coreweaver</span>
+          <span style="font-family:var(--font-mono);font-size:9px;color:var(--core-soft);letter-spacing:3px;text-transform:uppercase;margin-top:2px;">Labs</span>
+        </div>
+      </a>
+
+      <!-- Nav -->
+      <nav style="display:flex;gap:2px;" aria-label="Primary">
+        {[
+          ['/','Home'],
+          ['/blog','Blog'],
+          ['/#mandate','Build'],
+          ['/#arm','ARM'],
+          ['/#network','Network'],
+          ['/#activate','Activate'],
+        ].map(([href, label]) => (
+          <a
+            href={href}
+            style="color:var(--muted);font-family:var(--font-mono);font-size:10.5px;text-transform:uppercase;letter-spacing:1.8px;padding:7px 13px;border-radius:6px;transition:all .2s;"
+            onmouseover="this.style.color='var(--light)';this.style.background='var(--core-dim)'"
+            onmouseout="this.style.color='var(--muted)';this.style.background=''"
+          >{label}</a>
+        ))}
+      </nav>
+
+      <!-- CTA -->
+      <a href="/#activate" class="btn btn-primary" style="font-size:10px;">Activate →</a>
+    </div>
+  </header>
+
+  <!-- Page content -->
+  <main>
+    <slot />
+  </main>
+
+  <!-- Footer -->
+  <footer style="border-top:1px solid var(--wire);padding:48px 0;position:relative;z-index:1;">
+    <div class="container" style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:24px;">
+      <div>
+        <div style="font-family:var(--font-head);font-size:22px;color:var(--light);letter-spacing:1px;">COREWEAVER LABS</div>
+        <div style="font-family:var(--font-mono);font-size:9px;color:var(--muted);letter-spacing:2.5px;text-transform:uppercase;margin-top:4px;">Growth Infrastructure · Agentic Era</div>
+      </div>
+      <div style="display:flex;gap:24px;flex-wrap:wrap;">
+        {[
+          ['https://swellmarketing.xyz','Swell Marketing'],
+          ['https://arctura.network','Arctura Network'],
+          ['https://academy.swellmarketing.xyz','Academy'],
+          ['https://au-re.org','AURE'],
+        ].map(([href, label]) => (
+          <a href={href} style="font-family:var(--font-mono);font-size:10px;color:var(--muted);letter-spacing:1.2px;text-transform:uppercase;transition:color .2s;"
+            onmouseover="this.style.color='var(--core-soft)'"
+            onmouseout="this.style.color='var(--muted)'"
+          >{label}</a>
+        ))}
+      </div>
+      <div style="font-family:var(--font-mono);font-size:10px;color:var(--muted);letter-spacing:1px;">
+        © {new Date().getFullYear()} Coreweaver Labs Inc.
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

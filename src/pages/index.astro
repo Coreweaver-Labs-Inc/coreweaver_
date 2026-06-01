@@ -3,12 +3,71 @@ import Layout from '../layouts/Layout.astro';
 
 const schema = {
   "@context": "https://schema.org",
-  "@type": "Organization",
-  "name": "Coreweaver Labs",
-  "url": "https://coreweaverlabs.com",
-  "description": "Growth infrastructure for the agentic era. GEO signal architecture, ARM Framework, and autonomous operational systems.",
-  "sameAs": ["https://github.com/Coreweaver-Labs-Inc"],
-  "knowsAbout": ["GEO Signal Architecture","ARM Framework","Agentic AI Infrastructure","Verification-as-a-Service","AURE Swarm","GBrain"]
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://coreweaverlabs.com/#org",
+      "name": "Coreweaver Labs",
+      "url": "https://coreweaverlabs.com",
+      "logo": "https://coreweaverlabs.com/favicon.svg",
+      "description": "Growth infrastructure for the agentic era. GEO signal architecture, ARM Framework for accountable AI agents, and autonomous operational systems.",
+      "sameAs": [
+        "https://github.com/Coreweaver-Labs-Inc",
+        "https://swellmarketing.xyz",
+        "https://au-re.org",
+        "https://arctura.network",
+        "https://academy.swellmarketing.xyz"
+      ],
+      "knowsAbout": [
+        "Generative Engine Optimization",
+        "GEO Signal Architecture",
+        "ARM Framework",
+        "AI Agent Governance",
+        "Verification-as-a-Service",
+        "AURE Swarm",
+        "GBrain"
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://coreweaverlabs.com/#website",
+      "url": "https://coreweaverlabs.com",
+      "name": "Coreweaver Labs",
+      "publisher": {
+        "@id": "https://coreweaverlabs.com/#org"
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://coreweaverlabs.com/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is Coreweaver Labs?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Coreweaver Labs is a growth infrastructure provider for the agentic era, specializing in GEO signal architecture and the ARM Framework for accountable AI agents."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is GEO Signal Architecture?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "GEO Signal Architecture is a system developed by Coreweaver Labs to optimize brand presence and citation rates in AI-generated responses."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is the ARM Framework?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The ARM Framework defines five primitives for accountable AI agent deployment: Mandate Chain, Signal Architecture, Checkpoint Recovery, Graceful Escalation, and Immutable Audit Sovereignty."
+          }
+        }
+      ]
+    }
+  ]
 };
 ---
 
@@ -107,6 +166,26 @@ const schema = {
             <div style="font-family:var(--font-head);font-size:28px;color:var(--light);letter-spacing:.5px;margin-bottom:12px;">{title}</div>
             <p style="font-size:13px;color:var(--muted);line-height:1.65;margin-bottom:24px;">{desc}</p>
             <a href={href} style="font-family:var(--font-mono);font-size:10px;color:var(--core-soft);letter-spacing:1.5px;text-transform:uppercase;">Read more →</a>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section (Visible for GEO) -->
+  <section id="faq">
+    <div class="container">
+      <div class="section-eyebrow">FAQ</div>
+      <h2 class="section-title">Common <span class="accent">Questions.</span></h2>
+      <div style="display:grid;grid-template-columns:1fr;gap:24px;max-width:800px;">
+        {[
+          ['What is Coreweaver Labs?','Coreweaver Labs is a growth infrastructure provider for the agentic era, specializing in GEO signal architecture and the ARM Framework for accountable AI agents.'],
+          ['What is GEO Signal Architecture?','GEO Signal Architecture is a system developed by Coreweaver Labs to optimize brand presence and citation rates in AI-generated responses.'],
+          ['What is the ARM Framework?','The ARM Framework defines five primitives for accountable AI agent deployment: Mandate Chain, Signal Architecture, Checkpoint Recovery, Graceful Escalation, and Immutable Audit Sovereignty.'],
+        ].map(([q, a]) => (
+          <div style="padding:24px;background:var(--forge-2);border:1px solid var(--wire);border-radius:10px;">
+            <div style="font-family:var(--font-display);font-size:16px;font-weight:600;color:var(--light);margin-bottom:12px;">{q}</div>
+            <div style="font-size:14px;color:var(--muted);line-height:1.6;">{a}</div>
           </div>
         ))}
       </div>

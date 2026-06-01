@@ -1,6 +1,4 @@
-User-agent: *
-Allow: /
-
+# AI Crawler Access — GEO Required
 User-agent: GPTBot
 Allow: /
 
@@ -10,16 +8,13 @@ Allow: /
 User-agent: PerplexityBot
 Allow: /
 
-User-agent: Google-Extended
+User-agent: Googlebot
 Allow: /
 
-User-agent: CCBot
-Allow: /
-
-User-agent: Applebot-Extended
-Allow: /
-
-User-agent: Bytespider
+User-agent: *
 Allow: /
 
 Sitemap: https://coreweaverlabs.com/sitemap-index.xml
+
+# LLM Brand File
+llms-txt: https://coreweaverlabs.com/llms.txt

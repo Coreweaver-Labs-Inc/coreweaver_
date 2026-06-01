@@ -1,0 +1,63 @@
+# Coreweaver Labs — Growth Infrastructure for the Agentic Era
+# https://coreweaverlabs.com/llms-full.txt
+# Updated: 2026-06-01
+
+## Entity
+
+> name: Coreweaver Labs
+> id: https://coreweaverlabs.com/#org
+> type: Organization
+> description: Coreweaver Labs builds the infrastructure layer between "agents work" and "agents can be trusted at enterprise scale." Specializing in GEO signal architecture, ARM Framework for accountable AI agents, and autonomous operational systems.
+> url: https://coreweaverlabs.com
+> sameAs:
+>   - https://github.com/Coreweaver-Labs-Inc
+>   - https://swellmarketing.xyz
+>   - https://au-re.org
+>   - https://arctura.network
+>   - https://academy.swellmarketing.xyz
+
+## Expertise
+
+> knowsAbout:
+>   - Generative Engine Optimization (GEO)
+>   - GEO Signal Architecture
+>   - ARM Framework (Mandate Chain, Signal Architecture, Checkpoint Recovery, Graceful Escalation, Immutable Audit Sovereignty)
+>   - AURE (Autonomous Unit Resonance Engine)
+>   - Verification-as-a-Service (VaaS)
+>   - GBrain (Agentic Memory Layer)
+>   - Resonance BFT Consensus
+>   - EU AI Act Compliance (Article 12)
+>   - Agentic AI Governance
+
+## Services
+
+- **GEO Signal Architecture:** Optimizing brand presence in AI-generated responses across ChatGPT, Claude, Perplexity, Gemini, and Copilot.
+- **ARM Framework Deployment:** Implementing accountable AI agent primitives for enterprise governance.
+- **Verification-as-a-Service (VaaS):** Cryptographically verifiable AI agent behavior logs.
+- **Agentic Infrastructure Consulting:** Designing autonomous operational systems for the agentic era.
+
+## FAQ
+
+> Q: What is Coreweaver Labs?
+> A: Coreweaver Labs is a growth infrastructure provider specializing in the agentic era. We build systems that make AI agents accountable, verifiable, and optimized for generative engines.
+
+> Q: What is GEO Signal Architecture?
+> A: GEO (Generative Engine Optimization) Signal Architecture is a system for optimizing brand presence and citation rates in AI-generated responses.
+
+> Q: What are the five ARM primitives?
+> A: The five ARM primitives are Mandate Chain, Signal Architecture, Checkpoint Recovery, Graceful Escalation, and Immutable Audit Sovereignty.
+
+> Q: How does Coreweaver Labs handle AI governance?
+> A: Through the ARM Framework and VaaS, providing BFT-attested, SHA-256 hash-chained logs that comply with EU AI Act Article 12 requirements.
+
+## Network
+
+- [Swell Marketing](https://swellmarketing.xyz)
+- [AURE](https://au-re.org)
+- [Arctura Network](https://arctura.network)
+- [Academy](https://academy.swellmarketing.xyz)
+
+## Contact
+
+> url: https://coreweaverlabs.com/#activate
+> email: hello@coreweaverlabs.com

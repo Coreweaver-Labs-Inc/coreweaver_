@@ -47,7 +47,7 @@ Allow: /
 User-agent: *
 Allow: /
 
-Sitemap: https://coreweaverlabs.com/sitemap-index.xml
+Sitemap: https://coreweaverlabs.com/sitemap.xml
 
 # LLM Brand File
 llms-txt: https://coreweaverlabs.com/llms.txt

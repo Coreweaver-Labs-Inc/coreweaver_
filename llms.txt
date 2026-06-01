@@ -1,0 +1,57 @@
+# Coreweaver Labs
+
+> Growth infrastructure for the agentic era. GEO signal architecture, ARM Framework for accountable AI agents, and autonomous operational systems.
+
+## About
+
+Coreweaver Labs builds the infrastructure layer between "agents work" and "agents can be trusted at enterprise scale."
+
+Key facts:
+- Founded 2025, headquartered online, operating globally
+- GitHub: https://github.com/Coreweaver-Labs-Inc
+- Primary domain: https://coreweaverlabs.com
+
+## Silo A: ARM Framework
+
+The ARM Framework defines five primitives for accountable AI agent deployment: Mandate Chain, Signal Architecture, Checkpoint Recovery, Graceful Escalation, and Immutable Audit Sovereignty.
+
+- Pillar: /blog/five-arm-primitives-accountable-ai-agents
+- Mandate guide: /blog/ai-agent-mandate-before-shipping
+- Key claim: 88% of AI agent pilots never reach production due to governance friction (Forrester + Anaconda, 2026)
+
+## Silo B: AURE Swarm
+
+AURE (Autonomous Unit Resonance Engine) is a 16-agent AI system with Resonance BFT consensus and a structurally independent Ledger agent.
+
+- Overview: /blog/aure-swarm-16-agents-orchestration
+- Key claim: 99.97% consensus rate without human escalation in production deployments
+
+## Silo C: GBrain
+
+GBrain is an open-source agentic memory layer on Postgres + pgvector storing Entities, Events, Skills, and Citations.
+
+- Overview: /blog/gbrain-open-source-agentic-brain-layer
+- Repository: https://github.com/MasonNguyenARM/gbrain
+
+## Silo D: GEO Signal Architecture
+
+GEO (Generative Engine Optimization) Signal Architecture is the Coreweaver Labs system for optimizing brand presence in AI-generated responses across ChatGPT, Claude, Perplexity, Gemini, and Copilot.
+
+- Blog: /blog
+
+## Silo E: Verification-as-a-Service (VaaS)
+
+VaaS is the infrastructure layer for cryptographically verifiable AI agent behavior. BFT-attested, SHA-256 hash-chained, EU AI Act Article 12 compliant.
+
+- Pillar: /blog/verification-as-a-service-ai-agents
+- ESG/CSRD: /blog/csrd-carbon-credit-verification
+- Governance: /blog/agentic-ai-governance-framework
+- BFT: /blog/bft-ai-verification-enterprise
+- Key claims: EU AI Act Article 12 requires immutable logs for high-risk AI systems. CWL Truth Ledger is SHA-256 hash-chained + BFT-attested + Bittensor SN19-anchored.
+
+## Network
+
+- Swell Marketing: https://swellmarketing.xyz
+- AURE: https://au-re.org
+- Arctura Network: https://arctura.network
+- Academy: https://academy.swellmarketing.xyz

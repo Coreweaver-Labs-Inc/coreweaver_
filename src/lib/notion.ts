@@ -117,39 +117,81 @@ export async function getPostContent(pageId: string): Promise<string> {
   }
 }
 
+function richTextToHtml(richText: any[]): string {
+  return richText.map((t: any) => {
+    let s = t.plain_text
+      .replace(/&/g, '&amp;')
+      .replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;');
+    if (t.annotations?.bold)          s = `<strong>${s}</strong>`;
+    if (t.annotations?.italic)        s = `<em>${s}</em>`;
+    if (t.annotations?.strikethrough) s = `<del>${s}</del>`;
+    if (t.annotations?.underline)     s = `<u>${s}</u>`;
+    if (t.annotations?.code)          s = `<code>${s}</code>`;
+    if (t.href)                        s = `<a href="${t.href}" rel="noopener">${s}</a>`;
+    return s;
+  }).join('');
+}
+
 function blocksToHtml(blocks: any[]): string {
-  return blocks.map(block => {
-    const type    = block.type;
-    const content = block[type];
-    const richText = (content?.rich_text ?? []);
-    const text = richText.map((t: any) => {
-      let s = t.plain_text;
-      if (t.annotations?.bold)   s = `<strong>${s}</strong>`;
-      if (t.annotations?.italic) s = `<em>${s}</em>`;
-      if (t.annotations?.code)   s = `<code>${s}</code>`;
-      if (t.href)                 s = `<a href="${t.href}">${s}</a>`;
-      return s;
-    }).join('');
+  const html: string[] = [];
+  let i = 0;
+
+  while (i < blocks.length) {
+    const block = blocks[i];
+    const type  = block.type;
+    const data  = block[type];
+    const text  = richTextToHtml(data?.rich_text ?? []);
+
+    if (type === 'bulleted_list_item') {
+      // Collect consecutive bulleted items into one <ul>
+      const items: string[] = [];
+      while (i < blocks.length && blocks[i].type === 'bulleted_list_item') {
+        const t = richTextToHtml(blocks[i][blocks[i].type]?.rich_text ?? []);
+        items.push(`  <li>${t}</li>`);
+        i++;
+      }
+      html.push(`<ul>\n${items.join('\n')}\n</ul>`);
+      continue;
+    }
+
+    if (type === 'numbered_list_item') {
+      // Collect consecutive numbered items into one <ol>
+      const items: string[] = [];
+      while (i < blocks.length && blocks[i].type === 'numbered_list_item') {
+        const t = richTextToHtml(blocks[i][blocks[i].type]?.rich_text ?? []);
+        items.push(`  <li>${t}</li>`);
+        i++;
+      }
+      html.push(`<ol>\n${items.join('\n')}\n</ol>`);
+      continue;
+    }
 
     switch (type) {
-      case 'heading_1':          return `<h2 class="post-h1">${text}</h2>`;
-      case 'heading_2':          return `<h3 class="post-h2">${text}</h3>`;
-      case 'heading_3':          return `<h4 class="post-h3">${text}</h4>`;
-      case 'paragraph':          return text ? `<p>${text}</p>` : '<br/>';
-      case 'bulleted_list_item': return `<li>${text}</li>`;
-      case 'numbered_list_item': return `<li>${text}</li>`;
-      case 'code':               return `<pre><code class="language-${content.language}">${text}</code></pre>`;
-      case 'quote':              return `<blockquote>${text}</blockquote>`;
-      case 'divider':            return `<hr/>`;
-      case 'image': {
-        const url = content?.file?.url ?? content?.external?.url ?? '';
-        const cap = (content?.caption ?? []).map((t: any) => t.plain_text).join('');
-        return `<figure><img src="${url}" alt="${cap}" loading="lazy"/>${cap ? `<figcaption>${cap}</figcaption>` : ''}</figure>`;
+      case 'heading_1': html.push(`<h2 class="post-h1">${text}</h2>`); break;
+      case 'heading_2': html.push(`<h3 class="post-h2">${text}</h3>`); break;
+      case 'heading_3': html.push(`<h4 class="post-h3">${text}</h4>`); break;
+      case 'paragraph': html.push(text ? `<p>${text}</p>` : '<br/>'); break;
+      case 'code': {
+        const lang = data?.language ?? 'plaintext';
+        html.push(`<pre><code class="language-${lang}">${text}</code></pre>`);
+        break;
       }
-      case 'callout': return `<aside class="callout">${text}</aside>`;
-      default:        return text ? `<p>${text}</p>` : '';
+      case 'quote':   html.push(`<blockquote>${text}</blockquote>`); break;
+      case 'divider': html.push(`<hr/>`); break;
+      case 'image': {
+        const url = data?.file?.url ?? data?.external?.url ?? '';
+        const cap = (data?.caption ?? []).map((t: any) => t.plain_text).join('');
+        html.push(`<figure><img src="${url}" alt="${cap || 'Image'}" loading="lazy"/>${cap ? `<figcaption>${cap}</figcaption>` : ''}</figure>`);
+        break;
+      }
+      case 'callout': html.push(`<aside class="callout">${text}</aside>`); break;
+      default:        if (text) html.push(`<p>${text}</p>`); break;
     }
-  }).join('\n');
+    i++;
+  }
+
+  return html.join('\n');
 }
 
 export async function getApprovedImages(slug?: string): Promise<BlogImage[]> {

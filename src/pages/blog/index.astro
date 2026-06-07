@@ -4,12 +4,6 @@ import { getAllPosts } from '../../lib/notion';
 
 const posts = await getAllPosts();
 
-// Use first post's hero image as the blog index OG image if available,
-// otherwise fall back to a known good Supabase image.
-const blogOgImage = posts[0]?.ogImageUrl
-  ?? posts[0]?.heroImageUrl
-  ?? 'https://lauhqmibfaglnvyhfyfz.supabase.co/storage/v1/object/public/blog-images/2026-05/arm-mandate-chain.png';
-
 const schema = {
   "@context": "https://schema.org",
   "@type": "Blog",
@@ -27,7 +21,7 @@ const schema = {
 <Layout
   title="Blog — Coreweaver Labs"
   description="Signal architecture, GEO deployment, ARM Framework, and autonomous systems. The content engine for the agentic era."
-  ogImage={blogOgImage}
+  ogImage={posts[0]?.ogImageUrl ?? posts[0]?.heroImageUrl ?? 'https://lauhqmibfaglnvyhfyfz.supabase.co/storage/v1/object/public/blog-images/2026-05/arm-mandate-chain.png'}
   schema={schema}
 >
   <!-- Ticker -->

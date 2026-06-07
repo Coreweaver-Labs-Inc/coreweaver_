@@ -6,12 +6,29 @@ export async function getStaticPaths() {
   const posts = await getAllPosts();
   return posts.map(post => ({
     params: { slug: post.slug },
-    props: { post },
+    props: { post, allPosts: posts },
   }));
 }
 
-const { post } = Astro.props;
+const { post, allPosts } = Astro.props;
 const content = await getPostContent(post.id);
+
+// Related posts: same category, excluding current, max 2
+const relatedPosts = allPosts
+  .filter(p => p.slug !== post.slug && p.category.some(c => post.category.includes(c)))
+  .slice(0, 2);
+
+// Determine author — Mason Nguyen for human-authored posts, org for agent posts
+const isHumanAuthor = !post.authorAgent || post.authorAgent === 'Mason Nguyen';
+const authorSchema = isHumanAuthor
+  ? {
+      "@type": "Person",
+      "name": "Mason Nguyen",
+      "url": "https://coreweaverlabs.com",
+      "jobTitle": "CEO & Founder",
+      "worksFor": { "@type": "Organization", "name": "Coreweaver Labs" }
+    }
+  : { "@type": "Organization", "name": "Coreweaver Labs", "url": "https://coreweaverlabs.com" };
 
 const schema = {
   "@context": "https://schema.org",
@@ -19,12 +36,21 @@ const schema = {
   "headline": post.title,
   "description": post.metaDescription,
   "datePublished": post.publishDate,
+  "dateModified": post.publishDate,
   "wordCount": post.wordCount ?? undefined,
   "proficiencyLevel": "Expert",
-  "author": { "@type": "Organization", "name": "Coreweaver Labs", "url": "https://coreweaverlabs.com" },
-  "publisher": { "@type": "Organization", "name": "Coreweaver Labs", "url": "https://coreweaverlabs.com" },
+  "keywords": post.keywords || undefined,
+  "author": authorSchema,
+  "publisher": {
+    "@type": "Organization",
+    "name": "Coreweaver Labs",
+    "url": "https://coreweaverlabs.com",
+    "logo": { "@type": "ImageObject", "url": "https://coreweaverlabs.com/favicon.svg" }
+  },
   "image": post.ogImageUrl ?? post.heroImageUrl,
+  "url": `https://coreweaverlabs.com/blog/${post.slug}`,
   "mainEntityOfPage": `https://coreweaverlabs.com/blog/${post.slug}`,
+  "isPartOf": { "@type": "Blog", "name": "The Forge", "url": "https://coreweaverlabs.com/blog" },
   "breadcrumb": {
     "@type": "BreadcrumbList",
     "itemListElement": [
@@ -40,6 +66,7 @@ const schema = {
   title={post.title}
   description={post.metaDescription}
   ogImage={post.ogImageUrl ?? post.heroImageUrl ?? '/og-default.png'}
+  ogType="article"
   schema={schema}
 >
   <article style="max-width:760px;margin:0 auto;padding:72px 32px 96px;">
@@ -95,8 +122,29 @@ const schema = {
     <!-- Body -->
     <div class="prose-forge" set:html={content} />
 
+    <!-- Related posts -->
+    {relatedPosts.length > 0 && (
+      <aside style="margin-top:72px;padding-top:40px;border-top:1px solid var(--wire);">
+        <div style="font-family:var(--font-mono);font-size:9px;color:var(--muted);letter-spacing:2px;text-transform:uppercase;margin-bottom:24px;">Continue Reading</div>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px;">
+          {relatedPosts.map(related => (
+            <a href={`/blog/${related.slug}`} style="display:block;padding:24px;background:var(--forge-2);border:1px solid var(--wire);border-radius:10px;text-decoration:none;transition:border-color .2s;" onmouseover="this.style.borderColor='var(--core-soft)'" onmouseout="this.style.borderColor='var(--wire)'">
+              <div style="display:flex;gap:6px;flex-wrap:wrap;margin-bottom:10px;">
+                {related.category.slice(0,1).map(cat => (
+                  <span style="font-family:var(--font-mono);font-size:8px;padding:2px 8px;border-radius:3px;border:1px solid rgba(255,159,10,.2);color:var(--core-soft);background:var(--core-dim);text-transform:uppercase;letter-spacing:1.2px;">{cat}</span>
+                ))}
+              </div>
+              <div style="font-family:var(--font-head);font-size:20px;color:var(--light);line-height:1.1;margin-bottom:8px;letter-spacing:.3px;">{related.title}</div>
+              <div style="font-size:12px;color:var(--muted);line-height:1.6;">{related.metaDescription?.slice(0,100)}…</div>
+              <div style="font-family:var(--font-mono);font-size:9px;color:var(--core-soft);margin-top:14px;letter-spacing:1.5px;text-transform:uppercase;">Read →</div>
+            </a>
+          ))}
+        </div>
+      </aside>
+    )}
+
     <!-- Footer nav -->
-    <div style="margin-top:64px;padding-top:32px;border-top:1px solid var(--wire);display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px;">
+    <div style="margin-top:48px;padding-top:28px;border-top:1px solid var(--wire);display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px;">
       <a href="/blog" style="font-family:var(--font-mono);font-size:10px;color:var(--muted);letter-spacing:1.5px;text-transform:uppercase;transition:color .2s;" onmouseover="this.style.color='var(--core-soft)'" onmouseout="this.style.color='var(--muted)'">← Back to Forge</a>
       <div style="font-family:var(--font-mono);font-size:9px;color:var(--muted);letter-spacing:1px;">COREWEAVER LABS · ARM FRAMEWORK · SOVEREIGN</div>
     </div>

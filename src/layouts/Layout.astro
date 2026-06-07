@@ -5,6 +5,7 @@ interface Props {
   title:       string;
   description: string;
   ogImage?:    string;
+  ogType?:     string;
   canonical?:  string;
   schema?:     object;
 }
@@ -12,7 +13,8 @@ interface Props {
 const {
   title,
   description,
-  ogImage    = 'https://lauhqmibfaglnvyhfyfz.supabase.co/storage/v1/object/public/blog-images/2026-05/arm-mandate-chain.png',
+  ogImage    = '/og-default.png',
+  ogType     = 'website',
   canonical  = Astro.url.href,
   schema,
 } = Astro.props;
@@ -36,7 +38,7 @@ const fullTitle = title.includes('Coreweaver') ? title : `${title} — Coreweave
   <link rel="llms-txt" href="/llms.txt" />
 
   <!-- Open Graph -->
-  <meta property="og:type"        content="website" />
+  <meta property="og:type"        content={ogType} />
   <meta property="og:title"       content={fullTitle} />
   <meta property="og:description" content={description} />
   <meta property="og:url"         content={canonical} />

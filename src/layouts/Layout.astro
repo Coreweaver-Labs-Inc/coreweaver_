@@ -126,7 +126,7 @@ const fullTitle = title.includes('Coreweaver') ? title : `${title} — Coreweave
         <div style="grid-column: span 1.5;">
           <div style="font-family:var(--font-head);font-size:24px;color:var(--light);letter-spacing:1px;margin-bottom:12px;">COREWEAVER LABS</div>
           <p style="font-size:14px;color:var(--muted);line-height:1.6;max-width:320px;margin-bottom:24px;">
-            Growth infrastructure for the agentic era. Pioneers of GEO signal architecture and the ARM Framework for accountable AI.
+            Growth infrastructure for the agentic era. Part of the <a href="https://github.com/Arctura-Collective" style="color:var(--core-soft);text-decoration:none;">Arctura-Collective</a>. Pioneers of GEO signal architecture and the ARM Framework.
           </p>
           <div style="font-family:var(--font-mono);font-size:10px;color:var(--core-soft);letter-spacing:1px;text-transform:uppercase;">
             Mason Nguyen · CEO & Founder
@@ -135,14 +135,14 @@ const fullTitle = title.includes('Coreweaver') ? title : `${title} — Coreweave
 
         <!-- Builders -->
         <div>
-          <div style="font-family:var(--font-mono);font-size:9px;color:var(--light);letter-spacing:2px;text-transform:uppercase;margin-bottom:20px;">Builders & Contributors</div>
+          <div style="font-family:var(--font-mono);font-size:9px;color:var(--light);letter-spacing:2px;text-transform:uppercase;margin-bottom:20px;">Collective Partners</div>
           <div style="display:flex;flex-direction:column;gap:12px;">
             {[
+              ['Arctura-Collective','https://github.com/Arctura-Collective'],
+              ['Arctura Network','https://arctura.network'],
               ['Operon','https://arctura.network/operon'],
-              ['ARCTURA Network','https://arctura.network'],
               ['AURE Swarm','https://au-re.org'],
               ['Swell Marketing','https://swellmarketing.xyz'],
-              ['Academy','https://academy.swellmarketing.xyz'],
             ].map(([label, href]) => (
               <a href={href} style="font-family:var(--font-mono);font-size:11px;color:var(--muted);text-decoration:none;transition:color .2s;"
                 onmouseover="this.style.color='var(--core-soft)'"

@@ -23,9 +23,10 @@ The **Autonomous Resource Management (ARM) Framework** defines five primitives f
 
 ## 👥 Contributors & Ecosystem
 
-Coreweaver Labs is a collective effort involving builders across multiple sovereign networks:
+Coreweaver Labs is an independent entity that contributes to the **[Arctura-Collective](https://github.com/Arctura-Collective)**, a sovereign network of specialized builders:
 
 -   **Mason Nguyen:** Founder & Chief Architect.
+-   **Arctura-Collective:** The central hub for collaborative infrastructure.
 -   **Operon (ARCTURA):** Contributors to the decentralized compute and security layer.
 -   **AURE:** Partners in architecture remediation and CMS infrastructure.
 -   **Swell Marketing:** Growth execution and distribution infrastructure.

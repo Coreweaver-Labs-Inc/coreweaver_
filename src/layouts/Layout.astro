@@ -32,7 +32,7 @@ const fullTitle = title.includes('Coreweaver') ? title : `${title} — Coreweave
 
   <title>{fullTitle}</title>
   <meta name="description" content={description} />
-  <meta name="author" content="Coreweaver Labs" />
+  <meta name="author" content="Mason Nguyen & Coreweaver Labs Contributors" />
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" />
   <link rel="canonical" href={canonical} />
   <link rel="llms-txt" href="/llms.txt" />
@@ -57,7 +57,7 @@ const fullTitle = title.includes('Coreweaver') ? title : `${title} — Coreweave
   )}
 
   <!-- GEO: LLM-readable signal -->
-  <meta name="geo.description" content="Coreweaver Labs — growth infrastructure, GEO signal architecture, ARM Framework, agentic systems" />
+  <meta name="geo.description" content="Coreweaver Labs — growth infrastructure, GEO signal architecture, ARM Framework, agentic systems. Contributors to Operon and ARCTURA." />
 
   <!-- Global Builder Codes -->
   <meta name="base:app_id" content="6a1834c7660a3f727dea7030" />
@@ -118,27 +118,72 @@ const fullTitle = title.includes('Coreweaver') ? title : `${title} — Coreweave
   </main>
 
   <!-- Footer -->
-  <footer style="border-top:1px solid var(--wire);padding:48px 0;position:relative;z-index:1;">
-    <div class="container" style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:24px;">
-      <div>
-        <div style="font-family:var(--font-head);font-size:22px;color:var(--light);letter-spacing:1px;">COREWEAVER LABS</div>
-        <div style="font-family:var(--font-mono);font-size:9px;color:var(--muted);letter-spacing:2.5px;text-transform:uppercase;margin-top:4px;">Growth Infrastructure · Agentic Era</div>
+  <footer style="border-top:1px solid var(--wire);padding:64px 0 48px;position:relative;z-index:1;">
+    <div class="container">
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:48px;margin-bottom:64px;">
+        
+        <!-- Brand & Mission -->
+        <div style="grid-column: span 1.5;">
+          <div style="font-family:var(--font-head);font-size:24px;color:var(--light);letter-spacing:1px;margin-bottom:12px;">COREWEAVER LABS</div>
+          <p style="font-size:14px;color:var(--muted);line-height:1.6;max-width:320px;margin-bottom:24px;">
+            Growth infrastructure for the agentic era. Pioneers of GEO signal architecture and the ARM Framework for accountable AI.
+          </p>
+          <div style="font-family:var(--font-mono);font-size:10px;color:var(--core-soft);letter-spacing:1px;text-transform:uppercase;">
+            Mason Nguyen · CEO & Founder
+          </div>
+        </div>
+
+        <!-- Builders -->
+        <div>
+          <div style="font-family:var(--font-mono);font-size:9px;color:var(--light);letter-spacing:2px;text-transform:uppercase;margin-bottom:20px;">Builders & Contributors</div>
+          <div style="display:flex;flex-direction:column;gap:12px;">
+            {[
+              ['Operon','https://arctura.network/operon'],
+              ['ARCTURA Network','https://arctura.network'],
+              ['AURE Swarm','https://au-re.org'],
+              ['Swell Marketing','https://swellmarketing.xyz'],
+              ['Academy','https://academy.swellmarketing.xyz'],
+            ].map(([label, href]) => (
+              <a href={href} style="font-family:var(--font-mono);font-size:11px;color:var(--muted);text-decoration:none;transition:color .2s;"
+                onmouseover="this.style.color='var(--core-soft)'"
+                onmouseout="this.style.color='var(--muted)'"
+              >{label}</a>
+            ))}
+          </div>
+        </div>
+
+        <!-- Resources -->
+        <div>
+          <div style="font-family:var(--font-mono);font-size:9px;color:var(--light);letter-spacing:2px;text-transform:uppercase;margin-bottom:20px;">Resources</div>
+          <div style="display:flex;flex-direction:column;gap:12px;">
+            {[
+              ['The Forge (Blog)','/blog'],
+              ['ARM Framework','/#arm'],
+              ['VaaS Verification','/blog/verification-as-a-service-ai-agents'],
+              ['GitHub','https://github.com/Coreweaver-Labs-Inc'],
+              ['Contact','mailto:hello@coreweaverlabs.com'],
+            ].map(([label, href]) => (
+              <a href={href} style="font-family:var(--font-mono);font-size:11px;color:var(--muted);text-decoration:none;transition:color .2s;"
+                onmouseover="this.style.color='var(--core-soft)'"
+                onmouseout="this.style.color='var(--muted)'"
+              >{label}</a>
+            ))}
+          </div>
+        </div>
       </div>
-      <div style="display:flex;gap:24px;flex-wrap:wrap;">
-        {[
-          ['https://swellmarketing.xyz','Swell Marketing'],
-          ['https://arctura.network','Arctura Network'],
-          ['https://academy.swellmarketing.xyz','Academy'],
-          ['https://au-re.org','AURE'],
-        ].map(([href, label]) => (
-          <a href={href} style="font-family:var(--font-mono);font-size:10px;color:var(--muted);letter-spacing:1.2px;text-transform:uppercase;transition:color .2s;"
-            onmouseover="this.style.color='var(--core-soft)'"
-            onmouseout="this.style.color='var(--muted)'"
-          >{label}</a>
-        ))}
-      </div>
-      <div style="font-family:var(--font-mono);font-size:10px;color:var(--muted);letter-spacing:1px;">
-        © {new Date().getFullYear()} Coreweaver Labs Inc.
+
+      <!-- Bottom Bar -->
+      <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:24px;padding-top:32px;border-top:1px solid var(--wire);">
+        <div style="font-family:var(--font-mono);font-size:10px;color:var(--muted);letter-spacing:1px;">
+          © {new Date().getFullYear()} Coreweaver Labs Inc. MIT License.
+        </div>
+        <div style="display:flex;gap:16px;font-family:var(--font-mono);font-size:10px;color:var(--muted);letter-spacing:1px;text-transform:uppercase;">
+          <span>Decentralized AI</span>
+          <span>·</span>
+          <span>Blockchain Security</span>
+          <span>·</span>
+          <span>GEO Signal</span>
+        </div>
       </div>
     </div>
   </footer>

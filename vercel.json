@@ -27,6 +27,9 @@
     { "source": "/arm", "destination": "/blog/five-arm-primitives-accountable-ai-agents", "permanent": true },
     { "source": "/geo", "destination": "/blog", "permanent": false },
     { "source": "/vaas", "destination": "/vaas/", "permanent": false },
-    { "source": "/blog/verification-as-a-service-ai-agents", "destination": "/vaas/", "permanent": true }
+    { "source": "/blog/verification-as-a-service-ai-agents", "destination": "/vaas/", "permanent": true },
+    { "source": "/blog/agentic-ai-governance-framework", "destination": "/blog", "permanent": true },
+    { "source": "/blog/bft-ai-verification-enterprise", "destination": "/blog", "permanent": true },
+    { "source": "/blog/csrd-carbon-credit-verification", "destination": "/blog", "permanent": true }
   ]
 }

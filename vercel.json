@@ -26,6 +26,7 @@
   "redirects": [
     { "source": "/arm", "destination": "/blog/five-arm-primitives-accountable-ai-agents", "permanent": true },
     { "source": "/geo", "destination": "/blog", "permanent": false },
-    { "source": "/vaas", "destination": "/blog/verification-as-a-service-ai-agents", "permanent": false }
+    { "source": "/vaas", "destination": "/vaas/", "permanent": false },
+    { "source": "/blog/verification-as-a-service-ai-agents", "destination": "/vaas/", "permanent": true }
   ]
 }

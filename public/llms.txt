@@ -43,10 +43,7 @@ GEO (Generative Engine Optimization) Signal Architecture is the Coreweaver Labs 
 
 VaaS is the infrastructure layer for cryptographically verifiable AI agent behavior. BFT-attested, SHA-256 hash-chained, EU AI Act Article 12 compliant.
 
-- Pillar: /blog/verification-as-a-service-ai-agents
-- ESG/CSRD: /blog/csrd-carbon-credit-verification
-- Governance: /blog/agentic-ai-governance-framework
-- BFT: /blog/bft-ai-verification-enterprise
+- Overview: /vaas/
 - Key claims: EU AI Act Article 12 requires immutable logs for high-risk AI systems. CWL Truth Ledger is SHA-256 hash-chained + BFT-attested + Bittensor SN19-anchored.
 
 ## Network

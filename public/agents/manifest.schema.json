@@ -1,0 +1,45 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://coreweaverlabs.com/agents/manifest.schema.json",
+  "title": "Coreweaver Labs Agent Manifest",
+  "type": "object",
+  "required": ["schema", "version", "name", "website", "repository", "stack", "interoperability", "publicSurfaces", "content", "contributing"],
+  "properties": {
+    "schema": {"type": "string", "format": "uri"},
+    "version": {"type": "string"},
+    "name": {"type": "string"},
+    "description": {"type": "string"},
+    "slogan": {"type": "string"},
+    "website": {"type": "string", "format": "uri"},
+    "repository": {
+      "type": "object",
+      "required": ["type", "url", "defaultBranch", "license"],
+      "properties": {
+        "type": {"const": "git"},
+        "url": {"type": "string", "format": "uri"},
+        "defaultBranch": {"type": "string"},
+        "license": {"type": "string"}
+      },
+      "additionalProperties": false
+    },
+    "stack": {
+      "type": "object",
+      "required": ["framework", "language", "packageManager", "build", "output"],
+      "properties": {
+        "framework": {"type": "string"},
+        "language": {"type": "array", "items": {"type": "string"}},
+        "packageManager": {"type": "string"},
+        "build": {"type": "string"},
+        "output": {"type": "string"},
+        "runtimeRequirement": {"type": "string"},
+        "optionalDataServices": {"type": "array", "items": {"type": "string"}}
+      },
+      "additionalProperties": false
+    },
+    "interoperability": {"type": "object"},
+    "publicSurfaces": {"type": "array", "items": {"type": "object"}},
+    "content": {"type": "object"},
+    "contributing": {"type": "object"}
+  },
+  "additionalProperties": false
+}

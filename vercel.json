@@ -16,7 +16,7 @@
       "headers": [{ "key": "Cache-Control", "value": "public, max-age=3600" }]
     },
     {
-      "source": "/ai-config/(.*)",
+      "source": "/agents/(.*)",
       "headers": [
         { "key": "Cache-Control", "value": "public, max-age=3600" },
         { "key": "Access-Control-Allow-Origin", "value": "*" }

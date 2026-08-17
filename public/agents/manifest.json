@@ -32,6 +32,10 @@
     {"path": "/llms-full.txt", "format": "text/plain", "purpose": "Expanded factual profile and links."},
     {"path": "/agents/manifest.json", "format": "application/json", "purpose": "Machine-readable project and interoperability manifest."},
     {"path": "/agents/manifest.schema.json", "format": "application/schema+json", "purpose": "Manifest validation schema."},
+    {"path": "/geo/", "format": "text/html", "purpose": "GEO fundamentals pillar."},
+    {"path": "/geo-compass/", "format": "text/html", "purpose": "Anti-slop and evidence-to-citation method."},
+    {"path": "/ai-mastery/", "format": "text/html", "purpose": "AI systems architecture and trust silo."},
+    {"path": "/about/mason-nguyen/", "format": "text/html", "purpose": "Canonical author and entity page."},
     {"path": "/AGENTS.md", "format": "text/markdown", "purpose": "Human and agent contributor quickstart."},
     {"path": "/robots.txt", "format": "text/plain", "purpose": "Crawler access policy."},
     {"path": "/sitemap.xml", "format": "application/xml", "purpose": "Discoverable URL index."}
@@ -39,7 +43,9 @@
   "content": {
     "sourceOfTruth": "Git repository for public copy and structure; optional providers may supply blog records at build time.",
     "fallbackBehavior": "The static site remains buildable when optional external providers are unavailable.",
-    "claimPolicy": "Public claims should be source-backed, dated where material, and reviewable in Git."
+    "claimPolicy": "Public claims should be source-backed, dated where material, and reviewable in Git.",
+    "antiSlopPolicy": "Every new page must add original analysis, a useful canonical definition, or a proprietary framework; generic summaries are rejected.",
+    "measurementPolicy": "Measure fixed probe-query sets, technical crawlability, citation accuracy, and source coverage; do not treat any single score as a guarantee."
   },
   "contributing": {
     "workflow": "Use a feature branch, run npm ci and npm run build, inspect generated dist/, then open a pull request.",

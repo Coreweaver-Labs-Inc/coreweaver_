@@ -1,0 +1,14 @@
+---
+import SeoArticle from '../../components/SeoArticle.astro';
+const canonical = 'https://coreweaverlabs.com/ai-mastery/knowledge-systems/';
+---
+
+<SeoArticle title="Knowledge Systems for AI: Retrieval, Entities, and Evidence | Coreweaver Labs" description="A practical guide to knowledge systems for AI: entity architecture, structured data, citation networks, retrieval context, and machine-readable publishing." canonical={canonical} eyebrow="AI Mastery · knowledge systems" heading="Knowledge systems ground intelligence." lede="Retrieval quality depends on the quality of the information environment: entities, relationships, source provenance, and context that can survive extraction." section="AI Mastery">
+  <p>A knowledge system is more than a vector index. It includes the source record, its structure, its relationships, its freshness, and the rules by which another system decides whether the record is relevant. GEO is the public-web side of that problem.</p>
+  <h2>Five design requirements</h2>
+  <ol><li><strong>Entity clarity:</strong> give people and concepts stable names, URLs, and relationships.</li><li><strong>Source provenance:</strong> preserve where a claim came from and when it was checked.</li><li><strong>Retrieval affordances:</strong> use headings, concise definitions, tables, and descriptive links.</li><li><strong>Conflict handling:</strong> separate first-party claims, independent sources, and unresolved disagreement.</li><li><strong>Machine-readable output:</strong> publish HTML, JSON-LD, JSON, Markdown, plain text, and a sitemap.</li></ol>
+  <p>Read the <a href="/geo/signal-architecture/">Signal Architecture guide</a> for the six layers of an AI-readable public information system and the <a href="/glossary/citation-network/">Citation Network definition</a> for source relationships.</p>
+  <h2>Why structure beats volume</h2>
+  <p>Google’s guidance says structured data should describe visible content and that complete, accurate markup is better than a larger amount of inaccurate markup. [<a href="https://developers.google.com/search/docs/appearance/structured-data/intro-structured-data" rel="nofollow">Google Search Central</a>] The same principle applies to retrieval: a smaller, well-connected corpus can be more useful than a larger corpus with ambiguous sources.</p>
+  <div class="related-links"><a href="/ai-mastery/">AI Mastery pillar →</a><a href="/geo/">GEO fundamentals →</a><a href="/glossary/entity-authority/">Entity Authority →</a><a href="/geo-compass/">GEO-COMPASS →</a></div>
+</SeoArticle>

@@ -1,0 +1,65 @@
+---
+import SeoArticle from '../../components/SeoArticle.astro';
+const canonical = 'https://coreweaverlabs.com/geo/';
+---
+
+<SeoArticle
+  title="GEO Made Simple: Generative Engine Optimization | Coreweaver Labs"
+  description="A practical, evidence-led introduction to Generative Engine Optimization: entities, citations, structured data, internal links, and machine-readable trust."
+  canonical={canonical}
+  eyebrow="GEO fundamentals · pillar guide"
+  heading="GEO Made Simple."
+  lede="Generative Engine Optimization is the discipline of making useful information easier for retrieval systems and language models to identify, understand, verify, and cite."
+  section="GEO"
+  image="/images/geo-compass.svg"
+  imageAlt="GEO-COMPASS diagram showing Acquire, Retrieve, Reason, Publish, Measure, and Verify around a central node"
+  imageCaption="The GEO-COMPASS loop: publish evidence that remains legible as the reader changes from human to machine."
+>
+  <p>Search optimization began with documents and links. GEO adds an entity and evidence layer. A page can be technically crawlable and still be difficult for an AI system to attribute because the author, definition, source, and relationship graph are unclear.</p>
+  <p>Coreweaver Labs uses <strong>GEO signal architecture</strong> as a working model for solving that problem. It is not a promise that any model will cite a page. It is a method for improving the quality and retrievability of the public evidence available to people and machines.</p>
+
+  <h2>SEO → GEO: translate the system</h2>
+  <table>
+    <thead><tr><th>SEO concept</th><th>GEO equivalent</th><th>Practical change</th></tr></thead>
+    <tbody>
+      <tr><td>Rankings</td><td>Share of Model</td><td>Measure how often a defined entity appears in a controlled query set, not a universal ranking.</td></tr>
+      <tr><td>Backlinks</td><td>Citation networks</td><td>Prioritize relevant, independent references that verify a claim or entity.</td></tr>
+      <tr><td>Keywords</td><td>Probe queries</td><td>Test the questions people and models actually ask about the topic.</td></tr>
+      <tr><td>Meta tags</td><td>Entity metadata</td><td>Connect the page, author, organization, definitions, and sameAs identities with accurate JSON-LD.</td></tr>
+      <tr><td>Technical SEO</td><td>Signal architecture</td><td>Make the site crawlable, fast, canonical, extractable, and internally connected.</td></tr>
+    </tbody>
+  </table>
+
+  <h2>The evidence standard</h2>
+  <p>Google’s public guidance recommends original, helpful, people-first content, clear authorship, accurate sourcing, and a visible explanation of who created the page, how it was created, and why it exists. [<a href="https://developers.google.com/search/docs/fundamentals/creating-helpful-content">Google Search Central: helpful content</a>]</p>
+  <p>Structured data is useful when it describes visible content and supplies explicit clues about the page. It should be complete and accurate rather than inflated with properties that the reader cannot verify. [<a href="https://developers.google.com/search/docs/appearance/structured-data/intro-structured-data">Google Search Central: structured data</a>]</p>
+  <blockquote>GEO is not “write more pages.” GEO is “make the right evidence easier to resolve.”</blockquote>
+
+  <h2>Start with a signal map</h2>
+  <ol>
+    <li><strong>Acquire:</strong> collect first-party facts, source documents, definitions, authorship, and images.</li>
+    <li><strong>Retrieve:</strong> map the queries, synonyms, and entity relationships a reader may use.</li>
+    <li><strong>Reason:</strong> add an original framework or analysis instead of paraphrasing search results.</li>
+    <li><strong>Publish:</strong> expose the page through HTML, JSON-LD, internal links, sitemap, and plain-text summaries.</li>
+    <li><strong>Measure:</strong> monitor crawlability, citations, branded queries, and source accuracy.</li>
+    <li><strong>Verify:</strong> review claims, links, metadata, image alt text, and schema before release.</li>
+  </ol>
+
+  <h2>Continue through the silo</h2>
+  <div class="related-links">
+    <a href="/geo/seo-to-geo/">SEO to GEO translation →</a>
+    <a href="/glossary/entity-authority/">Entity Authority definition →</a>
+    <a href="/glossary/share-of-model/">Share of Model definition →</a>
+    <a href="/geo/signal-architecture/">Signal Architecture pillar →</a>
+    <a href="/geo-compass/">Read the GEO-COMPASS method →</a>
+    <a href="/about/mason-nguyen/">Meet the author and entity →</a>
+  </div>
+
+  <h2>Frequently asked questions</h2>
+  <h3>Does GEO replace SEO?</h3>
+  <p>No. GEO depends on good technical SEO because models still need to discover, fetch, parse, and attribute pages. GEO extends the system from document discovery into entity clarity and evidence resolution.</p>
+  <h3>Can structured data guarantee an AI citation?</h3>
+  <p>No. Structured data supplies explicit clues; it does not guarantee ranking, inclusion, or citation. The page must still be useful, visible, accurate, and supported by a credible information environment.</p>
+  <h3>What is the first GEO improvement to make?</h3>
+  <p>Start with one important entity and one query set. Align the page title, visible definition, author, canonical URL, JSON-LD, internal links, external evidence, and image alt text around the same clear answer.</p>
+</SeoArticle>

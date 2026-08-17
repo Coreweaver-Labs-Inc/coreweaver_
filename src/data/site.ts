@@ -26,7 +26,7 @@ export const services = [
   {
     name: 'ARM Framework',
     summary: 'A practical pattern for agents that operate within explicit authority, recover safely, and leave an auditable record.',
-    href: '/blog/five-arm-primitives-accountable-ai-agents',
+    href: '/framework/arm/',
   },
   {
     name: 'Open Interfaces',
@@ -72,6 +72,8 @@ export const network = [
 export const sameAs = [
   'https://github.com/Coreweaver-Labs-Inc/coreweaver_',
   'https://github.com/Coreweaver-Labs-Inc',
+  'https://www.linkedin.com/in/mason-nguyen',
+  'https://virtualmase.github.io/ai-mastery/',
   'https://arctura.network',
   'https://au-re.org',
   'https://swellmarketing.xyz',

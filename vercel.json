@@ -24,8 +24,8 @@
     }
   ],
   "redirects": [
-    { "source": "/arm", "destination": "/blog/five-arm-primitives-accountable-ai-agents", "permanent": true },
-    { "source": "/geo", "destination": "/blog", "permanent": false },
+    { "source": "/arm", "destination": "/framework/arm/", "permanent": true },
+    { "source": "/geo", "destination": "/geo/", "permanent": true },
     { "source": "/vaas", "destination": "/vaas/", "permanent": false },
     { "source": "/blog/verification-as-a-service-ai-agents", "destination": "/vaas/", "permanent": true },
     { "source": "/blog/agentic-ai-governance-framework", "destination": "/blog", "permanent": true },

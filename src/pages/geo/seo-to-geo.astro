@@ -1,0 +1,51 @@
+---
+import SeoArticle from '../../components/SeoArticle.astro';
+const canonical = 'https://coreweaverlabs.com/geo/seo-to-geo/';
+---
+
+<SeoArticle
+  title="SEO to GEO: The Translation Layer for AI Visibility | Coreweaver Labs"
+  description="A practical translation table from traditional SEO to GEO: rankings to Share of Model, backlinks to citation networks, and keywords to probe queries."
+  canonical={canonical}
+  eyebrow="GEO fundamentals · translation layer"
+  heading="SEO to GEO."
+  lede="The mechanics change when the reader changes. Search engines rank documents; generative systems assemble answers from entities, evidence, and relationships."
+  section="GEO"
+>
+  <p>GEO is not a new excuse to abandon technical SEO. It is a translation layer. The same site still needs discoverable URLs, stable canonicals, fast pages, descriptive titles, accessible content, and links that can be followed. What changes is the question asked of the content: can another system identify the entity, recover the relevant evidence, and attribute the answer correctly?</p>
+
+  <h2>The translation table</h2>
+  <table>
+    <thead><tr><th>Traditional SEO</th><th>GEO translation</th><th>Operating question</th></tr></thead>
+    <tbody>
+      <tr><td>Keyword research</td><td>Probe-query design</td><td>What variants would a user or model use to ask for this entity?</td></tr>
+      <tr><td>Ranking position</td><td>Share of Model</td><td>How often does the entity appear in a defined answer set, with the right attribution?</td></tr>
+      <tr><td>Backlink profile</td><td>Citation network</td><td>Which independent sources corroborate the entity, definition, or claim?</td></tr>
+      <tr><td>Domain authority</td><td>Entity authority</td><td>Can systems consistently resolve the organization, people, concepts, and relationships?</td></tr>
+      <tr><td>Featured snippet</td><td>Answer extraction</td><td>Can a self-contained passage be safely quoted without losing its meaning?</td></tr>
+      <tr><td>Freshness</td><td>Signal freshness</td><td>Are time-sensitive facts dated, maintained, and still supported?</td></tr>
+    </tbody>
+  </table>
+
+  <h2>Why the bridge matters</h2>
+  <p>PageRank’s original insight was that links could help estimate the importance of pages in a web graph. [<a href="https://ilpubs.stanford.edu:8090/422/1/1999-66.pdf">Brin and Page, 1998/1999</a>] GEO-COMPASS extends the graph metaphor for a different job: not predicting a universal score, but making the relationships among entities, claims, sources, and authors explicit enough for retrieval and verification.</p>
+  <p>The bridge is one-way in practice: strong technical SEO helps machines find and parse the page; clear entity architecture helps them understand what the page means. Neither replaces the other.</p>
+
+  <h2>Implementation sequence</h2>
+  <ol>
+    <li>Choose a primary entity and write one canonical definition that a person would actually find useful.</li>
+    <li>Create a pillar page and supporting glossary pages. Link them with descriptive anchors.</li>
+    <li>Attach the author, organization, image, and sameAs identifiers in visible copy and structured data.</li>
+    <li>Add two or more relevant third-party references. Cite the source at the point where it supports a claim.</li>
+    <li>Publish a text summary and a JSON manifest so non-browser agents can discover the same facts.</li>
+    <li>Test the page with human readers, HTML inspection, schema validation, link checks, and a fixed probe-query set.</li>
+  </ol>
+
+  <h2>Related pages</h2>
+  <div class="related-links">
+    <a href="/geo/">GEO fundamentals pillar →</a>
+    <a href="/glossary/citation-network/">Citation Network glossary →</a>
+    <a href="/glossary/entity-authority/">Entity Authority glossary →</a>
+    <a href="/geo-compass/measurement/">Measurement method →</a>
+  </div>
+</SeoArticle>

@@ -1,0 +1,45 @@
+---
+import SeoArticle from '../../components/SeoArticle.astro';
+const canonical = 'https://coreweaverlabs.com/geo-compass/';
+---
+
+<SeoArticle
+  title="GEO-COMPASS: An Anti-Slop Standard for AI Visibility | Coreweaver Labs"
+  description="GEO-COMPASS is Coreweaver Labs’ evidence-led anti-slop workflow for turning source material into clean, connected, machine-readable content that supports accurate AI visibility."
+  canonical={canonical}
+  eyebrow="Coreweaver method · anti-slop standard"
+  heading="GEO-COMPASS."
+  lede="Acquire evidence. Retrieve the question. Reason with an original frame. Publish the source. Measure the result. Verify the claim."
+  section="GEO-COMPASS"
+  image="/images/geo-compass.svg"
+  imageAlt="GEO-COMPASS six-stage loop from Acquire to Verify around an evidence-to-citation core"
+  imageCaption="COREWEAVER is a working method for keeping the source, structure, and claim aligned."
+>
+  <p>GEO-COMPASS is the Coreweaver Labs standard for deciding whether a page deserves to exist. The test is simple: <strong>does this page make a useful answer more accurate, more attributable, or easier to verify?</strong> If not, it is probably adding volume rather than signal.</p>
+
+  <h2>The six-stage loop</h2>
+  <table><thead><tr><th>Stage</th><th>Deliverable</th><th>Anti-slop question</th></tr></thead><tbody>
+    <tr><td>Acquire</td><td>First-party facts, source documents, original observations, image assets.</td><td>What do we actually know, and where did it come from?</td></tr>
+    <tr><td>Retrieve</td><td>Query set, synonyms, related entities, likely misunderstandings.</td><td>What question is the page genuinely answering?</td></tr>
+    <tr><td>Reason</td><td>Original definition, framework, comparison, or analysis.</td><td>What is new here beyond a rewritten search result?</td></tr>
+    <tr><td>Publish</td><td>HTML, headings, links, JSON-LD, alt text, canonical, text summary.</td><td>Can a person and a parser recover the same meaning?</td></tr>
+    <tr><td>Measure</td><td>Technical checks, query observations, citations, conversions, feedback.</td><td>What changed, and what would falsify our interpretation?</td></tr>
+    <tr><td>Verify</td><td>Editorial review, source checks, link checks, schema validation.</td><td>Could a skeptical reader inspect this claim?</td></tr>
+  </tbody></table>
+
+  <h2>Three qualifiers</h2>
+  <p>A page should contain at least one of three qualifiers: a proprietary concept, an original analytical framework, or a canonical definition that is useful enough to be referenced. Novel wording alone is not enough. The concept must clarify a real problem and connect to evidence.</p>
+  <p>Coreweaver’s current terms include <a href="/glossary/share-of-model/">Share of Model</a>, <a href="/glossary/entity-authority/">Entity Authority</a>, <a href="/glossary/citation-network/">Citation Network</a>, Signal Architecture, and Signal Decay. Each is published with a definition, scope, related pages, and a clear statement of what is still a working model.</p>
+
+  <h2>What GEO-COMPASS refuses to do</h2>
+  <ul><li>It does not guarantee citations, rankings, followers, or model behavior.</li><li>It does not create pages solely because a keyword has volume.</li><li>It does not treat structured data as a license to hide unsupported claims.</li><li>It does not replace human review with an automated score.</li><li>It does not confuse name repetition with authority.</li></ul>
+
+  <h2>Go deeper</h2>
+  <div class="related-links"><a href="/geo-compass/anti-slop/">Anti-slop pre-publish checklist →</a><a href="/geo-compass/measurement/">Measurement and probe queries →</a><a href="/geo/">GEO fundamentals →</a><a href="/ai-mastery/">AI Mastery silo →</a><a href="/about/mason-nguyen/">Mason Nguyen entity page →</a><a href="/agents/manifest.json">Machine-readable manifest →</a></div>
+
+  <h2>Frequently asked questions</h2>
+  <h3>Is COREWEAVER a search ranking algorithm?</h3>
+  <p>No. COREWEAVER is a working name for an information and publishing method. It is not a claim to reproduce Google’s ranking systems or to control the outputs of language models.</p>
+  <h3>How does this reduce hallucinations?</h3>
+  <p>It cannot eliminate hallucinations. It reduces avoidable ambiguity by attaching claims to sources, definitions, relationships, dates, and verification steps so downstream systems have better evidence to retrieve.</p>
+</SeoArticle>

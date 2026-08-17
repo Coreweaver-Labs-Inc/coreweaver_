@@ -1,0 +1,42 @@
+name: GEO Audit Evidence
+
+on:
+  workflow_dispatch:
+  schedule:
+    # Mondays at 03:17 UTC. Avoid the top of the hour, when scheduled workflows can be delayed.
+    - cron: '17 3 * * 1'
+
+permissions:
+  contents: read
+
+concurrency:
+  group: geo-audit-gemini-com
+  cancel-in-progress: false
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Check out source
+        uses: actions/checkout@v4
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Install locked dependencies
+        run: npm ci
+
+      - name: Collect public GEO evidence
+        run: npm run audit:geo
+
+      - name: Upload audit evidence
+        uses: actions/upload-artifact@v4
+        with:
+          name: gemini-com-geo-audit-${{ github.run_id }}
+          path: artifacts/geo-audits/gemini-com/
+          if-no-files-found: error
+          retention-days: 90

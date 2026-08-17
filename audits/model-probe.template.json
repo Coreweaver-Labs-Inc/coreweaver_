@@ -1,0 +1,27 @@
+{
+  "$schema": "./model-probe.schema.json",
+  "version": "1.0",
+  "auditRunId": "replace-with-audit-run-id",
+  "targetId": "gemini-com",
+  "reviewer": {
+    "type": "human-or-model",
+    "provider": "replace-with-provider-or-human-name",
+    "model": "replace-with-model-or-not-applicable",
+    "interface": "replace-with-chat-api-browser-or-manual-review",
+    "locale": "en-US",
+    "browsingEnabled": false
+  },
+  "executedAt": "2026-08-17T00:00:00.000Z",
+  "queries": [
+    {
+      "id": "entity-definition",
+      "prompt": "What is Gemini Exchange?",
+      "rawResponse": "Preserve the complete unedited answer here.",
+      "mentionsTarget": null,
+      "attributionAccurate": null,
+      "citationUrls": [],
+      "reviewerNotes": "Label only after human review."
+    }
+  ],
+  "methodNotes": "Never compare probe results across providers or dates without recording model, interface, locale, browsing state, prompt, and raw response."
+}

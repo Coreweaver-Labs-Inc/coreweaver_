@@ -5,6 +5,7 @@ interface Props {
   title:       string;
   description: string;
   ogImage?:    string;
+  ogImageAlt?: string;
   ogType?:     string;
   canonical?:  string;
   schema?:     object;
@@ -13,9 +14,10 @@ interface Props {
 const {
   title,
   description,
-  ogImage    = '/og-default.png',
+  ogImage    = '/images/geo-compass.svg',
+  ogImageAlt = 'GEO-COMPASS signal-to-trust loop',
   ogType     = 'website',
-  canonical  = Astro.url.href,
+  canonical  = new URL(Astro.url.pathname, Astro.site ?? 'https://coreweaverlabs.com').href,
   schema,
 } = Astro.props;
 
@@ -35,7 +37,9 @@ const fullTitle = title.includes('Coreweaver') ? title : `${title} — Coreweave
   <meta name="author" content="Mason Nguyen & Coreweaver Labs Contributors" />
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" />
   <link rel="canonical" href={canonical} />
-  <link rel="llms-txt" href="/llms.txt" />
+  <link rel="alternate" type="text/plain" href="/llms.txt" title="LLM-readable site summary" />
+  <link rel="alternate" type="application/json" href="/agents/manifest.json" title="Machine-readable agent manifest" />
+  <link rel="sitemap" type="application/xml" href="/sitemap.xml" />
 
   <!-- Open Graph -->
   <meta property="og:type"        content={ogType} />
@@ -43,29 +47,28 @@ const fullTitle = title.includes('Coreweaver') ? title : `${title} — Coreweave
   <meta property="og:description" content={description} />
   <meta property="og:url"         content={canonical} />
   <meta property="og:site_name"   content="Coreweaver Labs" />
-  <meta property="og:image"       content={ogImage} />
+  <meta property="og:image"       content={new URL(ogImage, Astro.site ?? 'https://coreweaverlabs.com').href} />
+  <meta property="og:image:alt"   content={ogImageAlt} />
 
   <!-- Twitter -->
   <meta name="twitter:card"        content="summary_large_image" />
   <meta name="twitter:title"       content={fullTitle} />
   <meta name="twitter:description" content={description} />
-  <meta name="twitter:image"       content={ogImage} />
+  <meta name="twitter:image"       content={new URL(ogImage, Astro.site ?? 'https://coreweaverlabs.com').href} />
+  <meta name="twitter:image:alt"   content={ogImageAlt} />
 
   <!-- Structured data -->
   {schema && (
     <script type="application/ld+json" set:html={JSON.stringify(schema)} />
   )}
 
-  <!-- GEO: LLM-readable signal -->
-  <meta name="geo.description" content="Coreweaver Labs — growth infrastructure, GEO signal architecture, ARM Framework, agentic systems. Contributors to Operon and ARCTURA." />
+  <!-- Machine-readable summary; detailed representations live at /llms.txt and /agents/manifest.json. -->
+  <meta name="description:short" content="GEO Made Simple. Coreweaver Labs builds portable, AI-readable information systems." />
 
-  <!-- Global Builder Codes -->
-  <meta name="base:app_id" content="6a1834c7660a3f727dea7030" />
-  <meta name="base:app_id" content="6a0ada777abfff0aca7b16f5" />
-  <meta name="talentapp:project_verification" content="fb72701efbb37acee74ca0542887c501cdef34feabaf49a687afaec1335df94783adabc777153238dfc56095fcde2eb9a3a0d6929c42a2531fb7ca4a39450fc1">
 </head>
 
 <body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
   <!-- Background atmosphere -->
   <div class="bg-layer bg-forge"   style="position:fixed;inset:0;pointer-events:none;z-index:0;" aria-hidden="true"></div>
   <div class="bg-layer bg-circuit" style="position:fixed;inset:0;pointer-events:none;z-index:0;" aria-hidden="true"></div>
@@ -89,14 +92,14 @@ const fullTitle = title.includes('Coreweaver') ? title : `${title} — Coreweave
       </a>
 
       <!-- Nav -->
-      <nav style="display:flex;gap:2px;" aria-label="Primary">
+      <nav style="display:flex;gap:2px;" aria-label="Primary navigation">
         {[
           ['/','Home'],
-          ['/blog','Blog'],
-          ['/#mandate','Build'],
-          ['/#arm','ARM'],
-          ['/#network','Network'],
-          ['/#activate','Activate'],
+          ['/geo/','GEO'],
+          ['/ai-mastery/','AI Mastery'],
+          ['/geo-compass/','GEO-COMPASS'],
+          ['/framework/arm/','ARM'],
+          ['/about/mason-nguyen/','Mason'],
         ].map(([href, label]) => (
           <a
             href={href}
@@ -113,7 +116,7 @@ const fullTitle = title.includes('Coreweaver') ? title : `${title} — Coreweave
   </header>
 
   <!-- Page content -->
-  <main>
+  <main id="main-content">
     <slot />
   </main>
 
@@ -158,8 +161,10 @@ const fullTitle = title.includes('Coreweaver') ? title : `${title} — Coreweave
           <div style="display:flex;flex-direction:column;gap:12px;">
             {[
               ['The Forge (Blog)','/blog'],
-              ['ARM Framework','/#arm'],
-              ['VaaS Verification','/vaas/'],
+              ['GEO-COMPASS','/geo-compass/'],
+              ['AI Mastery','/ai-mastery/'],
+              ['ARM Framework','/framework/arm/'],
+              ['Author: Mason Nguyen','/about/mason-nguyen/'],
               ['GitHub','https://github.com/Coreweaver-Labs-Inc'],
               ['Contact','mailto:hello@coreweaverlabs.com'],
             ].map(([label, href]) => (

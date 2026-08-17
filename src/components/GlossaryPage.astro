@@ -1,0 +1,27 @@
+---
+import SeoArticle from './SeoArticle.astro';
+
+interface Props { term: string; slug: string; definition: string; description: string; related: Array<[string, string]>; }
+const { term, slug, definition, description, related = [['/geo/', 'GEO fundamentals'], ['/geo-compass/', 'GEO-COMPASS'], ['/about/mason-nguyen/', 'Mason Nguyen']] } = Astro.props;
+const canonical = `https://coreweaverlabs.com/glossary/${slug}/`;
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'DefinedTerm',
+  '@id': `${canonical}#term`,
+  name: term,
+  termCode: slug,
+  description: definition,
+  url: canonical,
+  inDefinedTermSet: { '@type': 'DefinedTermSet', name: 'Coreweaver Labs GEO glossary', url: 'https://coreweaverlabs.com/geo/' },
+  creator: { '@type': 'Person', name: 'Mason Nguyen', url: 'https://www.linkedin.com/in/mason-nguyen' },
+};
+---
+
+<SeoArticle title={`${term}: GEO Glossary | Coreweaver Labs`} description={description} canonical={canonical} eyebrow={`GEO glossary · ${term}`} heading={term} lede={definition} section="GEO" type="DefinedTerm" termCode={slug}>
+  <p><strong>Canonical definition:</strong> {definition}</p>
+  <slot />
+  <h2>Related concepts</h2>
+  <div class="related-links">
+    {related.map(([href, label]) => <a href={href}>{label} →</a>)}
+  </div>
+</SeoArticle>

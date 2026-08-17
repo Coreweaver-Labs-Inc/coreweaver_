@@ -1,52 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <!-- Core Entity Nodes -->
-  <url>
-    <loc>https://coreweaverlabs.com/</loc>
-    <lastmod>2026-06-01</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
-  </url>
-  <url>
-    <loc>https://coreweaverlabs.com/blog</loc>
-    <lastmod>2026-06-01</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.9</priority>
-  </url>
-
-  <!-- Pillar Content: ARM Framework -->
-  <url>
-    <loc>https://coreweaverlabs.com/blog/five-arm-primitives-accountable-ai-agents</loc>
-    <lastmod>2026-05-31</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://coreweaverlabs.com/blog/ai-agent-mandate-before-shipping</loc>
-    <lastmod>2026-05-31</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <!-- Pillar Content: AURE & GBrain -->
-  <url>
-    <loc>https://coreweaverlabs.com/blog/aure-swarm-16-agents-orchestration</loc>
-    <lastmod>2026-05-31</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://coreweaverlabs.com/blog/gbrain-open-source-agentic-brain-layer</loc>
-    <lastmod>2026-05-31</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <!-- VaaS landing page -->
-  <url>
-    <loc>https://coreweaverlabs.com/vaas/</loc>
-    <lastmod>2026-08-14</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
+  <url><loc>https://coreweaverlabs.com/</loc><lastmod>2026-08-17</lastmod><changefreq>weekly</changefreq><priority>1.0</priority></url>
+  <url><loc>https://coreweaverlabs.com/geo/</loc><lastmod>2026-08-17</lastmod><changefreq>monthly</changefreq><priority>0.95</priority></url>
+  <url><loc>https://coreweaverlabs.com/geo/seo-to-geo/</loc><lastmod>2026-08-17</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://coreweaverlabs.com/geo/signal-architecture/</loc><lastmod>2026-08-17</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://coreweaverlabs.com/geo-compass/</loc><lastmod>2026-08-17</lastmod><changefreq>weekly</changefreq><priority>0.95</priority></url>
+  <url><loc>https://coreweaverlabs.com/geo-compass/anti-slop/</loc><lastmod>2026-08-17</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://coreweaverlabs.com/geo-compass/measurement/</loc><lastmod>2026-08-17</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://coreweaverlabs.com/ai-mastery/</loc><lastmod>2026-08-17</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://coreweaverlabs.com/ai-mastery/knowledge-systems/</loc><lastmod>2026-08-17</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://coreweaverlabs.com/ai-mastery/trust-infrastructure/</loc><lastmod>2026-08-17</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://coreweaverlabs.com/framework/arm/</loc><lastmod>2026-08-17</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://coreweaverlabs.com/about/mason-nguyen/</loc><lastmod>2026-08-17</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://coreweaverlabs.com/glossary/share-of-model/</loc><lastmod>2026-08-17</lastmod><changefreq>monthly</changefreq><priority>0.75</priority></url>
+  <url><loc>https://coreweaverlabs.com/glossary/entity-authority/</loc><lastmod>2026-08-17</lastmod><changefreq>monthly</changefreq><priority>0.75</priority></url>
+  <url><loc>https://coreweaverlabs.com/glossary/citation-network/</loc><lastmod>2026-08-17</lastmod><changefreq>monthly</changefreq><priority>0.75</priority></url>
+  <url><loc>https://coreweaverlabs.com/blog</loc><lastmod>2026-08-17</lastmod><changefreq>daily</changefreq><priority>0.8</priority></url>
+  <url><loc>https://coreweaverlabs.com/vaas/</loc><lastmod>2026-08-14</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://coreweaverlabs.com/mandate/</loc><lastmod>2026-08-17</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
 </urlset>

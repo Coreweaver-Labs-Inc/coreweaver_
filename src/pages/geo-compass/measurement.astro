@@ -1,0 +1,15 @@
+---
+import SeoArticle from '../../components/SeoArticle.astro';
+const canonical = 'https://coreweaverlabs.com/geo-compass/measurement/';
+---
+
+<SeoArticle title="Measure AI Visibility Without Vanity Metrics | Coreweaver Labs" description="A practical GEO measurement protocol for probe queries, entity mentions, citation accuracy, crawlability, structured data, internal links, and image coverage." canonical={canonical} eyebrow="GEO-COMPASS · measurement" heading="Measure what survives." lede="AI visibility is observable only when the question, model, date, locale, source set, and scoring rules are explicit." section="GEO-COMPASS">
+  <p>There is no universal public “AI visibility” number. Coreweaver treats visibility as a set of controlled observations. The purpose is not to produce a flattering score. It is to discover where an entity is missing, conflated, unsupported, or inaccurately described.</p>
+  <h2>Probe-query protocol</h2>
+  <ol><li>Define the target entity and a fixed set of representative questions.</li><li>Record model, interface, date, locale, and whether browsing or retrieval was enabled.</li><li>Capture the answer and code mention, accuracy, attribution, citation, and uncertainty separately.</li><li>Repeat at a fixed interval and keep the raw observations.</li><li>Compare against a baseline and avoid claiming that one change caused the outcome without a controlled test.</li></ol>
+  <h2>Technical scorecard</h2>
+  <table><thead><tr><th>Dimension</th><th>Example check</th><th>Why it matters</th></tr></thead><tbody><tr><td>Discovery</td><td>Robots, sitemap, status codes, canonical URLs.</td><td>Systems need a stable path to the content.</td></tr><tr><td>Extraction</td><td>One H1, semantic sections, descriptive anchors, concise answers.</td><td>Clear structure reduces interpretation cost.</td></tr><tr><td>Entity resolution</td><td>Author, organization, sameAs, definitions, consistent naming.</td><td>Prevents conflation with similarly named entities.</td></tr><tr><td>Evidence</td><td>Relevant external citations, dates, methods, claim scope.</td><td>Supports verification instead of assertion.</td></tr><tr><td>Media</td><td>Image dimensions, filenames, alt text, captions.</td><td>Preserves meaning beyond the visual rendering.</td></tr><tr><td>Experience</td><td>Core Web Vitals, mobile layout, keyboard access, reduced motion.</td><td>People-first content still needs a usable page.</td></tr></tbody></table>
+  <h2>Use the results responsibly</h2>
+  <p>A before-and-after comparison is more informative than a single score. Google’s structured-data guidance recommends validating markup and comparing performance over time rather than assuming markup alone caused an outcome. [<a href="https://developers.google.com/search/docs/appearance/structured-data/intro-structured-data" rel="nofollow">Google Search Central</a>]</p>
+  <div class="related-links"><a href="/glossary/share-of-model/">Share of Model definition →</a><a href="/geo/seo-to-geo/">SEO to GEO translation →</a><a href="/geo-compass/anti-slop/">Anti-slop checklist →</a><a href="/agents/manifest.json">Machine-readable contract →</a></div>
+</SeoArticle>

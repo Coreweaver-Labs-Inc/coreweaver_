@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" role="img" aria-labelledby="title desc">
+  <title id="title">GEO-COMPASS signal-to-trust loop</title>
+  <desc id="desc">A six-stage loop showing Acquire, Retrieve, Reason, Publish, Measure, and Verify connected around a central GEO-COMPASS node.</desc>
+  <rect width="1200" height="675" fill="#020409"/>
+  <g fill="none" stroke="#ff9f0a" stroke-width="2" opacity=".75">
+    <circle cx="600" cy="337" r="185"/>
+    <circle cx="600" cy="337" r="270" stroke="#1a2a45"/>
+  </g>
+  <g fill="#ffbb4a" font-family="monospace" font-size="24" text-anchor="middle">
+    <text x="600" y="96">ACQUIRE</text>
+    <text x="930" y="210">RETRIEVE</text>
+    <text x="930" y="495">REASON</text>
+    <text x="600" y="600">PUBLISH</text>
+    <text x="270" y="495">MEASURE</text>
+    <text x="270" y="210">VERIFY</text>
+  </g>
+  <g fill="#e8edf8" font-family="sans-serif" text-anchor="middle">
+    <text x="600" y="325" font-size="52" font-weight="700">GEO-COMPASS</text>
+    <text x="600" y="363" font-size="22" fill="#a8b2cc">evidence → clarity → citation</text>
+  </g>
+  <g stroke="#00d4aa" stroke-width="4" fill="none" stroke-linecap="round">
+    <path d="M600 122v60M852 246l-52 30M852 428l-52-30M600 552v-60M348 428l52-30M348 246l52 30"/>
+  </g>
+</svg>

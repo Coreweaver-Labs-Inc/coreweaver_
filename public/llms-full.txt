@@ -1,13 +1,13 @@
 # Coreweaver Labs — Growth Infrastructure for the Agentic Era
 # https://coreweaverlabs.com/llms-full.txt
-# Updated: 2026-06-01
+# Updated: 2026-08-17
 
 ## Entity
 
 > name: Coreweaver Labs
-> id: https://coreweaverlabs.com/#org
+> id: https://coreweaverlabs.com/#organization
 > type: Organization
-> description: Coreweaver Labs builds the infrastructure layer between "agents work" and "agents can be trusted at enterprise scale." Specializing in GEO signal architecture, ARM Framework for accountable AI agents, and autonomous operational systems.
+> description: Coreweaver Labs builds portable information systems that make organizations, products, and ideas easier for people and AI systems to understand, verify, and cite.
 > url: https://coreweaverlabs.com
 > sameAs:
 >   - https://github.com/Coreweaver-Labs-Inc
@@ -35,6 +35,8 @@
 - **ARM Framework Deployment:** Implementing accountable AI agent primitives for enterprise governance.
 - **Verification-as-a-Service (VaaS):** Cryptographically verifiable AI agent behavior logs.
 - **Agentic Infrastructure Consulting:** Designing autonomous operational systems for the agentic era.
+- **GEO-COMPASS:** An evidence-led anti-slop method for turning source material into clean, connected, machine-readable public knowledge.
+- **AI Mastery:** A systems-architecture map from model systems and knowledge systems to agentic compute, production infrastructure, and trust infrastructure.
 
 ## FAQ
 
@@ -50,12 +52,35 @@
 > Q: How does Coreweaver Labs handle AI governance?
 > A: Through the ARM Framework and VaaS, providing BFT-attested, SHA-256 hash-chained logs that comply with EU AI Act Article 12 requirements.
 
+## Content silos
+
+- [GEO fundamentals](https://coreweaverlabs.com/geo/)
+- [SEO to GEO translation](https://coreweaverlabs.com/geo/seo-to-geo/)
+- [GEO Signal Architecture](https://coreweaverlabs.com/geo/signal-architecture/)
+- [GEO-COMPASS](https://coreweaverlabs.com/geo-compass/)
+- [Anti-Slop Standard](https://coreweaverlabs.com/geo-compass/anti-slop/)
+- [Measurement protocol](https://coreweaverlabs.com/geo-compass/measurement/)
+- [AI Mastery](https://coreweaverlabs.com/ai-mastery/)
+- [Knowledge Systems](https://coreweaverlabs.com/ai-mastery/knowledge-systems/)
+- [Trust Infrastructure](https://coreweaverlabs.com/ai-mastery/trust-infrastructure/)
+- [ARM Framework](https://coreweaverlabs.com/framework/arm/)
+- [Mason Nguyen author and entity page](https://coreweaverlabs.com/about/mason-nguyen/)
+- [Share of Model glossary](https://coreweaverlabs.com/glossary/share-of-model/)
+- [Entity Authority glossary](https://coreweaverlabs.com/glossary/entity-authority/)
+- [Citation Network glossary](https://coreweaverlabs.com/glossary/citation-network/)
+
 ## Network
 
 - [Swell Marketing](https://swellmarketing.xyz)
 - [AURE](https://au-re.org)
 - [Arctura Network](https://arctura.network)
 - [Academy](https://academy.swellmarketing.xyz)
+
+## Author
+
+- **Mason Nguyen:** Founder of Coreweaver Labs; GEO strategist and AI systems architect.
+- LinkedIn: https://www.linkedin.com/in/mason-nguyen
+- GitHub: https://github.com/Coreweaver-Labs-Inc/coreweaver_
 
 ## Contact
 

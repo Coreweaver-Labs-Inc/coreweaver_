@@ -1,0 +1,34 @@
+---
+import SeoArticle from '../../components/SeoArticle.astro';
+const canonical = 'https://coreweaverlabs.com/geo/signal-architecture/';
+---
+
+<SeoArticle
+  title="GEO Signal Architecture: Build Clearer AI-Readable Systems | Coreweaver Labs"
+  description="Learn the six layers of GEO signal architecture: entity, definition, evidence, relationship, retrieval, and verification."
+  canonical={canonical}
+  eyebrow="Signal architecture · pillar guide"
+  heading="Signal Architecture."
+  lede="A content system becomes legible when its entities, definitions, evidence, relationships, retrieval paths, and verification rules agree."
+  section="GEO"
+>
+  <p>Signal architecture is Coreweaver Labs’ working term for the system that connects a page’s visible meaning to the machine-readable evidence around it. It is more specific than “write for AI.” It asks how a model could recover the answer, identify the source, and avoid conflating the subject with another entity.</p>
+
+  <h2>The six layers</h2>
+  <table><thead><tr><th>Layer</th><th>Question</th><th>Implementation</th></tr></thead><tbody>
+    <tr><td>Entity</td><td>Who or what is this?</td><td>Stable names, URLs, author identity, logo, sameAs.</td></tr>
+    <tr><td>Definition</td><td>What does it mean?</td><td>Visible canonical definition and DefinedTerm schema.</td></tr>
+    <tr><td>Evidence</td><td>Why should anyone believe it?</td><td>First-party work, source citations, dates, and methods.</td></tr>
+    <tr><td>Relationship</td><td>How does it connect?</td><td>Internal links, external references, and graph-compatible schema.</td></tr>
+    <tr><td>Retrieval</td><td>How will it be found?</td><td>Descriptive titles, headings, metadata, sitemap, plain-text summaries.</td></tr>
+    <tr><td>Verification</td><td>How can it be checked?</td><td>Tests, provenance, author page, review history, and explicit uncertainty.</td></tr>
+  </tbody></table>
+
+  <h2>Clean code is part of the signal</h2>
+  <p>Semantic HTML is not only an accessibility preference. It gives browsers, screen readers, crawlers, and parsers a common structure. A page with one clear heading, descriptive links, visible byline, useful alt text, and valid JSON-LD has fewer interpretation steps than a page that hides its meaning in decorative components.</p>
+  <p>Google’s structured-data guidance recommends describing the visible page and prioritizing fewer complete properties over inaccurate or incomplete markup. [<a href="https://developers.google.com/search/docs/appearance/structured-data/intro-structured-data" rel="nofollow">Google Search Central</a>]</p>
+
+  <h2>Signal decay</h2>
+  <p>Signal decay is the loss of clarity that occurs when a definition becomes inconsistent, a source disappears, a canonical URL changes, an image loses its alt text, or a page stops linking into the rest of the entity graph. Prevent it with dated claims, stable URLs, content review, and a build-time validation pass.</p>
+  <div class="related-links"><a href="/glossary/entity-authority/">Entity Authority →</a><a href="/glossary/citation-network/">Citation Network →</a><a href="/framework/arm/">ARM Framework →</a><a href="/geo-compass/anti-slop/">Anti-slop standard →</a></div>
+</SeoArticle>

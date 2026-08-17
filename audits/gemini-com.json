@@ -1,0 +1,34 @@
+{
+  "$schema": "./geo-audit.schema.json",
+  "version": "2.0",
+  "target": {
+    "id": "gemini-com",
+    "displayName": "Gemini Exchange",
+    "origin": "https://www.gemini.com",
+    "homepage": "https://www.gemini.com/",
+    "entity": {
+      "canonicalName": "Gemini Exchange",
+      "qualifiers": [
+        "Gemini Exchange",
+        "Gemini crypto exchange",
+        "Gemini Trust Company"
+      ]
+    }
+  },
+  "paths": {
+    "robots": "/robots.txt",
+    "sitemap": "/sitemap.xml",
+    "llms": "/llms.txt",
+    "llmsFull": "/llms-full.txt",
+    "agents": "/AGENTS.md"
+  },
+  "expectations": {
+    "homepageSchemaTypes": ["Organization", "FinancialService"],
+    "entityCues": ["Gemini Exchange", "Gemini crypto exchange", "Gemini Trust Company"]
+  },
+  "runner": {
+    "timeoutMs": 20000,
+    "maxBodyBytes": 1500000,
+    "userAgent": "Coreweaver-GEO-Audit/2.0 (+https://coreweaverlabs.com/geo-compass/)"
+  }
+}

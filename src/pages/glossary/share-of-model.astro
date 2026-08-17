@@ -1,0 +1,11 @@
+---
+import GlossaryPage from '../../components/GlossaryPage.astro';
+---
+
+<GlossaryPage term="Share of Model" slug="share-of-model" description="Share of Model is a Coreweaver Labs measurement concept for tracking how often an entity appears accurately in a defined AI answer set." definition="Share of Model (SoM) is the percentage of answers in a repeatable probe-query set where a target entity is mentioned accurately, with the intended relationship or attribution.">
+  <h2>What it measures</h2>
+  <p>Share of Model is not a universal ranking position and it is not a property that an AI model exposes as an official metric. It is an internal measurement protocol. A team chooses a fixed query set, records outputs at controlled intervals, codes whether the target entity appears, and separates accurate attribution from mere name matching.</p>
+  <h2>Minimum protocol</h2>
+  <ol><li>Define the entity, acceptable names, and unacceptable conflations.</li><li>Freeze a representative query set and record the model, date, locale, and retrieval context.</li><li>Score mention, accuracy, attribution, and citation separately.</li><li>Publish the methodology and compare changes over time instead of presenting one number as proof.</li></ol>
+  <p>See the <a href="/geo/seo-to-geo/">SEO-to-GEO translation layer</a> for the distinction between rankings and answer-surface measurements, then review <a href="/geo-compass/measurement/">the GEO-COMPASS measurement method</a>.</p>
+</GlossaryPage>

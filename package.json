@@ -9,6 +9,8 @@
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
+    "audit:geo": "node scripts/geo-audit.mjs --config audits/gemini-com.json",
+    "validate:geo-audit": "node scripts/validate-geo-audit.mjs",
     "astro": "astro"
   },
   "dependencies": {

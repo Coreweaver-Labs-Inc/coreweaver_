@@ -19,3 +19,9 @@ The separate `coreweaver.io` Live Journal is managed through Hostinger manual up
 ## Review controls
 
 Keep public copy source-backed, claim-safe, accessible, and manually reviewable. Never commit secrets, private records, payment data, or personal contact information. For every change, record what changed, why it was permitted, how it was validated, and what remains intentionally blocked.
+
+## GEO Audit v2
+
+Run `npm run audit:geo` to collect a timestamped public evidence package for the configured Gemini Exchange target. Run `npm run validate:geo-audit` to validate the configuration and scheduled-workflow safety contract without contacting the target. The runner writes `audit.json`, `audit.md`, and captured public responses under `artifacts/geo-audits/`; generated evidence is intentionally ignored by Git.
+
+Keep deterministic HTTP evidence separate from model-probe reviews. Any Claude, Codex, Copilot, Kimi, Gemini, local-model, or human review must preserve the raw prompt, raw answer, provider, model, interface, locale, browsing state, execution date, citations, and reviewer label. Do not report a model observation as a ranking or citation guarantee. See `docs/geo-audit-v2-architecture.md` and `docs/geo-audit-v2-runbook.md`.

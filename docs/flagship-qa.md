@@ -31,3 +31,7 @@ The release-contract suite now verifies the shared skip link and `main` target, 
 ## Production propagation observation — 2026-08-21
 
 Commit `7675c41` was pushed to the authorized `Coreweaver-Labs-Inc/coreweaver_` `main` branch. Two direct checks of `https://coreweaverlabs.com/` still returned the legacy deployment, including retired AURE Swarm, BFT, VaaS, cryptographic-log, compliance, and production-status language. The public domain has therefore **not yet propagated the pushed flagship commit**. The repository release candidate is validated; production should not be described as updated until the configured deployment target reports the new home, brass-and-teal identity, and `/source-map` route.
+
+## Production release confirmation — 2026-08-21
+
+Vercel subsequently confirmed production deployment `dpl_FTVicNsfs75yytbkDN4nJobdVucB` as `READY`, aliased to `coreweaverlabs.com`, and tied to commit `5542f5f93ec33d322902bdd13f40cbdf6ebe36b3` from `Coreweaver-Labs-Inc/coreweaver_` `main`. The direct deployment URL and a cache-busting custom-domain check both served the new flagship, including the brass-and-teal identity and public **Sources** navigation. The earlier legacy result was a stale browser-cache observation, not a failed deployment. The live release is now confirmed.

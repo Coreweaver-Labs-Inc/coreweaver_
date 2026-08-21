@@ -1,0 +1,19 @@
+{
+  "version": 1,
+  "enabled": false,
+  "deploymentUrlEnvironmentVariable": "CONTENT_OPS_DEPLOYMENT_URL",
+  "expectedCanonicalHost": "coreweaverlabs.com",
+  "routes": ["/"],
+  "required": {
+    "status": 200,
+    "title": true,
+    "metaDescription": true,
+    "singleH1": true,
+    "canonical": true
+  },
+  "articleRequirements": {
+    "visibleSources": true,
+    "visibleLimitation": true
+  },
+  "activationNote": "Enable only after Vercel preview and production smoke-test URLs, canonical policy, and rollback behavior are reviewed."
+}

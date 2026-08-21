@@ -1,0 +1,41 @@
+{
+  "version": 1,
+  "defaultMode": "offline-reviewed-inputs-only",
+  "allowedHosts": [
+    "coreweaverlabs.com",
+    "developers.google.com",
+    "search.google.com",
+    "app.notion.com"
+  ],
+  "sourceClasses": {
+    "first_party": {
+      "minimumReview": "named reviewer and current source record",
+      "examples": [
+        "Coreweaver Labs canonical public pages",
+        "Approved Coreweaver Notion evidence record"
+      ]
+    },
+    "official_guidance": {
+      "minimumReview": "direct official document URL and checked date",
+      "examples": [
+        "Google Search Central documentation"
+      ]
+    },
+    "market_source": {
+      "minimumReview": "owner-approved source allowlist entry, publication date, and limitation",
+      "examples": []
+    },
+    "keyword_provider": {
+      "minimumReview": "owner-approved account, documented query parameters, and capture date",
+      "examples": []
+    }
+  },
+  "blockedSourceTypes": [
+    "uncited model output",
+    "anonymous social post",
+    "scraped search snippet without source page",
+    "unsourced competitor claim",
+    "unverified search-volume estimate"
+  ],
+  "changeControl": "Any host or source-class expansion requires a reviewed pull request and an owner-approved rationale."
+}

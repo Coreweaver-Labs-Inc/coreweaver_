@@ -1,6 +1,8 @@
 name: Content operations foundation
 
 on:
+  pull_request:
+    branches: [main]
   workflow_dispatch:
     inputs:
       fixture:

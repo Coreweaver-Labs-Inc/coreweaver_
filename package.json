@@ -11,7 +11,10 @@
     "preview": "astro preview",
     "astro": "astro",
     "test": "node --test",
+    "collect:research-observations": "node scripts/collect-research-observations.mjs",
+    "prepare:article-request": "node scripts/build-article-request.mjs fixture-geo-made-simple",
     "score:content-topics": "node scripts/score-content-topics.mjs",
+    "smoke:test-content-release": "node scripts/smoke-test-content-release.mjs",
     "validate:content-ops": "node scripts/validate-content-ops.mjs fixture-geo-made-simple"
   },
   "dependencies": {

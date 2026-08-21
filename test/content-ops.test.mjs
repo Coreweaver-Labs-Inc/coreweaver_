@@ -59,3 +59,65 @@ test('topic scorer ranks an evidence-backed candidate without enabling release',
     await rm(directory, { recursive: true, force: true });
   }
 });
+
+
+test('research collector accepts a reviewed allowlisted observation but never enables release', async () => {
+  const directory = await mkdtemp(path.join(os.tmpdir(), 'coreweaver-research-input-'));
+  const output = path.join(directory, 'observations.json');
+  const record = {
+    id: 'fixture-google-guidance',
+    capturedAt: '2026-08-21T00:00:00.000Z',
+    source: {
+      url: 'https://developers.google.com/search/docs/fundamentals/creating-helpful-content',
+      title: 'Creating helpful, reliable, people-first content',
+      publisher: 'Google Search Central',
+      sourceClass: 'official_guidance',
+      checkedOn: '2026-08-21',
+      limitation: 'This source does not establish a site-specific ranking or commercial outcome.'
+    },
+    observations: [
+      {
+        topic: 'geo-made-simple',
+        readerQuestion: 'How should a public resource explain its source boundary?',
+        statement: 'Useful content should be written for people and show relevant source context.',
+        evidenceClass: 'third_party_fact',
+        timeSensitive: false,
+        recheckBy: null
+      }
+    ]
+  };
+
+  try {
+    await writeFile(path.join(directory, 'record.json'), `${JSON.stringify(record, null, 2)}\n`);
+    const { stdout } = await runNode('scripts/collect-research-observations.mjs', [directory, output]);
+    const report = JSON.parse(stdout);
+    const persisted = JSON.parse(await readFile(output, 'utf8'));
+
+    assert.equal(report.mode, 'disabled-foundation');
+    assert.equal(report.releaseAllowed, false);
+    assert.equal(report.acceptedCount, 1);
+    assert.equal(report.blockedCount, 0);
+    assert.equal(persisted.observations[0].recordId, record.id);
+  } finally {
+    await rm(directory, { recursive: true, force: true });
+  }
+});
+
+test('draft request remains provider-neutral and non-publishable', async () => {
+  const directory = await mkdtemp(path.join(os.tmpdir(), 'coreweaver-draft-request-'));
+  const output = path.join(directory, 'request.json');
+
+  try {
+    const { stdout } = await runNode('scripts/build-article-request.mjs', ['fixture-geo-made-simple', output]);
+    const request = JSON.parse(stdout);
+    const persisted = JSON.parse(await readFile(output, 'utf8'));
+
+    assert.equal(request.mode, 'disabled-foundation');
+    assert.equal(request.releaseAllowed, false);
+    assert.equal(request.draftAllowed, true);
+    assert.equal(request.provider.status, 'unconfigured');
+    assert.equal(persisted.resource.id, 'fixture-geo-made-simple');
+  } finally {
+    await rm(directory, { recursive: true, force: true });
+  }
+});

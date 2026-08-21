@@ -39,3 +39,7 @@ Vercel subsequently confirmed production deployment `dpl_FTVicNsfs75yytbkDN4nJob
 ## Swell-derived evidence-publication status — 2026-08-21
 
 The Coreweaver source map now includes a native, static evidence-publication panel adapted from the Swell fork’s **authorized-record / explicit-empty-state** discipline. Browser inspection confirmed the panel announces **Awaiting controlled public source**, makes the source, review, and publication requirements legible, and remains intentionally free of a client name, outcome, metric, testimonial, analytics event, or form. The Swell campaign stack, commercial offers, tracking pixels, revenue board, and performance claims were not imported.
+
+## Swell-derived production release confirmation — 2026-08-21
+
+Commit `21dafef` was pushed to the authorized `Coreweaver-Labs-Inc/coreweaver_` `main` branch. Vercel then reported production deployment `dpl_Ho7F67eoxGyj5Rr2mouRJxzSoFq9` as `READY`. A cache-busting inspection of `https://coreweaverlabs.com/source-map` confirmed the live custom domain now shows the controlled evidence-publication panel, its intentionally empty state, and the source/review/publication contract. No Swell client data, offers, testimonials, metrics, analytics, or intake collection was introduced.

@@ -1,0 +1,61 @@
+{
+  "$schema": "./content-ops.schema.json",
+  "version": 1,
+  "enabled": false,
+  "release": {
+    "destination": "vercel-only",
+    "cadence": {
+      "research": "daily",
+      "release": "weekly"
+    },
+    "maxArticlesPerWeek": 1,
+    "autoMerge": false,
+    "autoPublish": false,
+    "killSwitchEnvironmentVariable": "AUTOPUBLISH_ENABLED"
+  },
+  "topicPolicy": {
+    "minimumScore": 70,
+    "eligibleTopics": [
+      "geo-made-simple",
+      "entity-clarity",
+      "evidence-led-content",
+      "technical-discovery",
+      "transparent-measurement"
+    ],
+    "excludedTerms": [
+      "mandate chain",
+      "arm framework",
+      "autonomous resource management",
+      "agent governance",
+      "verification-as-a-service",
+      "vaas",
+      "truth ledger",
+      "swarm orchestration",
+      "csrd compliance infrastructure"
+    ],
+    "prohibitedOutcomeClaims": [
+      "guarantee rankings",
+      "guarantee citations",
+      "guarantee traffic",
+      "guarantee leads",
+      "guarantee revenue"
+    ]
+  },
+  "sourcePolicy": {
+    "requireHttps": true,
+    "minimumSources": {
+      "first_party_fact": 1,
+      "third_party_fact": 2,
+      "interpretation": 1,
+      "proposal": 0
+    },
+    "requireRecheckDateForTimeSensitiveClaims": true
+  },
+  "runtime": {
+    "researchSourceMode": "public-primary-sources-and-existing-site-data",
+    "searchConsole": "blocked-until-coreweaverlabs-property-is-verified",
+    "keywordProvider": "none-configured",
+    "webflowLivePublishing": false,
+    "socialPublishing": false
+  }
+}

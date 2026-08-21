@@ -1,0 +1,47 @@
+name: Content operations foundation
+
+on:
+  workflow_dispatch:
+    inputs:
+      fixture:
+        description: Non-publishable fixture to validate
+        required: false
+        default: fixture-geo-made-simple
+        type: string
+  # Enable the schedule only in a separately reviewed activation change.
+  # schedule:
+  #   - cron: '17 6 * * *'
+
+permissions:
+  contents: read
+
+concurrency:
+  group: content-operations-foundation
+  cancel-in-progress: false
+
+jobs:
+  validate-foundation:
+    name: Validate disabled content-operation foundation
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Check out source
+        uses: actions/checkout@v4
+
+      - name: Use Node.js 22
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Verify release automation is disabled
+        run: node --input-type=module -e "import config from './content-ops/config.json' with { type: 'json' }; if (config.enabled || config.release.autoMerge || config.release.autoPublish || config.runtime.webflowLivePublishing || config.runtime.socialPublishing) process.exit(1);"
+
+      - name: Validate non-publishable fixture
+        run: npm run validate:content-ops -- ${{ inputs.fixture || 'fixture-geo-made-simple' }}
+
+      - name: Build site without publishing
+        run: npm run build

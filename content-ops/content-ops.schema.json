@@ -1,0 +1,75 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Coreweaver Content Operations Configuration",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["version", "enabled", "release", "topicPolicy", "sourcePolicy", "runtime"],
+  "properties": {
+    "version": { "type": "integer", "const": 1 },
+    "enabled": { "type": "boolean" },
+    "release": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["destination", "cadence", "maxArticlesPerWeek", "autoMerge", "autoPublish", "killSwitchEnvironmentVariable"],
+      "properties": {
+        "destination": { "type": "string", "const": "vercel-only" },
+        "cadence": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["research", "release"],
+          "properties": {
+            "research": { "type": "string", "const": "daily" },
+            "release": { "type": "string", "const": "weekly" }
+          }
+        },
+        "maxArticlesPerWeek": { "type": "integer", "minimum": 1, "maximum": 4 },
+        "autoMerge": { "type": "boolean" },
+        "autoPublish": { "type": "boolean" },
+        "killSwitchEnvironmentVariable": { "type": "string", "const": "AUTOPUBLISH_ENABLED" }
+      }
+    },
+    "topicPolicy": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["minimumScore", "eligibleTopics", "excludedTerms", "prohibitedOutcomeClaims"],
+      "properties": {
+        "minimumScore": { "type": "number", "minimum": 0, "maximum": 100 },
+        "eligibleTopics": { "type": "array", "minItems": 1, "items": { "type": "string", "minLength": 1 } },
+        "excludedTerms": { "type": "array", "items": { "type": "string", "minLength": 1 } },
+        "prohibitedOutcomeClaims": { "type": "array", "items": { "type": "string", "minLength": 1 } }
+      }
+    },
+    "sourcePolicy": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["requireHttps", "minimumSources", "requireRecheckDateForTimeSensitiveClaims"],
+      "properties": {
+        "requireHttps": { "type": "boolean", "const": true },
+        "minimumSources": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["first_party_fact", "third_party_fact", "interpretation", "proposal"],
+          "properties": {
+            "first_party_fact": { "type": "integer", "minimum": 1 },
+            "third_party_fact": { "type": "integer", "minimum": 2 },
+            "interpretation": { "type": "integer", "minimum": 1 },
+            "proposal": { "type": "integer", "minimum": 0 }
+          }
+        },
+        "requireRecheckDateForTimeSensitiveClaims": { "type": "boolean", "const": true }
+      }
+    },
+    "runtime": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["researchSourceMode", "searchConsole", "keywordProvider", "webflowLivePublishing", "socialPublishing"],
+      "properties": {
+        "researchSourceMode": { "type": "string", "minLength": 1 },
+        "searchConsole": { "type": "string", "minLength": 1 },
+        "keywordProvider": { "type": "string", "minLength": 1 },
+        "webflowLivePublishing": { "type": "boolean", "const": false },
+        "socialPublishing": { "type": "boolean", "const": false }
+      }
+    }
+  }
+}

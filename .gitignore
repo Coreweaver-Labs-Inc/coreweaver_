@@ -22,3 +22,7 @@ pnpm-debug.log*
 
 # jetbrains setting folder
 .idea/
+
+# generated content-operation reports
+content-ops/runs/*.json
+!content-ops/runs/.gitkeep

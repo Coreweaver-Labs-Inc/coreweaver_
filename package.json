@@ -10,7 +10,9 @@
     "build": "astro build",
     "preview": "astro preview",
     "astro": "astro",
-    "test": "node --test"
+    "test": "node --test",
+    "score:content-topics": "node scripts/score-content-topics.mjs",
+    "validate:content-ops": "node scripts/validate-content-ops.mjs fixture-geo-made-simple"
   },
   "dependencies": {
     "@notionhq/client": "^2.2.15",

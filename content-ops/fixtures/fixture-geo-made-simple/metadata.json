@@ -1,0 +1,14 @@
+{
+  "title": "Fixture: GEO Made Simple",
+  "description": "A non-publishable fixture for validating Coreweaver's evidence-led content-operation workflow.",
+  "canonicalPath": "/resources/fixture-geo-made-simple/",
+  "contentType": "resource",
+  "author": {
+    "name": "Coreweaver Labs",
+    "url": "https://coreweaverlabs.com/"
+  },
+  "reviewer": "Fixture validation only",
+  "internalLinks": ["/", "/blog"],
+  "structuredDataType": "WebPage",
+  "image": null
+}

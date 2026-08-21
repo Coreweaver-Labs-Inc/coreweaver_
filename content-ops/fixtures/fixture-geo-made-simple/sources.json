@@ -1,0 +1,24 @@
+{
+  "sources": [
+    {
+      "id": "google-helpful-content",
+      "url": "https://developers.google.com/search/docs/fundamentals/creating-helpful-content",
+      "title": "Creating helpful, reliable, people-first content",
+      "publisher": "Google Search Central",
+      "sourceClass": "primary",
+      "checkedOn": "2026-08-21",
+      "supports": "Google describes people-first content and transparent sourcing as reader-oriented quality considerations.",
+      "limitation": "This guidance does not promise rankings, AI citations, traffic, leads, or revenue."
+    },
+    {
+      "id": "google-structured-data",
+      "url": "https://developers.google.com/search/docs/appearance/structured-data/intro-structured-data",
+      "title": "Introduction to structured data markup in Google Search",
+      "publisher": "Google Search Central",
+      "sourceClass": "primary",
+      "checkedOn": "2026-08-21",
+      "supports": "Structured data should describe visible, accurate, and complete page content.",
+      "limitation": "Structured data is not a guarantee of a Google Search appearance or outcome."
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "notionRecord": "https://app.notion.com/p/b277ba0e888b44e4bdce022788bb619b",
+  "postTitle": "Fixture: Evidence-led GEO resource",
+  "slug": "fixture-evidence-led-geo-resource",
+  "status": "approved",
+  "contentType": "geo-guide",
+  "claimClass": "third-party fact",
+  "sourceUrls": [
+    "https://developers.google.com/search/docs/fundamentals/creating-helpful-content",
+    "https://developers.google.com/search/docs/appearance/structured-data/intro-structured-data"
+  ],
+  "evidenceCheckedOn": "2026-08-21",
+  "reviewedBy": "Fixture validation only",
+  "reviewOutcome": "approved for release",
+  "autopublish": false,
+  "releaseMode": "fixture-only",
+  "releaseId": "CW-FIXTURE-NOTION-001",
+  "recheckBy": "2027-02-21",
+  "retirementReason": null,
+  "canonicalPath": "/resources/fixture-evidence-led-geo-resource/",
+  "gitPrUrl": null,
+  "vercelDeploymentUrl": null,
+  "rollbackSha": null
+}

@@ -49,8 +49,11 @@ jobs:
       - name: Prepare non-publishable draft request
         run: npm run prepare:article-request -- ${{ inputs.fixture || 'fixture-geo-made-simple' }}
 
-      - name: Validate non-publishable fixture
+      - name: Validate non-publishable content fixture
         run: npm run validate:content-ops -- ${{ inputs.fixture || 'fixture-geo-made-simple' }}
+
+      - name: Validate non-publishable Notion release record
+        run: npm run validate:notion-release-record
 
       - name: Confirm deployment smoke test is disabled
         run: npm run smoke:test-content-release

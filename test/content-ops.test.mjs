@@ -121,3 +121,15 @@ test('draft request remains provider-neutral and non-publishable', async () => {
     await rm(directory, { recursive: true, force: true });
   }
 });
+
+
+test('Notion release record validates with autopublishing disabled', async () => {
+  const { stdout } = await runNode('scripts/validate-notion-release-record.mjs', ['fixture-notion-release']);
+  const result = JSON.parse(stdout);
+
+  assert.equal(result.valid, true);
+  assert.equal(result.mode, 'disabled-foundation');
+  assert.equal(result.releaseAllowed, false);
+  assert.equal(result.candidate.autopublish, false);
+  assert.equal(result.candidate.reviewOutcome, 'approved for release');
+});

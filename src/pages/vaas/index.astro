@@ -1,0 +1,28 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: 'Verification has limits',
+  description: 'A Coreweaver working note on the difference between observing, reviewing, and asserting what an AI-enabled system does.',
+  mainEntityOfPage: 'https://coreweaverlabs.com/vaas',
+};
+
+const distinctions = [
+  ['Observation', 'A capture of what was seen or supplied at a specific moment. It is not, on its own, a finding.'],
+  ['Review', 'A human decision about the observation, its source, scope, and relevant uncertainty.'],
+  ['Assertion', 'A bounded statement that identifies what was reviewed, who issued it, and what conditions would change or supersede it.'],
+];
+---
+
+<Layout title="Verification has limits — Coreweaver Labs" description="A Coreweaver working note on the difference between observing, reviewing, and asserting what an AI-enabled system does." schema={schema}>
+  <section class="limits-hero"><div class="shell limits-hero__grid"><p class="eyebrow">Working note / evidence boundary</p><h1 class="display">Verification<br />does not start<br />with a <em>seal.</em></h1><p class="limits-hero__copy">It starts with a clear observation, a controlled source, and a named reviewer. Anything beyond that should say exactly what it is—and what it is not.</p></div></section>
+  <section class="section section--paper"><div class="shell limits-intro"><div><p class="eyebrow">Three distinct acts</p><h2 class="section-title">Do not collapse the<br /><em>evidence chain.</em></h2></div><p class="body-large">A screenshot, a log, an answer, or a public page can be useful evidence. It does not become a trustworthy claim until the source, time, scope, and review decision remain visible.</p></div><div class="shell distinction-grid">{distinctions.map(([name, description], index) => (<article><span>0{index + 1}</span><h3>{name}</h3><p>{description}</p></article>))}</div></section>
+  <section class="section limits-list"><div class="shell limits-list__grid"><div><p class="eyebrow">Coreweaver boundary</p><h2 class="section-title">No badge can replace<br /><em>inspectable work.</em></h2></div><div class="limits-list__items"><p><strong>Coreweaver does not issue certifications</strong>, compliance opinions, legal conclusions, or performance guarantees on this surface.</p><p><strong>Technical controls need their own proof.</strong> Architecture language is not evidence of an operational deployment, security property, or regulatory outcome.</p><p><strong>Claims should remain supersedable.</strong> New evidence, changed conditions, or a corrected review should be able to update the record without hiding what came before.</p></div></div></section>
+  <section class="section bridge"><div class="shell bridge__content"><p class="eyebrow">A separate public instrument</p><h2 class="section-title">For a structured assessment of<br />AI representation risk, see <em>AURE.</em></h2><p class="body-large">AURE is a distinct evidence-first audit instrument. Its proposed field standard, monitoring intake, and assertion controls explain their own status and limitations. Coreweaver does not represent AURE’s assessments as a certification or an outcome guarantee.</p><a class="button button--lime" href="https://aureaudit-76sftcco.manus.space/standard">Read the AURE Standard <span aria-hidden="true">↗</span></a></div></section>
+</Layout>
+
+<style>
+  .limits-hero{position:relative;z-index:1;padding:clamp(86px,13vw,176px) 0;overflow:hidden}.limits-hero:before{position:absolute;right:-18%;bottom:-45%;width:66vw;height:66vw;border:1px solid rgba(20,155,162,.48);border-radius:50%;box-shadow:0 0 0 54px rgba(20,155,162,.05),0 0 0 108px rgba(201,140,58,.035);content:''}.limits-hero__grid{position:relative;display:grid;grid-template-columns:1fr .7fr;gap:35px;align-items:end}.limits-hero__grid .eyebrow{grid-column:1/-1}.limits-hero__copy{max-width:25ch;margin:0 0 6px;border-left:1px solid var(--line-strong);padding-left:24px;color:var(--text-muted);font-size:18px;line-height:1.65}.limits-intro{display:grid;grid-template-columns:1fr .85fr;gap:50px;align-items:end}.limits-intro .body-large{margin:0}.distinction-grid{display:grid;grid-template-columns:repeat(3,1fr);margin-top:70px;border-top:1px solid rgba(7,9,11,.2);border-left:1px solid rgba(7,9,11,.2)}.distinction-grid article{min-height:285px;border-right:1px solid rgba(7,9,11,.2);border-bottom:1px solid rgba(7,9,11,.2);padding:23px}.distinction-grid span{color:#126f73;font:400 10px var(--font-mono)}.distinction-grid h3{margin:70px 0 14px;font-size:28px;letter-spacing:-.05em}.distinction-grid p{margin:0;color:#46565a;font-size:14px;line-height:1.7}.limits-list__grid{display:grid;grid-template-columns:1fr 1fr;gap:90px}.limits-list__items{border-top:1px solid var(--line)}.limits-list__items p{margin:0;border-bottom:1px solid var(--line);padding:24px 0;color:var(--text-muted);font-size:16px;line-height:1.7}.limits-list__items strong{color:var(--text)}.bridge{background:var(--ink-raised)}.bridge__content{max-width:940px}.bridge__content .body-large{margin:28px 0 38px}@media(max-width:800px){.limits-hero__grid,.limits-intro,.limits-list__grid{grid-template-columns:1fr}.limits-hero__grid .eyebrow{grid-column:auto}.distinction-grid{grid-template-columns:1fr}.distinction-grid article{min-height:auto}.distinction-grid h3{margin-top:40px}.limits-hero__copy{margin-top:12px}.limits-hero:before{right:-56%;width:120vw;height:120vw}}
+</style>

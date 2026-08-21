@@ -1,54 +1,33 @@
 # Coreweaver Labs
 
-> Growth infrastructure for the agentic era. GEO signal architecture, ARM Framework for accountable AI agents, and autonomous operational systems.
+> Coreweaver Labs designs growth infrastructure: the entity, evidence, distribution, and measurement systems that make an organization clearer across human and AI-mediated discovery.
 
 ## About
 
-Coreweaver Labs builds the infrastructure layer between "agents work" and "agents can be trusted at enterprise scale."
+Coreweaver works with operators who need to make their organization easier to understand, inspect, retrieve, and measure. The public method connects four layers:
 
-Key facts:
-- Founded 2025, headquartered online, operating globally
-- GitHub: https://github.com/Coreweaver-Labs-Inc
-- Primary domain: https://coreweaverlabs.com
+1. **Entity** — identity, category language, market vocabulary, and source ownership.
+2. **Evidence** — controlled sources for facts, examples, decisions, and claim boundaries.
+3. **Distribution** — pages, narratives, references, and partnerships organized around retrieval.
+4. **Measurement** — decision-ready visibility, demand, conversion, and learning signals.
 
-## Silo A: ARM Framework
+## Working principles
 
-The ARM Framework defines five primitives for accountable AI agent deployment: Mandate Chain, Signal Architecture, Checkpoint Recovery, Graceful Escalation, and Immutable Audit Sovereignty.
+- Proof before assertion.
+- Structure before scale.
+- Measurement before theatre.
+- AI in the open.
 
-- Pillar: /blog/five-arm-primitives-accountable-ai-agents
-- Mandate guide: /blog/ai-agent-mandate-before-shipping
-- Key claim: 88% of AI agent pilots never reach production due to governance friction (Forrester + Anaconda, 2026)
+These are public working principles, not a certification, a legal conclusion, a performance guarantee, or a description of a deployed technical product.
 
-## Silo B: AURE Swarm
+## Public routes
 
-AURE (Autonomous Unit Resonance Engine) is a 16-agent AI system with Resonance BFT consensus and a structurally independent Ledger agent.
+- Home: https://coreweaverlabs.com/
+- Field notes: https://coreweaverlabs.com/blog
+- Authority before automation: https://coreweaverlabs.com/mandate
+- Verification limits: https://coreweaverlabs.com/vaas
+- Source repository: https://github.com/Coreweaver-Labs-Inc/coreweaver_
 
-- Overview: /blog/aure-swarm-16-agents-orchestration
-- Key claim: 99.97% consensus rate without human escalation in production deployments
+## Claim boundary
 
-## Silo C: GBrain
-
-GBrain is an open-source agentic memory layer on Postgres + pgvector storing Entities, Events, Skills, and Citations.
-
-- Overview: /blog/gbrain-open-source-agentic-brain-layer
-- Repository: https://github.com/MasonNguyenARM/gbrain
-
-## Silo D: GEO Signal Architecture
-
-GEO (Generative Engine Optimization) Signal Architecture is the Coreweaver Labs system for optimizing brand presence in AI-generated responses across ChatGPT, Claude, Perplexity, Gemini, and Copilot.
-
-- Blog: /blog
-
-## Silo E: Verification-as-a-Service (VaaS)
-
-VaaS is the infrastructure layer for cryptographically verifiable AI agent behavior. BFT-attested, SHA-256 hash-chained, EU AI Act Article 12 compliant.
-
-- Overview: /vaas/
-- Key claims: EU AI Act Article 12 requires immutable logs for high-risk AI systems. CWL Truth Ledger is SHA-256 hash-chained + BFT-attested + Bittensor SN19-anchored.
-
-## Network
-
-- Swell Marketing: https://swellmarketing.xyz
-- AURE: https://au-re.org
-- Arctura Network: https://arctura.network
-- Academy: https://academy.swellmarketing.xyz
+Coreweaver does not claim, through this public file, to operate an AI-agent swarm, a consensus system, an immutable ledger, a compliance product, or a certification service. Any future technical or outcome claim should be accompanied by a controlled, independently inspectable source.

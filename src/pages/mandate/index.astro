@@ -1,0 +1,37 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: 'Authority before automation',
+  description: 'A proposed Coreweaver working note on defining authority, sources, escalation, and review before automation acts.',
+  mainEntityOfPage: 'https://coreweaverlabs.com/mandate',
+};
+
+const controls = [
+  ['01', 'Name the decision owner', 'Do not infer authority from a job title, a chat message, or a missing response. Name the owner and the decision.'],
+  ['02', 'Scope the action', 'State what the workflow can do, where it may act, what information it may use, and what ends permission.'],
+  ['03', 'Rank the sources', 'Give the system a hierarchy for evidence. When sources conflict, surface the conflict rather than quietly choose an answer.'],
+  ['04', 'Design escalation', 'When a task exceeds the mandate, a clear handoff is more useful than confident improvisation.'],
+  ['05', 'Retain the review record', 'Keep enough context for a reviewer to understand what was proposed, what was decided, and what evidence informed it.'],
+];
+---
+
+<Layout title="Authority before automation — Coreweaver Labs" description="A proposed Coreweaver working note on defining authority, sources, escalation, and review before automation acts." schema={schema}>
+  <section class="note-hero">
+    <div class="shell note-hero__grid">
+      <div><p class="eyebrow">Working note / proposed method</p><h1 class="display">Authority<br />before<br /><em>automation.</em></h1></div>
+      <aside><span>COREWEAVER / PRINCIPLES / 01</span><p>Automation is not a substitute for decision rights. It is a way to execute within them—provided the boundary is explicit and reviewable.</p></aside>
+    </div>
+  </section>
+  <section class="section section--paper">
+    <div class="shell premise"><p class="eyebrow">The premise</p><div><h2 class="section-title">Before a workflow moves,<br />make its <em>authority</em> legible.</h2><p class="body-large">Coreweaver uses the following controls as a working method for system design. They are not a software specification, a cryptographic protocol, a certification, or a legal conclusion. They are practical questions to answer before delegating consequential work.</p></div></div>
+  </section>
+  <section class="section controls"><div class="shell"><p class="eyebrow">Five design controls</p><h2 class="section-title">The boundary should be<br /><em>visible in the work.</em></h2><div class="controls__grid">{controls.map(([number, title, description]) => (<article><span>{number}</span><h3>{title}</h3><p>{description}</p></article>))}</div></div></section>
+  <section class="section note-cta"><div class="shell note-cta__box"><p class="eyebrow">Where this belongs</p><h2 class="section-title">Design the operating system<br />before you scale <em>the output.</em></h2><p class="body-large">This note can inform an entity, evidence, distribution, or measurement engagement. It does not promise technical implementation or certify a system’s behavior.</p><a class="button button--lime" href="mailto:hello@coreweaverlabs.com?subject=Coreweaver%20authority%20working%20session">Discuss the working method <span aria-hidden="true">↗</span></a></div></section>
+</Layout>
+
+<style>
+  .note-hero{position:relative;z-index:1;padding:clamp(86px,14vw,190px) 0 clamp(72px,11vw,140px);border-bottom:1px solid var(--line);overflow:hidden}.note-hero:after{position:absolute;top:-22vw;right:-12vw;width:55vw;height:55vw;border:1px solid rgba(201,140,58,.54);border-radius:50%;box-shadow:0 0 0 48px rgba(201,140,58,.045),0 0 0 96px rgba(20,155,162,.035);content:''}.note-hero__grid{position:relative;display:grid;grid-template-columns:1fr .7fr;gap:48px;align-items:end}.note-hero aside{position:relative;z-index:1;border-left:1px solid var(--line-strong);padding:12px 0 12px 24px}.note-hero aside span{color:var(--blue-bright);font:400 9px var(--font-mono);letter-spacing:.1em}.note-hero aside p{max-width:29ch;margin:24px 0 0;color:var(--text-muted);font-size:17px;line-height:1.6}.premise{display:grid;grid-template-columns:.8fr 1.2fr;gap:42px}.premise .body-large{margin:30px 0 0}.controls__grid{display:grid;grid-template-columns:repeat(5,1fr);margin-top:70px;border-top:1px solid var(--line);border-left:1px solid var(--line)}.controls__grid article{min-height:310px;border-right:1px solid var(--line);border-bottom:1px solid var(--line);padding:22px}.controls__grid span{color:var(--lime);font:400 10px var(--font-mono)}.controls__grid h3{margin:68px 0 14px;font-size:20px;letter-spacing:-.04em;line-height:1.05}.controls__grid p{margin:0;color:var(--text-muted);font-size:13px;line-height:1.65}.note-cta{background:var(--ink-raised)}.note-cta__box{max-width:900px}.note-cta__box .body-large{margin:25px 0 34px}@media(max-width:900px){.note-hero__grid,.premise{grid-template-columns:1fr}.controls__grid{grid-template-columns:repeat(2,1fr)}.controls__grid article{min-height:250px}.controls__grid h3{margin-top:38px}}@media(max-width:540px){.controls__grid{grid-template-columns:1fr}.note-hero aside{margin-top:24px}.note-hero:after{top:-8vw;right:-44vw;width:110vw;height:110vw}}
+</style>

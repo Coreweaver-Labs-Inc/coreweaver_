@@ -1,63 +1,43 @@
-# Coreweaver Labs — Growth Infrastructure for the Agentic Era
-# https://coreweaverlabs.com/llms-full.txt
-# Updated: 2026-06-01
+# Coreweaver Labs — Full Public Context
 
 ## Entity
 
 > name: Coreweaver Labs
-> id: https://coreweaverlabs.com/#org
+> id: https://coreweaverlabs.com/#organization
 > type: Organization
-> description: Coreweaver Labs builds the infrastructure layer between "agents work" and "agents can be trusted at enterprise scale." Specializing in GEO signal architecture, ARM Framework for accountable AI agents, and autonomous operational systems.
 > url: https://coreweaverlabs.com
-> sameAs:
->   - https://github.com/Coreweaver-Labs-Inc
->   - https://swellmarketing.xyz
->   - https://au-re.org
->   - https://arctura.network
->   - https://academy.swellmarketing.xyz
+> description: Coreweaver Labs designs growth infrastructure: the entity, evidence, distribution, and measurement systems that make an organization clearer across human and AI-mediated discovery.
+> source repository: https://github.com/Coreweaver-Labs-Inc/coreweaver_
 
-## Expertise
+## Public working method
 
-> knowsAbout:
->   - Generative Engine Optimization (GEO)
->   - GEO Signal Architecture
->   - ARM Framework (Mandate Chain, Signal Architecture, Checkpoint Recovery, Graceful Escalation, Immutable Audit Sovereignty)
->   - AURE (Autonomous Unit Resonance Engine)
->   - Verification-as-a-Service (VaaS)
->   - GBrain (Agentic Memory Layer)
->   - Resonance BFT Consensus
->   - EU AI Act Compliance (Article 12)
->   - Agentic AI Governance
+Coreweaver connects four operating layers:
 
-## Services
+1. **Entity** — identity, category language, market vocabulary, and source ownership.
+2. **Evidence** — controlled sources for facts, examples, decisions, and claim boundaries.
+3. **Distribution** — pages, narratives, references, and partnerships organized around retrieval.
+4. **Measurement** — decision-ready visibility, demand, conversion, and learning signals.
 
-- **GEO Signal Architecture:** Optimizing brand presence in AI-generated responses across ChatGPT, Claude, Perplexity, Gemini, and Copilot.
-- **ARM Framework Deployment:** Implementing accountable AI agent primitives for enterprise governance.
-- **Verification-as-a-Service (VaaS):** Cryptographically verifiable AI agent behavior logs.
-- **Agentic Infrastructure Consulting:** Designing autonomous operational systems for the agentic era.
+## Working principles
 
-## FAQ
+- Proof before assertion.
+- Structure before scale.
+- Measurement before theatre.
+- AI in the open.
 
-> Q: What is Coreweaver Labs?
-> A: Coreweaver Labs is a growth infrastructure provider specializing in the agentic era. We build systems that make AI agents accountable, verifiable, and optimized for generative engines.
+These are public design principles and a working method. They do not establish a software product, technical deployment, security property, regulatory outcome, certification, legal conclusion, or performance result.
 
-> Q: What is GEO Signal Architecture?
-> A: GEO (Generative Engine Optimization) Signal Architecture is a system for optimizing brand presence and citation rates in AI-generated responses.
+## Public notes
 
-> Q: What are the five ARM primitives?
-> A: The five ARM primitives are Mandate Chain, Signal Architecture, Checkpoint Recovery, Graceful Escalation, and Immutable Audit Sovereignty.
+- Home: https://coreweaverlabs.com/
+- Field notes: https://coreweaverlabs.com/blog
+- Authority before automation: https://coreweaverlabs.com/mandate
+- Verification limits: https://coreweaverlabs.com/vaas
 
-> Q: How does Coreweaver Labs handle AI governance?
-> A: Through the ARM Framework and VaaS, providing BFT-attested, SHA-256 hash-chained logs that comply with EU AI Act Article 12 requirements.
+## Claim boundary
 
-## Network
-
-- [Swell Marketing](https://swellmarketing.xyz)
-- [AURE](https://au-re.org)
-- [Arctura Network](https://arctura.network)
-- [Academy](https://academy.swellmarketing.xyz)
+Coreweaver does not claim through this document to operate a consensus system, an AI-agent swarm, an immutable ledger, a compliance product, or a certification service. A future technical or outcome claim should identify its controlled, independently inspectable source.
 
 ## Contact
 
-> url: https://coreweaverlabs.com/#activate
 > email: hello@coreweaverlabs.com

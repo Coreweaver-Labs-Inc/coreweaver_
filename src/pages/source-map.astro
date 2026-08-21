@@ -1,0 +1,29 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'WebPage',
+  name: 'Coreweaver Labs source and method map',
+  description: 'A public map of Coreweaver Labs method pages, claim boundaries, field notes, and working-session path.',
+  url: 'https://coreweaverlabs.com/source-map',
+  isPartOf: { '@type': 'WebSite', '@id': 'https://coreweaverlabs.com/#website' },
+};
+
+const records = [
+  ['01', 'Entity statement', 'The home page explains Coreweaver’s four operating layers—entity, evidence, distribution, and measurement—in ordinary public language.', 'Home / signal system', '/#system'],
+  ['02', 'Method boundary', 'The authority note explains how decision ownership, scope, sources, escalation, and review should be named before consequential automation acts.', 'Authority before automation', '/mandate'],
+  ['03', 'Verification boundary', 'The verification note distinguishes observation, review, and assertion, and states what public material does not establish.', 'Verification has limits', '/vaas'],
+  ['04', 'Editorial record', 'Field notes remain quiet until a reviewed public source is ready. Published notes retain their own date, scope, and source context.', 'Field notes', '/blog'],
+];
+---
+
+<Layout title="Source and method map — Coreweaver Labs" description="A public map of Coreweaver Labs method pages, claim boundaries, field notes, and working-session path." schema={schema}>
+  <section class="map-hero"><div class="shell"><p class="eyebrow">Coreweaver / public source map</p><h1 class="display">Every public claim<br />needs a place<br />to <em>stand.</em></h1><p class="body-large">This map makes the public operating system easier to inspect: the entity statement, method, evidence boundary, editorial record, and next private conversation are all connected in ordinary HTML.</p></div></section>
+  <section class="section map-records"><div class="shell"><div class="map-records__intro"><p class="eyebrow">Four public records</p><h2 class="section-title">A small system,<br /><em>made legible.</em></h2><p class="body-large">These pages explain the work. They do not certify a deployment, promise an outcome, or substitute for a source specific to a future claim.</p></div><div class="map-grid">{records.map(([number, title, description, label, href]) => (<article><span>{number}</span><h3>{title}</h3><p>{description}</p><a href={href}>{label} <b aria-hidden="true">↗</b></a></article>))}</div></div></section>
+  <section class="section map-boundary"><div class="shell map-boundary__grid"><div><p class="eyebrow">Publication boundary</p><h2 class="section-title">Source, scope,<br />review—<em>then claim.</em></h2></div><div><p>Coreweaver uses public pages to explain a working method and to point to controlled sources. A meaningful research finding, comparison, client result, technical status, or performance statement needs its own named source, scope, review record, and authorization before it belongs here.</p><p>No page in this map is a certification, legal conclusion, compliance opinion, or performance guarantee.</p><a class="button button--lime" href="mailto:hello@coreweaverlabs.com?subject=Coreweaver%20working%20session">Start a working session <span aria-hidden="true">↗</span></a></div></div></section>
+</Layout>
+
+<style>
+  .map-hero{position:relative;z-index:1;overflow:hidden;padding:clamp(90px,14vw,184px) 0 clamp(75px,11vw,136px);border-bottom:1px solid var(--line)}.map-hero:after{position:absolute;top:-29vw;right:-12vw;width:58vw;height:58vw;border:1px solid rgba(201,140,58,.5);border-radius:50%;box-shadow:0 0 0 48px rgba(201,140,58,.05),0 0 0 96px rgba(20,155,162,.04);content:''}.map-hero .shell{position:relative}.map-hero .body-large{margin:35px 0 0}.map-records__intro{display:grid;grid-template-columns:1fr 1.1fr 1fr;gap:30px;align-items:end}.map-records__intro .body-large{margin:0}.map-grid{display:grid;grid-template-columns:repeat(4,1fr);margin-top:70px;border-top:1px solid var(--line);border-left:1px solid var(--line)}.map-grid article{display:flex;min-height:340px;flex-direction:column;border-right:1px solid var(--line);border-bottom:1px solid var(--line);padding:22px;background:rgba(13,19,22,.35);transition:background 180ms var(--ease-out)}.map-grid article:hover{background:rgba(20,155,162,.11)}.map-grid article>span{color:var(--orange);font:400 9px var(--font-mono);letter-spacing:.08em}.map-grid h3{margin:74px 0 14px;font-size:25px;letter-spacing:-.05em;line-height:1.05}.map-grid p{margin:0;color:var(--text-muted);font-size:13px;line-height:1.7}.map-grid a{margin-top:auto;padding-top:28px;color:var(--blue-bright);font:500 9px var(--font-mono);letter-spacing:.08em;text-decoration:none;text-transform:uppercase}.map-grid a:hover{color:var(--orange)}.map-grid b{font-size:12px}.map-boundary{background:var(--ink-raised)}.map-boundary__grid{display:grid;grid-template-columns:1fr 1fr;gap:90px}.map-boundary__grid>div:last-child{border-top:1px solid var(--line);padding-top:22px}.map-boundary p{margin:0 0 18px;color:var(--text-muted);font-size:16px;line-height:1.75}.map-boundary .button{margin-top:20px}@media(max-width:940px){.map-records__intro,.map-boundary__grid{grid-template-columns:1fr;gap:28px}.map-grid{grid-template-columns:repeat(2,1fr)}.map-records__intro .body-large{margin:0}}@media(max-width:560px){.map-hero:after{top:-5vw;right:-52vw;width:120vw;height:120vw}.map-grid{grid-template-columns:1fr}.map-grid article{min-height:255px}.map-grid h3{margin-top:38px}}
+</style>

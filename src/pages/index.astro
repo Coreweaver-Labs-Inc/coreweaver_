@@ -2,254 +2,187 @@
 import Layout from '../layouts/Layout.astro';
 
 const schema = {
-  "@context": "https://schema.org",
-  "@graph": [
+  '@context': 'https://schema.org',
+  '@graph': [
     {
-      "@type": "Organization",
-      "@id": "https://coreweaverlabs.com/#org",
-      "name": "Coreweaver Labs",
-      "url": "https://coreweaverlabs.com",
-      "logo": "https://coreweaverlabs.com/favicon.svg",
-      "description": "Growth infrastructure for the agentic era. GEO signal architecture, ARM Framework for accountable AI agents, and autonomous operational systems.",
-      "parentOrganization": {
-        "@type": "Organization",
-        "name": "Arctura-Collective",
-        "url": "https://github.com/Arctura-Collective"
-      },
-      "founder": {
-        "@type": "Person",
-        "name": "Mason Nguyen",
-        "jobTitle": "CEO & Founder",
-        "url": "https://coreweaverlabs.com"
-      },
-      "member": [
-        { "@type": "Organization", "name": "AURE Swarm", "url": "https://au-re.org" },
-        { "@type": "Organization", "name": "Swell Marketing", "url": "https://swellmarketing.xyz" },
-        { "@type": "Organization", "name": "Arctura Network", "url": "https://arctura.network" }
-      ],
-      "sameAs": [
-        "https://github.com/Coreweaver-Labs-Inc",
-        "https://swellmarketing.xyz",
-        "https://au-re.org",
-        "https://arctura.network",
-        "https://academy.swellmarketing.xyz"
-      ],
-      "knowsAbout": [
-        "Generative Engine Optimization",
-        "GEO Signal Architecture",
-        "ARM Framework",
-        "AI Agent Governance",
-        "Verification-as-a-Service",
-        "AURE Swarm",
-        "GBrain"
-      ]
+      '@type': 'Organization',
+      '@id': 'https://coreweaverlabs.com/#organization',
+      name: 'Coreweaver Labs',
+      url: 'https://coreweaverlabs.com',
+      description: 'Coreweaver Labs designs growth infrastructure: the entity, evidence, distribution, and measurement systems that make an organization clearer across human and AI-mediated discovery.',
+      sameAs: ['https://github.com/Coreweaver-Labs-Inc/coreweaver_'],
     },
     {
-      "@type": "WebSite",
-      "@id": "https://coreweaverlabs.com/#website",
-      "url": "https://coreweaverlabs.com",
-      "name": "Coreweaver Labs",
-      "publisher": {
-        "@id": "https://coreweaverlabs.com/#org"
-      }
+      '@type': 'WebSite',
+      '@id': 'https://coreweaverlabs.com/#website',
+      name: 'Coreweaver Labs',
+      url: 'https://coreweaverlabs.com',
+      publisher: { '@id': 'https://coreweaverlabs.com/#organization' },
     },
-    {
-      "@type": "FAQPage",
-      "@id": "https://coreweaverlabs.com/#faq",
-      "mainEntity": [
-        {
-          "@type": "Question",
-          "name": "What is Coreweaver Labs?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Coreweaver Labs is a growth infrastructure provider for the agentic era, specializing in GEO signal architecture and the ARM Framework for accountable AI agents."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "What is GEO Signal Architecture?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "GEO Signal Architecture is a system developed by Coreweaver Labs to optimize brand presence and citation rates in AI-generated responses."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "What is the ARM Framework?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "The ARM Framework defines five primitives for accountable AI agent deployment: Mandate Chain, Signal Architecture, Checkpoint Recovery, Graceful Escalation, and Immutable Audit Sovereignty."
-          }
-        }
-      ]
-    }
-  ]
+  ],
 };
+
+const layers = [
+  ['01', 'Entity', 'Name the thing correctly.', 'Identity, category language, source ownership, and the market vocabulary worth carrying forward.'],
+  ['02', 'Evidence', 'Give the claim a home.', 'A controlled source system for the facts, examples, decisions, and boundaries a buyer or model needs to inspect.'],
+  ['03', 'Distribution', 'Place the right signal.', 'Pages, narratives, references, and partnerships organized around how people and inference systems actually retrieve information.'],
+  ['04', 'Measurement', 'Decide from movement.', 'A practical view of visibility, demand, conversion, and the next highest-leverage system change.'],
+];
+
+const interventions = [
+  ['The category is blurry.', 'Your best work is being described with borrowed language, broad claims, or a market category that does not fit.', 'Establish the entity.'],
+  ['The proof is scattered.', 'The information exists, but it cannot be found, reused, or inspected at the moment a decision is made.', 'Structure the evidence.'],
+  ['The signal does not travel.', 'Publishing activity is high while retrieval, references, and qualified demand remain disconnected.', 'Redesign distribution.'],
+  ['The team cannot see movement.', 'There is no credible line from the work to the decision it was meant to change.', 'Instrument the system.'],
+];
+
+const principles = [
+  ['01', 'Proof before assertion', 'A claim earns its position when a person or machine can trace it to a controlled source.'],
+  ['02', 'Structure before scale', 'Resolve identity and information architecture before multiplying output.'],
+  ['03', 'Measurement before theatre', 'Instrument the decision path; do not substitute reporting volume for learning.'],
+  ['04', 'AI in the open', 'Disclose where automation shapes research, execution, and review.'],
+];
 ---
 
 <Layout
-  title="Coreweaver Labs — Growth Infrastructure for the Agentic Era"
-  description="Coreweaver Labs builds GEO signal architecture, the ARM Framework for accountable AI agents, and autonomous operational systems for the AI-native era."
+  title="Coreweaver Labs — Growth infrastructure for the inference era"
+  description="Coreweaver Labs designs the entity, evidence, distribution, and measurement systems that make an organization clearer across human and AI-mediated discovery."
   schema={schema}
 >
-  <!-- Ticker -->
-  <div class="ticker-strip" aria-hidden="true">
-    <div class="ticker-inner">
-      {Array(4).fill(['GEO SIGNAL ARCHITECTURE','ARM FRAMEWORK','AURE SWARM','VERIFICATION-AS-A-SERVICE','GBRAIN','SHARE OF MODEL','COREWEAVERLABS.COM']).flat().map(item => (
-        <span class="ticker-item">{item}<span class="ticker-sep"></span></span>
-      ))}
-    </div>
-  </div>
-
-  <!-- Hero -->
-  <section id="hero" style="padding:120px 0 96px;position:relative;z-index:1;">
-    <div class="container">
-      <div style="opacity:0;animation:hero-in .8s cubic-bezier(0.16,1,0.3,1) .08s forwards;">
-        <div class="section-eyebrow">Growth Infrastructure · Agentic Era</div>
-        <h1 style="font-family:var(--font-head);font-size:clamp(52px,6vw,96px);line-height:.9;letter-spacing:.5px;color:var(--light);font-weight:400;margin-bottom:28px;">
-          Build agents<br/>
-          that <span style="color:var(--core-soft);">can be trusted.</span>
-        </h1>
-        <p style="font-size:18px;font-weight:300;color:var(--light-dim);max-width:560px;line-height:1.75;margin-bottom:40px;">
-          Coreweaver Labs is the infrastructure layer between "agents work" and "agents can be trusted at enterprise scale." GEO signal architecture, accountable AI deployment, and autonomous operational systems.
-        </p>
-        <div style="display:flex;gap:12px;flex-wrap:wrap;">
-          <a href="/blog" class="btn btn-primary">Read the Forge →</a>
-          <a href="#arm" class="btn">ARM Framework</a>
-          <a href="#mandate" class="btn">Build with us</a>
+  <section class="hero" aria-labelledby="hero-title">
+    <div class="shell hero__grid">
+      <div class="hero__copy">
+        <p class="eyebrow reveal">Growth infrastructure / inference era</p>
+        <h1 class="display reveal reveal--2" id="hero-title">Become the<br />signal systems<br />can <em>retrieve.</em></h1>
+        <p class="body-large hero__intro reveal reveal--3">Coreweaver builds the layer around good work: the <strong>entity, evidence, distribution, and measurement</strong> systems that make an organization clear to people, platforms, and AI interfaces.</p>
+        <div class="hero__actions reveal reveal--3">
+          <a class="button button--lime" href="mailto:hello@coreweaverlabs.com?subject=Coreweaver%20working%20session">Map the signal path <span aria-hidden="true">↗</span></a>
+          <a class="text-link" href="#system">See the system <span aria-hidden="true">↓</span></a>
         </div>
       </div>
 
-      <!-- Stat strip -->
-      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:1px;background:var(--wire);border:1px solid var(--wire);border-radius:10px;margin-top:80px;overflow:hidden;">
-        {[
-          ['88%','of AI agent pilots never reach production — governance is the #1 blocker'],
-          ['63%','of enterprises cannot enforce purpose limits on their own AI agents'],
-          ['$492M','AI governance spend in 2026, projected to surpass $1B by 2030'],
-          ['Article 12','EU AI Act: immutable audit logs required for all high-risk AI systems'],
-        ].map(([stat, desc]) => (
-          <div style="padding:28px 24px;background:var(--forge-2);">
-            <div style="font-family:var(--font-head);font-size:36px;color:var(--core-soft);line-height:1;margin-bottom:8px;">{stat}</div>
-            <div style="font-size:12px;color:var(--muted);line-height:1.5;">{desc}</div>
-          </div>
+      <div class="signal-readout reveal reveal--2" aria-label="Coreweaver signal-system readout">
+        <div class="signal-readout__top"><span>Signal state</span><span class="status"><i></i> Alignment begins here</span></div>
+        <div class="signal-readout__value">Structured<br /><em>enough to move.</em></div>
+        <div class="signal-readout__diagram" aria-hidden="true">
+          <span class="node node--one">E</span><span class="node node--two">V</span><span class="node node--three">D</span><span class="node node--four">M</span>
+          <svg viewBox="0 0 500 230" preserveAspectRatio="none"><path d="M57 184 C143 38 204 209 286 90 S416 198 448 48" /></svg>
+        </div>
+        <div class="signal-readout__legend"><span>ENTITY</span><span>EVIDENCE</span><span>DISTRIBUTION</span><span>MEASUREMENT</span></div>
+      </div>
+    </div>
+    <div class="shell hero__index" aria-hidden="true"><span>01 / COREWEAVER LABS</span><span>OPERATING SURFACE</span><span>2026</span></div>
+  </section>
+
+  <section class="section system" id="system" aria-labelledby="system-title">
+    <div class="shell system__intro">
+      <p class="eyebrow">01 / The signal system</p>
+      <h2 class="section-title" id="system-title">Signal is not content.<br /><em>It is a system.</em></h2>
+      <p class="body-large">Content only compounds when the right entity, proof, distribution, and decision loop meet the right inference layer. Coreweaver connects those layers into an operating system—not another publishing calendar.</p>
+    </div>
+    <div class="shell layer-grid">
+      {layers.map(([number, name, statement, description]) => (
+        <article class="layer-card">
+          <div class="layer-card__top"><span>{number}</span><span>Signal layer</span></div>
+          <h3>{name}</h3>
+          <p class="layer-card__statement">{statement}</p>
+          <p>{description}</p>
+          <span class="layer-card__rule" aria-hidden="true"></span>
+        </article>
+      ))}
+    </div>
+  </section>
+
+  <section class="section section--paper constraints" aria-labelledby="constraints-title">
+    <div class="shell">
+      <div class="constraints__heading">
+        <p class="eyebrow">02 / Start with the constraint</p>
+        <h2 class="section-title" id="constraints-title">Find the signal break<br />costing the most <em>leverage.</em></h2>
+      </div>
+      <div class="constraint-grid">
+        {interventions.map(([heading, body, action], index) => (
+          <article class="constraint-card">
+            <span class="constraint-card__number">0{index + 1}</span>
+            <h3>{heading}</h3>
+            <p>{body}</p>
+            <span>{action}</span>
+          </article>
         ))}
       </div>
     </div>
   </section>
 
-  <!-- Mandate / What we build -->
-  <section id="mandate">
-    <div class="container">
-      <div class="section-eyebrow">The Mandate</div>
-      <h2 class="section-title">Five primitives.<br/><span class="accent">One accountable agent.</span></h2>
-      <p style="font-size:16px;color:var(--light-dim);max-width:540px;margin-bottom:56px;line-height:1.75;">The ARM Framework defines the infrastructure pattern for AI agents that can be deployed, audited, and trusted in production — without constant human supervision.</p>
-
-      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1px;background:var(--wire);border:1px solid var(--wire);border-radius:10px;overflow:hidden;">
-        {[
-          ['01','Mandate Chain','Every agent action traces to a named human-approved directive. Cryptographically anchored. Revocable in under 60 seconds.'],
-          ['02','Signal Architecture','Explicit data source hierarchy. Conflict resolution rules. Confidence thresholds. No more agents inventing decision logic.'],
-          ['03','Checkpoint Recovery','Durable state serialization. Idempotency keys. Resume-not-restart on failure. No silent incompletions.'],
-          ['04','Graceful Escalation','Defined triggers. Named humans. 60-second decision packages. Silence is never approval.'],
-          ['05','Immutable Audit Sovereignty','Append-only Truth Ledger. Per-action granularity. Checksum-chained. No agent can modify its own history.'],
-        ].map(([num, title, desc]) => (
-          <div style="padding:32px 28px;background:var(--forge-2);position:relative;overflow:hidden;">
-            <div style="font-family:var(--font-mono);font-size:9px;color:var(--muted);letter-spacing:2px;margin-bottom:14px;text-transform:uppercase;">{num}</div>
-            <div style="font-family:var(--font-display);font-size:16px;font-weight:600;color:var(--light);margin-bottom:10px;">{title}</div>
-            <div style="font-size:13px;color:var(--muted);line-height:1.65;">{desc}</div>
-            <div style="position:absolute;top:0;left:0;right:0;height:2px;background:var(--core);transform:scaleX(0);transform-origin:left;transition:transform .35s cubic-bezier(0.16,1,0.3,1);" class="card-accent" aria-hidden="true"></div>
-          </div>
-        ))}
+  <section class="section method" id="method" aria-labelledby="method-title">
+    <div class="shell method__grid">
+      <div>
+        <p class="eyebrow">03 / The working method</p>
+        <h2 class="section-title" id="method-title">From noise to a<br /><em>decision-ready</em> system.</h2>
       </div>
-
-      <div style="margin-top:32px;">
-        <a href="/blog/five-arm-primitives-accountable-ai-agents" class="btn">Read the full ARM Framework guide →</a>
+      <div class="method__steps">
+        <article><span>01</span><div><h3>Map</h3><p>Trace the current signal path from identity and proof through distribution to the decision it needs to influence.</p></div></article>
+        <article><span>02</span><div><h3>Decide</h3><p>Identify the smallest structural change that reduces ambiguity or restores a missing feedback loop.</p></div></article>
+        <article><span>03</span><div><h3>Build</h3><p>Turn the decision into a controlled surface: a source system, a decisive page, a distribution pattern, or an instrumented workflow.</p></div></article>
+        <article><span>04</span><div><h3>Review</h3><p>Inspect what changed, retain the evidence, and use the result to decide the next iteration—not to manufacture certainty.</p></div></article>
       </div>
     </div>
   </section>
 
-  <!-- ARM -->
-  <section id="arm">
-    <div class="container">
-      <div class="section-eyebrow">The Stack</div>
-      <h2 class="section-title">AURE · GBrain · <span class="accent">VaaS.</span></h2>
-      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:24px;">
-        {[
-          ['AURE Swarm','16 specialized agents. One mandate. 99.97% Resonance BFT consensus. The Rena Chief Intelligence Node arbitrates every contradiction before output ships.','aure-swarm-16-agents-orchestration','/blog/aure-swarm-16-agents-orchestration'],
-          ['GBrain','Open-source agentic memory layer on Postgres + pgvector. Entities, Events, Skills, Citations — persistent, sovereign, queryable. Running in production since Jan 2026.','gbrain-open-source-agentic-brain-layer','/blog/gbrain-open-source-agentic-brain-layer'],
-          ['VaaS','Verification-as-a-Service. The infrastructure layer between "agents work" and "agents can be trusted at enterprise scale." BFT-attested. SHA-256 hash-chained. EU AI Act Article 12 compliant.','verification-as-a-service','/vaas/'],
-        ].map(([title, desc, slug, href]) => (
-          <div style="background:var(--forge-2);border:1px solid var(--wire-bright);border-radius:10px;padding:32px 28px;position:relative;overflow:hidden;">
-            <div style="font-family:var(--font-head);font-size:28px;color:var(--light);letter-spacing:.5px;margin-bottom:12px;">{title}</div>
-            <p style="font-size:13px;color:var(--muted);line-height:1.65;margin-bottom:24px;">{desc}</p>
-            <a href={href} style="font-family:var(--font-mono);font-size:10px;color:var(--core-soft);letter-spacing:1.5px;text-transform:uppercase;">Read more →</a>
-          </div>
-        ))}
-      </div>
+  <section class="section principles" aria-labelledby="principles-title">
+    <div class="shell principles__top">
+      <p class="eyebrow">04 / Operator principles</p>
+      <h2 class="section-title" id="principles-title">Clear claims.<br /><em>Controlled sources.</em></h2>
+      <p class="body-large">The operating system is intentionally simple: make the claim inspectable, make the source governable, and make the next decision visible.</p>
+    </div>
+    <div class="shell principle-grid">
+      {principles.map(([number, title, description]) => (
+        <article class="principle">
+          <span>{number}</span>
+          <h3>{title}</h3>
+          <p>{description}</p>
+        </article>
+      ))}
     </div>
   </section>
 
-  <!-- FAQ Section (Visible for GEO) -->
-  <section id="faq">
-    <div class="container">
-      <div class="section-eyebrow">FAQ</div>
-      <h2 class="section-title">Common <span class="accent">Questions.</span></h2>
-      <div style="display:grid;grid-template-columns:1fr;gap:24px;max-width:800px;">
-        {[
-          ['What is Coreweaver Labs?','Coreweaver Labs is a growth infrastructure provider for the agentic era, specializing in GEO signal architecture and the ARM Framework for accountable AI agents.'],
-          ['What is GEO Signal Architecture?','GEO Signal Architecture is a system developed by Coreweaver Labs to optimize brand presence and citation rates in AI-generated responses.'],
-          ['What is the ARM Framework?','The ARM Framework defines five primitives for accountable AI agent deployment: Mandate Chain, Signal Architecture, Checkpoint Recovery, Graceful Escalation, and Immutable Audit Sovereignty.'],
-        ].map(([q, a]) => (
-          <div style="padding:24px;background:var(--forge-2);border:1px solid var(--wire);border-radius:10px;">
-            <div style="font-family:var(--font-display);font-size:16px;font-weight:600;color:var(--light);margin-bottom:12px;">{q}</div>
-            <div style="font-size:14px;color:var(--muted);line-height:1.6;">{a}</div>
-          </div>
-        ))}
-      </div>
-    </div>
-  </section>
-
-  <!-- Network -->
-  <section id="network">
-    <div class="container">
-      <div class="section-eyebrow">The Network</div>
-      <h2 class="section-title">Ecosystem <span class="accent">properties.</span></h2>
-      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1px;background:var(--wire);border:1px solid var(--wire);border-radius:10px;overflow:hidden;">
-        {[
-          ['Swell Marketing','swellmarketing.xyz','Growth execution and distribution.'],
-          ['AURE','au-re.org','Architecture remediation and CMS infrastructure.'],
-          ['Arctura Network','arctura.network','Ecosystem connective tissue.'],
-          ['Academy','academy.swellmarketing.xyz','Operator and agent training.'],
-        ].map(([name, domain, desc]) => (
-          <div style="padding:28px 24px;background:var(--forge-2);">
-            <div style="font-family:var(--font-display);font-size:14px;font-weight:600;color:var(--light);margin-bottom:4px;">{name}</div>
-            <div style="font-family:var(--font-mono);font-size:10px;color:var(--core-soft);margin-bottom:8px;letter-spacing:.5px;">{domain}</div>
-            <div style="font-size:12px;color:var(--muted);">{desc}</div>
-          </div>
-        ))}
-      </div>
-    </div>
-  </section>
-
-  <!-- Activate CTA -->
-  <section id="activate">
-    <div class="container" style="text-align:center;padding:48px 0;">
-      <div class="section-eyebrow" style="justify-content:center;">Activate</div>
-      <h2 class="section-title">Ready to build<br/><span class="accent">accountable agents?</span></h2>
-      <p style="font-size:16px;color:var(--light-dim);max-width:480px;margin:0 auto 40px;line-height:1.75;">Join the operators building on ARM Framework infrastructure. Start with the blog — or come talk to us directly.</p>
-      <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;">
-        <a href="/blog" class="btn btn-primary">Read the Forge →</a>
-        <a href="mailto:hello@coreweaverlabs.com" class="btn">Get in touch</a>
-      </div>
+  <section class="section session" aria-labelledby="session-title">
+    <div class="shell session__content">
+      <p class="eyebrow">05 / Working session</p>
+      <h2 class="section-title" id="session-title">Start with the<br /><em>one break</em> that matters.</h2>
+      <p class="body-large">A focused working session maps the current signal path, locates the evidence or distribution constraint, and identifies the smallest system change worth making next. Scope, methods, and outcomes are set together—not presumed on a landing page.</p>
+      <a class="button button--paper" href="mailto:hello@coreweaverlabs.com?subject=Coreweaver%20working%20session">Start a working session <span aria-hidden="true">↗</span></a>
     </div>
   </section>
 </Layout>
 
-<script>
-document.querySelectorAll('.card-accent').forEach(accent => {
-  const card = accent.closest('div[style*="position:relative"]');
-  if(card){
-    card.addEventListener('mouseenter',()=>{ accent.style.transform='scaleX(1)'; });
-    card.addEventListener('mouseleave',()=>{ accent.style.transform='scaleX(0)'; });
-  }
-});
-</script>
+<style>
+  .hero { position: relative; z-index: 1; min-height: min(840px, calc(100vh - 76px)); padding: clamp(78px, 10vw, 144px) 0 30px; overflow: hidden; }
+  .hero::before { position: absolute; inset: 0; background-image: linear-gradient(var(--line) 1px, transparent 1px), linear-gradient(90deg, var(--line) 1px, transparent 1px); background-size: 80px 80px; mask-image: linear-gradient(to bottom, black, transparent 92%); content: ''; opacity: .55; }
+  .hero__grid { position: relative; display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(390px, .85fr); align-items: end; gap: clamp(42px, 7vw, 120px); }
+  .hero__copy { padding-bottom: 6px; }
+  .hero__intro { margin: 34px 0 0; }
+  .hero__actions { display: flex; align-items: center; gap: 28px; margin-top: 40px; }
+  .text-link { color: var(--text-muted); font: 500 10px var(--font-mono); letter-spacing: .1em; text-decoration: none; text-transform: uppercase; }
+  .text-link:hover { color: var(--lime); }
+  .signal-readout { position: relative; min-height: 458px; overflow: hidden; border: 1px solid var(--line-strong); background: linear-gradient(135deg, rgba(13,19,22,.96), rgba(7,9,11,.76)); box-shadow: 24px 28px 0 rgba(20,155,162,.08); padding: 25px; }
+  .signal-readout::after { position: absolute; right: -44px; bottom: -44px; width: 160px; height: 160px; border: 1px solid rgba(201,140,58,.38); border-radius: 50%; content: ''; }
+  .signal-readout__top { display: flex; justify-content: space-between; gap: 10px; color: var(--text-faint); font: 400 9px var(--font-mono); letter-spacing: .11em; text-transform: uppercase; }
+  .status { color: var(--lime); } .status i { display: inline-block; width: 6px; height: 6px; margin-right: 5px; border-radius: 50%; background: currentColor; }
+  .signal-readout__value { position: relative; z-index: 1; margin-top: 58px; font-size: clamp(36px, 4vw, 57px); font-weight: 700; letter-spacing: -.06em; line-height: .9; }
+  .signal-readout__value em { color: var(--blue-bright); font-family: var(--font-serif); font-weight: 500; }
+  .signal-readout__diagram { position: absolute; right: 0; bottom: 40px; left: 0; height: 260px; }
+  .signal-readout__diagram svg { width: 100%; height: 100%; } .signal-readout__diagram path { fill: none; stroke: rgba(120,215,211,.72); stroke-width: 1.5; stroke-dasharray: 3 7; }
+  .node { position: absolute; z-index: 1; display: grid; width: 33px; height: 33px; place-items: center; border: 1px solid var(--blue-bright); border-radius: 50%; background: var(--ink); color: var(--text); font: 400 10px var(--font-mono); }
+  .node--one { left: 10%; bottom: 43px; }.node--two { left: 35%; top: 22px; border-color: var(--lime); color: var(--lime); }.node--three { right: 31%; bottom: 95px; }.node--four { right: 8%; top: 35px; border-color: var(--orange); color: var(--orange); }
+  .signal-readout__legend { position: absolute; right: 25px; bottom: 20px; left: 25px; display: flex; flex-wrap: wrap; gap: 8px 15px; border-top: 1px solid var(--line); padding-top: 14px; color: var(--text-faint); font: 400 8px var(--font-mono); letter-spacing: .08em; }
+  .hero__index { position: relative; display: flex; justify-content: space-between; margin-top: 84px; color: var(--text-faint); font: 400 9px var(--font-mono); letter-spacing: .1em; }
+  .system__intro { display: grid; grid-template-columns: .9fr 1.1fr; gap: 54px; align-items: end; }.system__intro .body-large { margin: 0 0 4px; }
+  .layer-grid { display: grid; grid-template-columns: repeat(4, 1fr); margin-top: 72px; border-top: 1px solid var(--line); border-left: 1px solid var(--line); }
+  .layer-card { position: relative; min-height: 350px; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); padding: 24px 23px; background: rgba(13,19,22,.3); transition: background 180ms var(--ease-out); }.layer-card:hover { background: rgba(20,155,162,.1); }
+  .layer-card__top { display: flex; justify-content: space-between; color: var(--text-faint); font: 400 9px var(--font-mono); letter-spacing: .08em; text-transform: uppercase; }.layer-card h3 { margin: 88px 0 10px; color: var(--blue-bright); font-size: 31px; letter-spacing: -.05em; }.layer-card__statement { margin: 0; color: var(--text); font: 500 22px/1.1 var(--font-serif); }.layer-card p:not(.layer-card__statement) { margin: 20px 0 0; color: var(--text-muted); font-size: 13px; line-height: 1.7; }.layer-card__rule { position: absolute; right: 24px; bottom: 24px; left: 24px; height: 1px; background: linear-gradient(90deg, var(--lime), transparent); transform: scaleX(.22); transform-origin: left; transition: transform 260ms var(--ease-out); }.layer-card:hover .layer-card__rule { transform: scaleX(1); }
+  .constraints__heading { display: grid; grid-template-columns: .95fr 1.05fr; gap: 50px; }.constraint-grid { display: grid; grid-template-columns: repeat(4, 1fr); margin-top: 72px; border-top: 1px solid rgba(7,9,11,.2); border-left: 1px solid rgba(7,9,11,.2); }.constraint-card { min-height: 294px; border-right: 1px solid rgba(7,9,11,.2); border-bottom: 1px solid rgba(7,9,11,.2); padding: 22px; }.constraint-card__number { color: #126f73; font: 400 10px var(--font-mono); }.constraint-card h3 { margin: 64px 0 12px; font-size: 22px; letter-spacing: -.05em; line-height: 1.05; }.constraint-card p { min-height: 76px; margin: 0; color: #46565a; font-size: 13px; line-height: 1.65; }.constraint-card > span:last-child { display: block; margin-top: 22px; color: #126f73; font: 500 9px var(--font-mono); letter-spacing: .08em; text-transform: uppercase; }
+  .method__grid { display: grid; grid-template-columns: 1fr 1fr; gap: 90px; }.method__steps { border-top: 1px solid var(--line); }.method__steps article { display: grid; grid-template-columns: 58px 1fr; gap: 16px; border-bottom: 1px solid var(--line); padding: 20px 0 23px; }.method__steps article > span { color: var(--lime); font: 400 10px var(--font-mono); }.method__steps h3 { margin: 0; font-size: 25px; letter-spacing: -.05em; }.method__steps p { margin: 8px 0 0; color: var(--text-muted); font-size: 13px; line-height: 1.65; }
+  .principles { background: var(--ink-raised); }.principles__top { display: grid; grid-template-columns: .8fr 1fr 1fr; gap: 40px; align-items: end; }.principles__top .body-large { margin: 0 0 3px; }.principle-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-top: 72px; }.principle { min-height: 220px; border-top: 1px solid var(--line-strong); padding-top: 16px; }.principle > span { color: var(--blue-bright); font: 400 9px var(--font-mono); }.principle h3 { margin: 72px 0 11px; font-size: 18px; letter-spacing: -.04em; }.principle p { margin: 0; color: var(--text-muted); font-size: 13px; line-height: 1.62; }
+  .session { overflow: hidden; background: linear-gradient(120deg, #b9772d, var(--lime)); color: var(--ink); }.session::before { position: absolute; top: -90%; right: -8%; width: 74%; aspect-ratio: 1; border: 1px solid rgba(7,9,11,.34); border-radius: 50%; box-shadow: 0 0 0 58px rgba(7,9,11,.07), 0 0 0 118px rgba(7,9,11,.05); content: ''; }.session .eyebrow { color: var(--ink); }.session .eyebrow::before { box-shadow: 0 0 0 3px rgba(7,9,11,.11); }.session .section-title { position: relative; }.session .section-title em { color: var(--paper); }.session .body-large { position: relative; color: #1b2526; }.session__content { position: relative; max-width: 830px; }.session__content .button { position: relative; margin-top: 37px; }
+  @media (max-width: 1040px) { .hero__grid { grid-template-columns: 1fr; }.signal-readout { max-width: 660px; }.system__intro, .constraints__heading, .method__grid, .principles__top { grid-template-columns: 1fr; gap: 28px; }.layer-grid, .constraint-grid { grid-template-columns: repeat(2, 1fr); }.principle-grid { grid-template-columns: repeat(2, 1fr); }.layer-card h3 { margin-top: 45px; }.principles__top .body-large { margin: 0; } }
+  @media (max-width: 620px) { .hero { min-height: auto; padding-top: 72px; }.hero__actions { align-items: flex-start; flex-direction: column; gap: 20px; }.signal-readout { min-height: 390px; padding: 19px; }.signal-readout__value { margin-top: 44px; }.hero__index { margin-top: 44px; }.hero__index span:nth-child(2) { display: none; }.layer-grid, .constraint-grid, .principle-grid { grid-template-columns: 1fr; }.layer-card, .constraint-card { min-height: auto; }.layer-card h3, .constraint-card h3 { margin-top: 42px; }.constraint-card p { min-height: auto; }.constraint-card > span:last-child { margin-top: 35px; }.principle { min-height: auto; padding: 16px 0 28px; }.principle h3 { margin-top: 34px; }.section-title { max-width: 11ch; }.session::before { top: -9%; right: -42%; width: 125%; } }
+</style>

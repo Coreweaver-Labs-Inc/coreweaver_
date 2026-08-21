@@ -3,24 +3,13 @@
   "@graph": [
     {
       "@type": "Organization",
-      "@id": "https://coreweaverlabs.com/#org",
+      "@id": "https://coreweaverlabs.com/#organization",
       "name": "Coreweaver Labs",
       "url": "https://coreweaverlabs.com",
-      "logo": "https://coreweaverlabs.com/favicon.svg",
-      "description": "Growth infrastructure for the agentic era. GEO signal architecture, ARM Framework for accountable AI agents, and autonomous operational systems.",
+      "logo": "https://coreweaverlabs.com/coreweaver-labs-logo-2026.png",
+      "description": "Coreweaver Labs designs growth infrastructure: the entity, evidence, distribution, and measurement systems that make an organization clearer across human and AI-mediated discovery.",
       "sameAs": [
-        "https://github.com/Coreweaver-Labs-Inc",
-        "https://swellmarketing.xyz",
-        "https://au-re.org",
-        "https://arctura.network",
-        "https://academy.swellmarketing.xyz"
-      ],
-      "knowsAbout": [
-        "Generative Engine Optimization",
-        "GEO Signal Architecture",
-        "ARM Framework",
-        "AI Agent Governance",
-        "Verification-as-a-Service"
+        "https://github.com/Coreweaver-Labs-Inc/coreweaver_"
       ]
     },
     {
@@ -29,38 +18,8 @@
       "url": "https://coreweaverlabs.com",
       "name": "Coreweaver Labs",
       "publisher": {
-        "@id": "https://coreweaverlabs.com/#org"
+        "@id": "https://coreweaverlabs.com/#organization"
       }
-    },
-    {
-      "@type": "FAQPage",
-      "@id": "https://coreweaverlabs.com/#faq",
-      "mainEntity": [
-        {
-          "@type": "Question",
-          "name": "What is Coreweaver Labs?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Coreweaver Labs is a growth infrastructure provider for the agentic era, specializing in GEO signal architecture and the ARM Framework for accountable AI agents."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "What is GEO Signal Architecture?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "GEO Signal Architecture is a system developed by Coreweaver Labs to optimize brand presence and citation rates in AI-generated responses."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "What is the ARM Framework?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "The ARM Framework defines five primitives for accountable AI agent deployment: Mandate Chain, Signal Architecture, Checkpoint Recovery, Graceful Escalation, and Immutable Audit Sovereignty."
-          }
-        }
-      ]
     }
   ]
 }

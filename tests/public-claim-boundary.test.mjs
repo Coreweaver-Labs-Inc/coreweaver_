@@ -59,6 +59,11 @@ test('source map and organization schema retain the inspectable public-informati
 
   assert.match(sourceMap, /Source, scope,\s*review/i);
   assert.match(sourceMap, /No page in this map is a certification/i);
+  assert.match(sourceMap, /No public outcome[\s\S]*record is[\s\S]*<em>approved yet/i);
+  assert.match(sourceMap, /Awaiting controlled public source/i);
+  assert.match(sourceMap, /publication authorization/i);
+  assert.match(sourceMap, /surface stays intentionally empty/i);
+  assert.doesNotMatch(sourceMap, /clientLabel|reportingWindow|sourceSupportedFinding|approvedCaseStudyRecords/i);
   assert.match(schema, /coreweaver-labs-logo-2026\.png/);
   assert.doesNotMatch(schema, /favicon\.svg/i);
 });

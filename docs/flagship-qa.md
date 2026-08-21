@@ -35,3 +35,7 @@ Commit `7675c41` was pushed to the authorized `Coreweaver-Labs-Inc/coreweaver_` 
 ## Production release confirmation — 2026-08-21
 
 Vercel subsequently confirmed production deployment `dpl_FTVicNsfs75yytbkDN4nJobdVucB` as `READY`, aliased to `coreweaverlabs.com`, and tied to commit `5542f5f93ec33d322902bdd13f40cbdf6ebe36b3` from `Coreweaver-Labs-Inc/coreweaver_` `main`. The direct deployment URL and a cache-busting custom-domain check both served the new flagship, including the brass-and-teal identity and public **Sources** navigation. The earlier legacy result was a stale browser-cache observation, not a failed deployment. The live release is now confirmed.
+
+## Swell-derived evidence-publication status — 2026-08-21
+
+The Coreweaver source map now includes a native, static evidence-publication panel adapted from the Swell fork’s **authorized-record / explicit-empty-state** discipline. Browser inspection confirmed the panel announces **Awaiting controlled public source**, makes the source, review, and publication requirements legible, and remains intentionally free of a client name, outcome, metric, testimonial, analytics event, or form. The Swell campaign stack, commercial offers, tracking pixels, revenue board, and performance claims were not imported.

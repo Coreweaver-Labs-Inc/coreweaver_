@@ -1,0 +1,22 @@
+{
+  "claims": [
+    {
+      "id": "claim-1",
+      "statement": "A useful GEO resource should make its reader question, visible content, source boundary, and next step clear.",
+      "claimClass": "interpretation",
+      "sourceIds": ["google-helpful-content"],
+      "limitation": "This is a Coreweaver operating interpretation, not a documented Google ranking formula.",
+      "timeSensitive": false,
+      "recheckBy": null
+    },
+    {
+      "id": "claim-2",
+      "statement": "Structured data should match information that is visible and accurate on the page.",
+      "claimClass": "third_party_fact",
+      "sourceIds": ["google-helpful-content", "google-structured-data"],
+      "limitation": "Using structured data does not guarantee a search result treatment or commercial outcome.",
+      "timeSensitive": true,
+      "recheckBy": "2027-02-21"
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "id": "fixture-geo-made-simple",
+  "status": "eligible",
+  "readerQuestion": "How can an organization make its information easier for people and AI-assisted discovery systems to understand without promising an outcome?",
+  "topic": "geo-made-simple",
+  "scores": {
+    "strategicRelevance": 30,
+    "firstPartyQueryOpportunity": 5,
+    "sourceQualityAndFreshness": 20,
+    "readerDecisionUsefulness": 15,
+    "marketTimeliness": 8,
+    "duplicatePenalty": 0,
+    "total": 78
+  },
+  "notes": "Fixture only. It exercises source, claim, metadata, and release validation without qualifying a production resource.",
+  "sourceRecord": "https://app.notion.com/p/b277ba0e888b44e4bdce022788bb619b"
+}

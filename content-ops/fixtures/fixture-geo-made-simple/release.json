@@ -1,0 +1,11 @@
+{
+  "releaseId": "CW-FIXTURE-001",
+  "autopublish": false,
+  "releaseMode": "fixture-only",
+  "notionRecord": "https://app.notion.com/p/b277ba0e888b44e4bdce022788bb619b",
+  "generatedAt": "2026-08-21T00:00:00.000Z",
+  "commit": null,
+  "pullRequest": null,
+  "deployment": null,
+  "rollbackCommit": null
+}

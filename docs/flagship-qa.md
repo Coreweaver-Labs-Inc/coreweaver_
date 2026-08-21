@@ -43,3 +43,7 @@ The Coreweaver source map now includes a native, static evidence-publication pan
 ## Swell-derived production release confirmation — 2026-08-21
 
 Commit `21dafef` was pushed to the authorized `Coreweaver-Labs-Inc/coreweaver_` `main` branch. Vercel then reported production deployment `dpl_Ho7F67eoxGyj5Rr2mouRJxzSoFq9` as `READY`. A cache-busting inspection of `https://coreweaverlabs.com/source-map` confirmed the live custom domain now shows the controlled evidence-publication panel, its intentionally empty state, and the source/review/publication contract. No Swell client data, offers, testimonials, metrics, analytics, or intake collection was introduced.
+
+## Hero signal-console revision — 2026-08-21
+
+The prior abstract spline and isolated letter-node graphic was replaced with a four-stage **Coreweaver Signal Console**: Entity, Evidence, Distribution, and Measurement. The new panel communicates a directional method through named stages, textual states, and a compact action strip rather than pseudo-data or an ambiguous “AI graph.” Desktop inspection confirms that the headline and working-session action remain the first read, with the console acting as supporting method evidence. A 390px mobile capture confirms the console shifts to a clear 2×2 stage grid, preserves the Entity → Evidence → Distribution → Measurement order, keeps every status and method label visible, and introduces no horizontal overflow. The panel contains no customer record, metric, live-feed, autonomous-action, or outcome claim.

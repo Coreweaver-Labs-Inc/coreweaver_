@@ -51,6 +51,18 @@ test('machine-readable positioning names the four public operating layers and cl
   assert.match(llms, /independently inspectable source/i);
 });
 
+test('hero signal console explains the four-stage method without simulating live results or customer data', async () => {
+  const home = await readFile(resolve(root, 'src/pages/index.astro'), 'utf8');
+
+  for (const stage of ['Entity', 'Evidence', 'Distribution', 'Measurement']) {
+    assert.match(home, new RegExp(`<strong>${stage}</strong>`));
+  }
+  assert.match(home, /Constraint mapped/i);
+  assert.match(home, /Map source/i);
+  assert.match(home, /Review movement/i);
+  assert.doesNotMatch(home, /live feed|client result|conversion rate|revenue|case study result/i);
+});
+
 test('source map and organization schema retain the inspectable public-information contract', async () => {
   const [sourceMap, schema] = await Promise.all([
     readFile(resolve(root, 'src/pages/source-map.astro'), 'utf8'),

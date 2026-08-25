@@ -20,6 +20,10 @@ The page applies the existing public ARM framework language already stated in th
 
 `npm run build` completed successfully on August 25, 2026. The local Astro preview rendered `/autonomous-resource-management` with the expected Coreweaver header, ARM navigation item, canonical title, decision-route hero, five primitives, route-specific working-session CTA, reference-layer link, and shared footer. The build emitted existing environment notices for missing optional Notion content credentials and a Node deprecation warning; neither prevented static route generation.
 
+## Visual review update
+
+The page was compared with the existing Coreweaver Labs signal-console surface at desktop size and inspected at a 390px mobile viewport. The desktop composition required no structural change. The mobile hero was tightened so the supporting copy, route-specific CTA, and decision-route panel arrive in a more useful first-screen sequence. The refined route was rebuilt and the full test suite passed.
+
 ## Intentionally blocked
 
 - No automatic publishing, scheduling, external data retrieval, CRM integration, or Notion writing is introduced.

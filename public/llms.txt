@@ -24,6 +24,7 @@ These are public working principles, not a certification, a legal conclusion, a 
 
 - Home: https://coreweaverlabs.com/
 - Autonomous Resource Management: https://coreweaverlabs.com/autonomous-resource-management — an applied method page for accountable decisions across constraints, autonomous systems, and human oversight.
+- Autonomous Operations for Energy Systems: https://coreweaverlabs.com/autonomous-operations-energy-systems — an applied method page for examining energy-system decision routes across changing conditions, human authority, and retained records.
 - Field notes: https://coreweaverlabs.com/blog
 - Authority before automation: https://coreweaverlabs.com/mandate
 - Verification limits: https://coreweaverlabs.com/vaas

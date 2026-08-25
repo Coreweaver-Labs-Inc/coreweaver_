@@ -1,0 +1,277 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+/**
+ * DESIGN SYSTEM: Signal Observatory — Coreweaver's obsidian operating surface.
+ * Use the existing signal-grid, mineral-aqua, warm-brass, editorial type, and
+ * asymmetric route logic to make constraints, owners, actions, and records inspectable.
+ */
+const primitives = [
+  {
+    code: '01',
+    label: 'Mandate chain',
+    question: 'Who has approved this action?',
+    description: 'A named, human-approved directive keeps authority visible before a system acts.',
+  },
+  {
+    code: '02',
+    label: 'Signal architecture',
+    question: 'What evidence is allowed to move the decision?',
+    description: 'A defined source hierarchy and confidence boundary make the input inspectable.',
+  },
+  {
+    code: '03',
+    label: 'Checkpoint recovery',
+    question: 'What survives interruption?',
+    description: 'A durable decision state makes a pause recoverable without pretending the context never changed.',
+  },
+  {
+    code: '04',
+    label: 'Graceful escalation',
+    question: 'When does the decision return to a person?',
+    description: 'Explicit intervention triggers give uncertainty a route instead of concealing it.',
+  },
+  {
+    code: '05',
+    label: 'Audit sovereignty',
+    question: 'What record remains after the action?',
+    description: 'The decision, evidence, and accountable owner remain available for review.',
+  },
+];
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'WebPage',
+  name: 'Autonomous Resource Management',
+  description: 'A Coreweaver Labs application page for accountable decisions across resource constraints, autonomous systems, and human oversight.',
+  url: 'https://coreweaverlabs.com/autonomous-resource-management',
+  isPartOf: {
+    '@type': 'WebSite',
+    name: 'Coreweaver Labs',
+    url: 'https://coreweaverlabs.com/',
+  },
+  about: {
+    '@type': 'Thing',
+    name: 'Autonomous Resource Management',
+    description: 'A framework for making autonomous or assisted operational decisions accountable, inspectable, and recoverable.',
+  },
+};
+---
+
+<!-- DESIGN SYSTEM: Signal Observatory. This is a Coreweaver Labs application route, not a separate product identity. -->
+<Layout
+  title="Autonomous Resource Management"
+  description="A Coreweaver Labs application surface for accountable decisions across constraints, automation, and human oversight."
+  canonical="https://coreweaverlabs.com/autonomous-resource-management"
+  schema={schema}
+>
+  <section class="arm-hero">
+    <div class="arm-hero__grid" aria-hidden="true"></div>
+    <div class="shell arm-hero__inner">
+      <div class="arm-hero__copy">
+        <p class="eyebrow reveal">Application surface / ARM 01</p>
+        <h1 class="arm-hero__title reveal reveal--2">Make the resource decision <em>inspectable.</em></h1>
+        <p class="arm-hero__lead reveal reveal--3">Coreweaver applies the Autonomous Resource Management framework where material constraints, autonomous systems, and human accountability have to meet in the same decision.</p>
+        <div class="arm-hero__actions reveal reveal--3">
+          <a class="button button--lime" href="mailto:hello@coreweaverlabs.com?subject=ARM%20decision%20working%20session">Map a live decision <span aria-hidden="true">↗</span></a>
+          <a class="arm-link" href="#primitives">Read the five primitives <span aria-hidden="true">↓</span></a>
+        </div>
+      </div>
+
+      <aside class="route-console reveal reveal--2" aria-label="Autonomous Resource Management decision route">
+        <div class="route-console__topline"><span>ARM / DECISION ROUTE</span><span class="route-console__status">ACTIVE REVIEW</span></div>
+        <div class="route-console__body">
+          <p class="route-console__title">A decision is only autonomous when its authority, evidence, exception path, and record can be named.</p>
+          <ol class="route-map">
+            <li><span class="route-map__node">01</span><span>Constraint mapped</span></li>
+            <li><span class="route-map__node">02</span><span>Owner assigned</span></li>
+            <li><span class="route-map__node">03</span><span>Action bounded</span></li>
+            <li><span class="route-map__node">04</span><span>Record retained</span></li>
+          </ol>
+        </div>
+        <div class="route-console__footer"><span>OPERATING POSITION</span><span>NOT A PREDICTION</span></div>
+      </aside>
+    </div>
+    <div class="shell arm-hero__foot" aria-label="Page classification">
+      <span>COREWEAVER LABS / APPLIED METHOD</span><span>CONSTRAINT → AUTHORITY → ACTION → RECORD</span><span>2026</span>
+    </div>
+  </section>
+
+  <section class="section arm-translation">
+    <div class="shell arm-translation__grid">
+      <div>
+        <p class="eyebrow">01 / The operating condition</p>
+        <h2 class="section-title">Autonomy needs a <em>clearer handoff.</em></h2>
+      </div>
+      <div class="arm-translation__copy">
+        <p class="body-large">The difficult decision is rarely a question of automation alone. It is whether a constrained system can show <strong>what it is acting on, who can interrupt it, and what remains available for review.</strong></p>
+        <p class="arm-note">ARM is a working framework for locating that decision boundary. It does not substitute governance, compliance advice, or human responsibility.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--paper arm-stakes">
+    <div class="shell">
+      <div class="arm-section-head">
+        <p class="eyebrow">02 / Start with the break</p>
+        <p class="arm-section-head__meta">THE QUESTION IS NOT “CAN IT ACT?”<br />IT IS “CAN THE ACTION BE EXPLAINED?”</p>
+      </div>
+      <div class="stakes-grid">
+        <article class="stake-card">
+          <span class="stake-card__code">A / CONSTRAINT</span>
+          <h3>Material limits are not visible in the action.</h3>
+          <p>Inputs are abundant, but the conditions that should bound a decision have not been made explicit.</p>
+        </article>
+        <article class="stake-card">
+          <span class="stake-card__code">B / AUTHORITY</span>
+          <h3>The system has motion without named decision rights.</h3>
+          <p>Escalation is implied or retrospective rather than designed into the operating path.</p>
+        </article>
+        <article class="stake-card">
+          <span class="stake-card__code">C / RECORD</span>
+          <h3>The action cannot be reconstructed when it matters.</h3>
+          <p>Evidence, exceptions, and owners become scattered once the decision has been taken.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="primitives" class="section arm-primitives">
+    <div class="shell arm-primitives__intro">
+      <div>
+        <p class="eyebrow">03 / The ARM framework</p>
+        <h2 class="section-title">Five controls for a <em>decision-ready</em> system.</h2>
+      </div>
+      <p class="body-large">The framework makes the decision route observable before a live operating condition tests it. Each primitive resolves a different form of ambiguity.</p>
+    </div>
+    <div class="shell primitive-list" role="list">
+      {primitives.map((primitive) => (
+        <article class="primitive" role="listitem">
+          <span class="primitive__code">{primitive.code}</span>
+          <div class="primitive__main">
+            <h3>{primitive.label}</h3>
+            <p>{primitive.question}</p>
+          </div>
+          <p class="primitive__detail">{primitive.description}</p>
+        </article>
+      ))}
+    </div>
+  </section>
+
+  <section class="section arm-method">
+    <div class="shell arm-method__grid">
+      <div class="arm-method__intro">
+        <p class="eyebrow">04 / A working route</p>
+        <h2 class="section-title">Bring one decision.<br /><em>Find the boundary.</em></h2>
+        <p class="body-large">A working session does not begin with a platform prescription. It begins with one decision that already carries material, operational, or accountability pressure.</p>
+      </div>
+      <div class="method-diagram" aria-label="ARM working-session sequence">
+        <div class="method-diagram__rail" aria-hidden="true"></div>
+        <div class="method-step">
+          <span>01</span>
+          <div><h3>Map the constraint</h3><p>Identify the conditions, signals, and evidence that should shape the decision.</p></div>
+        </div>
+        <div class="method-step">
+          <span>02</span>
+          <div><h3>Name the owner</h3><p>Clarify mandate, decision rights, review points, and escalation triggers.</p></div>
+        </div>
+        <div class="method-step">
+          <span>03</span>
+          <div><h3>Bound the action</h3><p>Define the smallest viable action that can be inspected without manufacturing certainty.</p></div>
+        </div>
+        <div class="method-step">
+          <span>04</span>
+          <div><h3>Keep the record</h3><p>Retain the evidence, decision state, and next review condition in a usable form.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="arm-bridge">
+    <div class="shell arm-bridge__inner">
+      <p class="eyebrow">05 / Reference & application</p>
+      <h2>The reference layer names the system.<br /><em>The working session makes it useful.</em></h2>
+      <p>ARM has a separate neutral reference surface for the term and its public definition. This Coreweaver route is the application layer for organizations that need to work through a live decision.</p>
+      <div class="arm-bridge__actions">
+        <a class="button button--paper" href="mailto:hello@coreweaverlabs.com?subject=ARM%20decision%20working%20session">Map a live decision <span aria-hidden="true">↗</span></a>
+        <a class="arm-link arm-link--light" href="https://autonomousresourcemanagement.com" rel="external">View the reference layer <span aria-hidden="true">↗</span></a>
+      </div>
+      <div class="arm-bridge__foot"><span>COREWEAVER LABS / ARM</span><span>NO CLAIM IS A SUBSTITUTE FOR A RECORD.</span></div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  /* SIGNAL OBSERVATORY: dark editorial field, asymmetric evidence panels, mineral-aqua route language. */
+  .arm-hero { position: relative; z-index: 1; overflow: hidden; min-height: min(870px, calc(100svh - 76px)); border-bottom: 1px solid var(--line); background: #07090b; }
+  .arm-hero::before { position: absolute; inset: 0; background: radial-gradient(circle at 78% 38%, rgba(20, 155, 162, .18), transparent 0 22%), radial-gradient(circle at 96% 86%, rgba(201, 140, 58, .15), transparent 0 17%); content: ''; pointer-events: none; }
+  .arm-hero__grid { position: absolute; inset: 0; background-image: linear-gradient(rgba(120, 215, 211, .07) 1px, transparent 1px), linear-gradient(90deg, rgba(120, 215, 211, .07) 1px, transparent 1px); background-position: center; background-size: clamp(48px, 6vw, 84px) clamp(48px, 6vw, 84px); mask-image: linear-gradient(to bottom, black, rgba(0, 0, 0, .65) 75%, transparent); opacity: .9; pointer-events: none; }
+  .arm-hero__inner { position: relative; display: grid; grid-template-columns: minmax(0, 1.12fr) minmax(350px, .7fr); align-items: center; gap: clamp(48px, 7vw, 130px); min-height: min(758px, calc(100svh - 112px)); padding: 112px 0 104px; }
+  .arm-hero__copy { position: relative; z-index: 1; }
+  .arm-hero__title { max-width: 9.8ch; margin: 19px 0 26px; font-size: clamp(60px, 8vw, 128px); font-weight: 700; letter-spacing: -.078em; line-height: .84; }
+  .arm-hero__title em { color: var(--blue-bright); font-family: var(--font-serif); font-weight: 500; letter-spacing: -.08em; }
+  .arm-hero__lead { max-width: 53ch; margin: 0; color: var(--text-muted); font-size: clamp(16px, 1.5vw, 20px); line-height: 1.63; }
+  .arm-hero__actions, .arm-bridge__actions { display: flex; flex-wrap: wrap; align-items: center; gap: 17px; margin-top: 33px; }
+  .arm-link { color: var(--blue-bright); font: 500 10px var(--font-mono); letter-spacing: .09em; text-decoration: none; text-transform: uppercase; transition: color 160ms var(--ease-out), transform 160ms var(--ease-out); }
+  .arm-link:hover { color: var(--orange); transform: translateX(3px); }
+  .route-console { position: relative; z-index: 1; border: 1px solid rgba(120, 215, 211, .46); background: rgba(8, 15, 17, .75); box-shadow: 20px 22px 0 rgba(20, 155, 162, .08); backdrop-filter: blur(12px); }
+  .route-console::after { position: absolute; right: -1px; bottom: -1px; width: 82px; height: 2px; background: var(--lime); content: ''; }
+  .route-console__topline, .route-console__footer { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 14px 17px; color: var(--text-faint); font: 400 8px var(--font-mono); letter-spacing: .1em; text-transform: uppercase; }
+  .route-console__topline { border-bottom: 1px solid var(--line); }
+  .route-console__status { color: var(--blue-bright); }
+  .route-console__body { padding: clamp(30px, 4vw, 46px) clamp(24px, 3vw, 40px) 31px; }
+  .route-console__title { max-width: 25ch; margin: 0; color: var(--text); font: 500 clamp(21px, 2.3vw, 31px)/1.08 var(--font-serif); }
+  .route-map { display: grid; gap: 13px; margin: 35px 0 0; padding: 0; list-style: none; }
+  .route-map li { position: relative; display: grid; grid-template-columns: 27px 1fr; align-items: center; gap: 12px; color: var(--text-muted); font: 400 10px var(--font-mono); letter-spacing: .05em; text-transform: uppercase; }
+  .route-map li:not(:last-child)::after { position: absolute; top: 27px; left: 12px; width: 1px; height: 13px; background: rgba(120, 215, 211, .45); content: ''; }
+  .route-map__node { display: grid; width: 25px; height: 25px; place-items: center; border: 1px solid rgba(120, 215, 211, .5); color: var(--blue-bright); font-size: 8px; }
+  .route-console__footer { border-top: 1px solid var(--line); color: var(--paper-muted); }
+  .arm-hero__foot { position: absolute; z-index: 1; right: 0; bottom: 22px; left: 0; display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; gap: 20px; color: var(--text-faint); font: 400 8px var(--font-mono); letter-spacing: .09em; text-transform: uppercase; }
+  .arm-hero__foot span:nth-child(2) { text-align: center; color: var(--blue-bright); }
+  .arm-hero__foot span:last-child { text-align: right; }
+  .arm-translation__grid { display: grid; grid-template-columns: minmax(0, .9fr) minmax(320px, .75fr); gap: clamp(50px, 12vw, 210px); }
+  .arm-translation__grid .section-title { margin-top: 23px; }
+  .arm-translation__copy { padding-top: 48px; }
+  .arm-note { max-width: 54ch; margin: 24px 0 0; color: var(--text-faint); font: 400 11px/1.7 var(--font-mono); }
+  .arm-section-head { display: flex; align-items: flex-start; justify-content: space-between; gap: 32px; }
+  .arm-section-head__meta { margin: 0; color: #536163; font: 400 9px/1.65 var(--font-mono); letter-spacing: .08em; text-align: right; }
+  .stakes-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; margin-top: 60px; border-top: 1px solid rgba(12, 35, 36, .18); border-left: 1px solid rgba(12, 35, 36, .18); }
+  .stake-card { min-height: 320px; padding: 28px; border-right: 1px solid rgba(12, 35, 36, .18); border-bottom: 1px solid rgba(12, 35, 36, .18); background: linear-gradient(145deg, rgba(255,255,255,.3), transparent); }
+  .stake-card__code { color: #126f73; font: 400 9px var(--font-mono); letter-spacing: .1em; }
+  .stake-card h3 { max-width: 15ch; margin: 70px 0 16px; color: var(--ink); font-size: clamp(23px, 2vw, 31px); letter-spacing: -.045em; line-height: 1; }
+  .stake-card p { max-width: 31ch; margin: 0; color: #5b6568; font-size: 14px; line-height: 1.65; }
+  .arm-primitives__intro { display: grid; grid-template-columns: minmax(0, .9fr) minmax(330px, .7fr); gap: clamp(48px, 12vw, 210px); align-items: end; }
+  .arm-primitives__intro .section-title { margin-top: 22px; }
+  .arm-primitives__intro .body-large { margin: 0; }
+  .primitive-list { margin-top: 66px; border-top: 1px solid var(--line-strong); }
+  .primitive { display: grid; grid-template-columns: 75px minmax(220px, .8fr) minmax(260px, 1.1fr); gap: 28px; align-items: start; padding: 30px 16px 31px 0; border-bottom: 1px solid var(--line); transition: background 180ms var(--ease-out), padding-left 180ms var(--ease-out); }
+  .primitive:hover { padding-left: 18px; background: rgba(20, 155, 162, .08); }
+  .primitive__code { color: var(--blue-bright); font: 400 10px var(--font-mono); letter-spacing: .1em; }
+  .primitive__main h3 { margin: 0; color: var(--text); font-size: clamp(22px, 2.3vw, 32px); letter-spacing: -.05em; line-height: 1; }
+  .primitive__main p { margin: 9px 0 0; color: var(--orange); font: 400 10px/1.5 var(--font-mono); letter-spacing: .02em; }
+  .primitive__detail { max-width: 40ch; margin: 0; color: var(--text-muted); font-size: 14px; line-height: 1.68; }
+  .arm-method { background: linear-gradient(125deg, rgba(20, 155, 162, .08), transparent 42%), var(--ink-raised); }
+  .arm-method__grid { display: grid; grid-template-columns: minmax(0, .88fr) minmax(390px, .78fr); gap: clamp(48px, 12vw, 200px); align-items: center; }
+  .arm-method__intro .section-title { margin-top: 22px; }
+  .arm-method__intro .body-large { margin: 29px 0 0; }
+  .method-diagram { position: relative; display: grid; gap: 0; border-top: 1px solid var(--line-strong); }
+  .method-diagram__rail { position: absolute; top: 47px; bottom: 47px; left: 13px; width: 1px; background: linear-gradient(var(--blue-bright), rgba(120, 215, 211, .1)); }
+  .method-step { position: relative; display: grid; grid-template-columns: 50px 1fr; gap: 23px; min-height: 124px; padding: 27px 0 22px; border-bottom: 1px solid var(--line); }
+  .method-step > span { position: relative; z-index: 1; display: grid; width: 27px; height: 27px; place-items: center; border: 1px solid var(--blue-bright); background: var(--ink-raised); color: var(--blue-bright); font: 400 8px var(--font-mono); }
+  .method-step h3 { margin: 1px 0 7px; font-size: 20px; letter-spacing: -.035em; }
+  .method-step p { max-width: 48ch; margin: 0; color: var(--text-muted); font-size: 14px; line-height: 1.6; }
+  .arm-bridge { position: relative; z-index: 1; padding: clamp(86px, 12vw, 172px) 0 32px; background: var(--blue); color: #061012; overflow: hidden; }
+  .arm-bridge::before { position: absolute; inset: 0; background-image: linear-gradient(rgba(7,9,11,.14) 1px, transparent 1px), linear-gradient(90deg, rgba(7,9,11,.14) 1px, transparent 1px); background-size: 64px 64px; content: ''; opacity: .8; pointer-events: none; }
+  .arm-bridge__inner { position: relative; }
+  .arm-bridge .eyebrow { color: #061012; }
+  .arm-bridge .eyebrow::before { box-shadow: 0 0 0 3px rgba(7,9,11,.13); }
+  .arm-bridge h2 { max-width: 13ch; margin: 25px 0 28px; font-size: clamp(43px, 6.3vw, 90px); letter-spacing: -.07em; line-height: .86; }
+  .arm-bridge h2 em { color: var(--paper); font-family: var(--font-serif); font-weight: 500; }
+  .arm-bridge p:not(.eyebrow) { max-width: 59ch; margin: 0; color: rgba(6, 16, 18, .8); font-size: clamp(16px, 1.55vw, 20px); line-height: 1.62; }
+  .arm-link--light { color: #061012; }
+  .arm-link--light:hover { color: var(--paper); }
+  .arm-bridge__foot { display: flex; justify-content: space-between; gap: 24px; margin-top: 100px; padding-top: 17px; border-top: 1px solid rgba(7,9,11,.3); color: rgba(6,16,18,.67); font: 400 8px var(--font-mono); letter-spacing: .09em; text-transform: uppercase; }
+  @media (max-width: 900px) { .arm-hero__inner, .arm-translation__grid, .arm-primitives__intro, .arm-method__grid { grid-template-columns: 1fr; } .arm-hero__inner { min-height: auto; padding: 96px 0 118px; } .route-console { max-width: 560px; } .arm-translation__copy { padding-top: 0; } .stakes-grid { grid-template-columns: 1fr; } .stake-card { min-height: 0; } .stake-card h3 { margin-top: 44px; } .primitive { grid-template-columns: 54px 1fr; } .primitive__detail { grid-column: 2; } }
+  @media (max-width: 620px) { .arm-hero__title { font-size: clamp(54px, 16vw, 78px); } .arm-hero__foot { grid-template-columns: 1fr; gap: 8px; } .arm-hero__foot span:nth-child(2), .arm-hero__foot span:last-child { text-align: left; } .arm-section-head { display: grid; } .arm-section-head__meta { text-align: left; } .primitive { grid-template-columns: 1fr; gap: 14px; padding-right: 0; } .primitive__detail { grid-column: auto; } .method-step { grid-template-columns: 42px 1fr; gap: 16px; } .arm-bridge__foot { align-items: flex-start; flex-direction: column; gap: 9px; margin-top: 68px; } }
+  @media (prefers-reduced-motion: no-preference) { .route-console { animation: console-in 760ms var(--ease-out) both; } @keyframes console-in { from { opacity: 0; transform: translateY(22px); } to { opacity: 1; transform: none; } } }
+</style>

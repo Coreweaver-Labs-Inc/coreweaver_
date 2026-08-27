@@ -1,0 +1,129 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const sessionRequestHref = 'mailto:hello@coreweaverlabs.com?subject=Coreweaver%20working%20session&body=Organization%3A%0AWhat%20needs%20to%20become%20clearer%3A%0ARelevant%20public%20surface%20or%20source%3A%0ADecision%20owner%3A%0A%0AOnly%20share%20information%20you%20are%20authorized%20to%20share.';
+
+const questions = [
+  ['01', 'The category is unclear.', 'The organization is being described with borrowed, overly broad, or incomplete language.'],
+  ['02', 'The proof is difficult to inspect.', 'Relevant sources, examples, decisions, or boundaries are present but scattered or detached from the claim they should support.'],
+  ['03', 'The signal does not travel.', 'A useful page, narrative, or reference exists, but it is not connected to the reader question or decision it should help address.'],
+  ['04', 'Movement cannot be reviewed.', 'The team cannot distinguish a change in attention from a meaningful change in understanding, inquiry, or next decision.'],
+];
+
+const outputs = [
+  ['Frame', 'State the reader, decision, current surface, and the specific ambiguity worth resolving.'],
+  ['Map', 'Identify the relevant entity language, evidence, distribution route, and measurement question.'],
+  ['Decide', 'Name the smallest responsible next change, its owner, and what requires a separate review.'],
+];
+
+const boundaries = [
+  'A working session does not certify a technical system, legal position, security posture, compliance status, or safety outcome.',
+  'It does not guarantee visibility, model behavior, traffic, qualified demand, revenue, press, or a commercial result.',
+  'Any implementation, price, ongoing service, external publication, or access to private material requires a separately agreed scope and approval.',
+];
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'WebPage',
+  name: 'Coreweaver working session',
+  description: 'A bounded Coreweaver working session for mapping one entity, evidence, distribution, or measurement constraint.',
+  url: 'https://coreweaverlabs.com/working-session',
+  isPartOf: { '@type': 'WebSite', '@id': 'https://coreweaverlabs.com/#website' },
+  about: { '@type': 'Organization', '@id': 'https://coreweaverlabs.com/#organization' },
+};
+---
+
+<Layout
+  title="Working session — Coreweaver Labs"
+  description="Map one entity, evidence, distribution, or measurement constraint with a bounded Coreweaver working session."
+  canonical="https://coreweaverlabs.com/working-session"
+  schema={schema}
+>
+  <section class="session-hero" aria-labelledby="session-title">
+    <div class="session-hero__grid" aria-hidden="true"></div>
+    <div class="session-hero__arc session-hero__arc--one" aria-hidden="true"></div>
+    <div class="session-hero__arc session-hero__arc--two" aria-hidden="true"></div>
+    <div class="shell session-hero__inner">
+      <div class="session-hero__copy">
+        <p class="eyebrow reveal">Coreweaver / working session</p>
+        <h1 class="session-hero__title reveal reveal--2" id="session-title">Find the signal break.<br /><em>Keep the next step</em> clear.</h1>
+        <p class="session-hero__lead reveal reveal--3">A Coreweaver working session begins with one real question: what does a buyer, partner, reviewer, or team need to understand before a decision can move responsibly?</p>
+        <div class="session-hero__actions reveal reveal--3">
+          <a class="button button--lime" href={sessionRequestHref}>Request a working session <span aria-hidden="true">↗</span></a>
+          <a class="session-link" href="#scope">See the session scope <span aria-hidden="true">↓</span></a>
+        </div>
+      </div>
+      <aside class="session-console reveal reveal--2" aria-label="Working session scope">
+        <div class="session-console__top"><span>Working surface / 001</span><span>Human-led</span></div>
+        <p class="session-console__title">One constraint.<br /><em>One accountable next decision.</em></p>
+        <dl class="session-console__list">
+          <div><dt>Input</dt><dd>A public or internal signal under pressure</dd></div>
+          <div><dt>Method</dt><dd>Entity → evidence → distribution → measurement</dd></div>
+          <div><dt>Output</dt><dd>A bounded decision packet, not a promise</dd></div>
+          <div><dt>Authority</dt><dd>Responsible owner remains named</dd></div>
+        </dl>
+      </aside>
+    </div>
+    <div class="shell session-hero__foot" aria-label="Page classification"><span>COREWEAVER LABS / APPLIED METHOD</span><span>SCOPE → EVIDENCE → DECISION</span><span>SESSION 01</span></div>
+  </section>
+
+  <section class="section session-intro" id="scope" aria-labelledby="scope-title">
+    <div class="shell session-intro__grid">
+      <div>
+        <p class="eyebrow">01 / Start with the constraint</p>
+        <h2 class="section-title" id="scope-title">The useful question is not<br />“what should we publish?”<br /><em>It is “what must become clear?”</em></h2>
+      </div>
+      <div class="session-intro__copy">
+        <p class="body-large">The session treats communication as a decision system. We map the point where a category, source, route, or measurement gap makes it harder for the right person to inspect the work and choose a next step.</p>
+        <p>This is a working method for a defined question. It does not assume that more content, automation, or visibility is the answer before the relevant constraint is named.</p>
+      </div>
+    </div>
+    <div class="shell question-grid" role="list">
+      {questions.map(([number, title, description]) => (
+        <article class="question-card" role="listitem"><span>{number}</span><h3>{title}</h3><p>{description}</p></article>
+      ))}
+    </div>
+  </section>
+
+  <section class="section session-route" aria-labelledby="route-title">
+    <div class="shell session-route__head">
+      <div><p class="eyebrow">02 / The working route</p><h2 class="section-title" id="route-title">A small map before<br /><em>a larger motion.</em></h2></div>
+      <p class="body-large">The session produces a shared view of the signal under review, the source boundary, and the next decision—not a manufactured certainty about a market or a system.</p>
+    </div>
+    <div class="shell session-steps" role="list">
+      {outputs.map(([title, description], index) => (
+        <article role="listitem"><span>{String(index + 1).padStart(2, '0')}</span><div><h3>{title}</h3><p>{description}</p></div><em>{['What is being decided?', 'What supports it?', 'What changes next?'][index]}</em></article>
+      ))}
+    </div>
+  </section>
+
+  <section class="section section--paper session-bridge" aria-labelledby="bridge-title">
+    <div class="shell session-bridge__grid">
+      <div><p class="eyebrow">03 / Context, not borrowed authority</p><h2 class="section-title" id="bridge-title">The method carries<br /><em>across a decision field.</em></h2></div>
+      <div class="session-bridge__copy">
+        <p>Coreweaver’s commercial method layer is informed by the public ARM reference: make constraint visible, keep accountable judgment in the loop, and retain a usable record. The reference supplies a vocabulary; it does not establish a deployed system or a customer outcome.</p>
+        <a class="session-link session-link--ink" href="/autonomous-resource-management#primitives">Examine ARM primitives <span aria-hidden="true">↗</span></a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section session-boundary" aria-labelledby="boundary-title">
+    <div class="shell session-boundary__grid">
+      <div><p class="eyebrow">04 / Session boundary</p><h2 class="section-title" id="boundary-title">Useful scope.<br /><em>No borrowed outcomes.</em></h2></div>
+      <div class="boundary-panel"><p class="boundary-panel__state"><span aria-hidden="true"></span> Scope set with the responsible owner</p><ul>{boundaries.map((boundary) => <li>{boundary}</li>)}</ul><a class="session-link" href="/source-map">Review Coreweaver’s source and claim boundary <span aria-hidden="true">↗</span></a></div>
+    </div>
+  </section>
+
+  <section class="section session-cta" aria-labelledby="request-title">
+    <div class="shell session-cta__content">
+      <p class="eyebrow">05 / Request</p>
+      <h2 class="section-title" id="request-title">Bring the one question<br /><em>that keeps returning.</em></h2>
+      <p class="body-large">The request link opens your email application with a short scope prompt. Share only material you are authorized to share. A working session is accepted only after a human reviews the fit, boundary, and decision owner.</p>
+      <a class="button button--paper" href={sessionRequestHref}>Start a working session <span aria-hidden="true">↗</span></a>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .session-hero{position:relative;z-index:1;min-height:min(880px,calc(100svh - 76px));overflow:hidden;border-bottom:1px solid var(--line);background:#07090b}.session-hero::before{position:absolute;inset:0;background:radial-gradient(circle at 78% 24%,rgba(20,155,162,.22),transparent 0 20%),radial-gradient(circle at 23% 77%,rgba(201,140,58,.12),transparent 0 24%);content:'';pointer-events:none}.session-hero__grid{position:absolute;inset:0;background-image:linear-gradient(rgba(120,215,211,.065) 1px,transparent 1px),linear-gradient(90deg,rgba(120,215,211,.065) 1px,transparent 1px);background-size:clamp(48px,6vw,84px) clamp(48px,6vw,84px);mask-image:linear-gradient(to bottom,black,rgba(0,0,0,.7) 75%,transparent);pointer-events:none}.session-hero__arc{position:absolute;border:1px solid rgba(201,140,58,.4);border-radius:50%;pointer-events:none}.session-hero__arc--one{top:-32vw;right:-8vw;width:69vw;aspect-ratio:1}.session-hero__arc--two{right:14vw;bottom:-35vw;width:51vw;aspect-ratio:1;border-color:rgba(120,215,211,.2)}.session-hero__inner{position:relative;display:grid;grid-template-columns:minmax(0,1.15fr) minmax(340px,.68fr);align-items:center;gap:clamp(48px,7vw,132px);min-height:min(760px,calc(100svh - 112px));padding:112px 0 104px}.session-hero__title{max-width:10.2ch;margin:19px 0 26px;font-size:clamp(56px,7.6vw,118px);font-weight:700;letter-spacing:-.078em;line-height:.84}.session-hero__title em,.section-title em,.session-console__title em{color:var(--blue-bright);font-family:var(--font-serif);font-weight:500;letter-spacing:-.08em}.session-hero__lead{max-width:57ch;margin:0;color:var(--text-muted);font-size:clamp(16px,1.5vw,20px);line-height:1.63}.session-hero__actions{display:flex;flex-wrap:wrap;align-items:center;gap:17px;margin-top:33px}.session-link{color:var(--blue-bright);font:500 10px var(--font-mono);letter-spacing:.09em;text-decoration:none;text-transform:uppercase;transition:color 160ms var(--ease-out),transform 160ms var(--ease-out)}.session-link:hover{color:var(--lime);transform:translateX(3px)}.session-console{position:relative;overflow:hidden;border:1px solid var(--line-strong);background:rgba(8,15,17,.82);padding:24px;box-shadow:22px 26px 0 rgba(20,155,162,.08)}.session-console::after{position:absolute;right:0;bottom:0;left:0;height:2px;background:linear-gradient(90deg,var(--orange),var(--lime) 62%,transparent);content:''}.session-console__top{display:flex;justify-content:space-between;gap:12px;color:var(--text-faint);font:400 8px var(--font-mono);letter-spacing:.1em;text-transform:uppercase}.session-console__top span:last-child{color:var(--orange)}.session-console__title{margin:52px 0 36px;font:500 clamp(27px,3vw,40px)/.96 var(--font-serif);letter-spacing:-.06em}.session-console__list{margin:0;border-top:1px solid var(--line-strong)}.session-console__list div{display:grid;grid-template-columns:72px 1fr;gap:17px;padding:15px 0;border-bottom:1px solid var(--line)}.session-console__list dt{color:var(--text-faint);font:400 8px var(--font-mono);letter-spacing:.08em;text-transform:uppercase}.session-console__list dd{margin:0;color:var(--text-muted);font-size:12px;line-height:1.5}.session-hero__foot{position:absolute;right:0;bottom:22px;left:0;display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:20px;color:var(--text-faint);font:400 8px var(--font-mono);letter-spacing:.09em;text-transform:uppercase}.session-hero__foot span:nth-child(2){color:var(--blue-bright);text-align:center}.session-hero__foot span:last-child{text-align:right}.session-intro__grid{display:grid;grid-template-columns:minmax(0,.95fr) minmax(330px,.72fr);gap:clamp(50px,12vw,210px);align-items:end}.session-intro__grid .section-title{margin-top:23px}.session-intro__copy{max-width:60ch;padding-top:48px}.session-intro__copy .body-large{margin-top:0}.session-intro__copy p:last-child{color:var(--text-muted);font-size:15px;line-height:1.75}.question-grid{display:grid;grid-template-columns:repeat(4,1fr);margin-top:66px;border-top:1px solid rgba(12,35,36,.18);border-left:1px solid rgba(12,35,36,.18)}.question-card{min-height:294px;border-right:1px solid rgba(12,35,36,.18);border-bottom:1px solid rgba(12,35,36,.18);padding:22px;background:linear-gradient(145deg,rgba(255,255,255,.28),transparent)}.question-card>span{color:#126f73;font:400 10px var(--font-mono);letter-spacing:.08em}.question-card h3{margin:65px 0 14px;font-size:22px;letter-spacing:-.05em;line-height:1.05}.question-card p{margin:0;color:#46565a;font-size:13px;line-height:1.7}.session-route{background:linear-gradient(125deg,rgba(20,155,162,.07),transparent 45%),var(--ink-raised)}.session-route__head{display:grid;grid-template-columns:minmax(0,.95fr) minmax(330px,.67fr);gap:clamp(48px,12vw,210px);align-items:end}.session-route__head .section-title{margin-top:22px}.session-route__head .body-large{margin:0}.session-steps{margin-top:67px;border-top:1px solid var(--line-strong)}.session-steps article{display:grid;grid-template-columns:75px minmax(220px,.8fr) minmax(180px,.4fr);gap:28px;align-items:start;padding:30px 16px 31px 0;border-bottom:1px solid var(--line);transition:background 180ms var(--ease-out),padding-left 180ms var(--ease-out)}.session-steps article:hover{padding-left:18px;background:rgba(20,155,162,.08)}.session-steps article>span{color:var(--lime);font:400 10px var(--font-mono);letter-spacing:.08em}.session-steps h3{margin:0;font-size:26px;letter-spacing:-.055em}.session-steps p{max-width:50ch;margin:8px 0 0;color:var(--text-muted);font-size:14px;line-height:1.65}.session-steps em{color:var(--orange);font:400 9px/1.6 var(--font-mono);letter-spacing:.06em;text-transform:uppercase}.session-bridge__grid{display:grid;grid-template-columns:minmax(0,.9fr) minmax(330px,.68fr);gap:clamp(48px,12vw,210px);align-items:end}.session-bridge__grid .section-title{margin-top:22px}.session-bridge__copy{max-width:54ch;border-top:1px solid rgba(12,35,36,.2);padding-top:23px}.session-bridge__copy p{margin:0 0 25px;color:#46565a;font-size:15px;line-height:1.74}.session-link--ink{color:#126f73}.session-boundary{background:var(--ink-raised)}.session-boundary__grid{display:grid;grid-template-columns:minmax(0,.9fr) minmax(330px,.68fr);gap:clamp(48px,12vw,210px);align-items:end}.session-boundary__grid .section-title{margin-top:22px}.boundary-panel{border:1px solid var(--line-strong);background:rgba(7,9,11,.64);padding:25px}.boundary-panel__state{display:flex;align-items:center;gap:9px;margin:0;color:var(--blue-bright);font:500 9px var(--font-mono);letter-spacing:.1em;text-transform:uppercase}.boundary-panel__state span{width:8px;height:8px;background:var(--orange);border-radius:50%;box-shadow:0 0 0 4px rgba(201,140,58,.12)}.boundary-panel ul{margin:27px 0;padding:0;list-style:none}.boundary-panel li{position:relative;padding:13px 0 13px 18px;border-top:1px solid var(--line);color:var(--text-muted);font-size:13px;line-height:1.65}.boundary-panel li::before{position:absolute;top:19px;left:0;width:5px;height:5px;background:var(--orange);content:''}.boundary-panel li:last-child{border-bottom:1px solid var(--line)}.session-cta{overflow:hidden;background:linear-gradient(120deg,#b9772d,var(--lime));color:var(--ink)}.session-cta::before{position:absolute;top:-90%;right:-8%;width:74%;aspect-ratio:1;border:1px solid rgba(7,9,11,.34);border-radius:50%;box-shadow:0 0 0 58px rgba(7,9,11,.07),0 0 0 118px rgba(7,9,11,.05);content:''}.session-cta .eyebrow{color:var(--ink)}.session-cta .eyebrow::before{box-shadow:0 0 0 3px rgba(7,9,11,.11)}.session-cta .section-title{position:relative}.session-cta .section-title em{color:var(--paper)}.session-cta .body-large{position:relative;max-width:62ch;color:#1b2526}.session-cta__content{position:relative;max-width:900px}.session-cta__content .button{position:relative;margin-top:36px}@media(max-width:980px){.session-hero__inner,.session-intro__grid,.session-route__head,.session-bridge__grid,.session-boundary__grid{grid-template-columns:1fr;gap:31px}.session-console{max-width:650px}.session-intro__copy{padding-top:0}.question-grid{grid-template-columns:repeat(2,1fr)}.session-route__head .body-large{margin:0}.session-bridge__copy{max-width:100%}}@media(max-width:620px){.session-hero{min-height:auto}.session-hero__inner{min-height:0;padding:84px 0 88px}.session-hero__title{font-size:clamp(50px,15vw,80px)}.session-hero__actions{align-items:flex-start;flex-direction:column;gap:20px}.session-console{padding:19px}.session-console__title{margin:38px 0 30px}.session-hero__foot{bottom:18px}.session-hero__foot span:nth-child(2){display:none}.session-hero__foot{grid-template-columns:1fr 1fr}.question-grid{grid-template-columns:1fr}.question-card{min-height:0;padding-bottom:30px}.question-card h3{margin-top:42px}.session-steps article{grid-template-columns:45px 1fr;gap:16px}.session-steps em{grid-column:2}.session-cta::before{top:-9%;right:-42%;width:125%}}
+</style>

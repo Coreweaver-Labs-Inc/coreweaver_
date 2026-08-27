@@ -11,6 +11,7 @@ test('scheduled content-learning workflow is read-only and artifact-only', async
   assert.match(workflow, /workflow_dispatch:/);
   assert.match(workflow, /schedule:/);
   assert.match(workflow, /npm run learning:run/);
+  assert.match(workflow, /npm run content:validate-release-candidates/);
   assert.match(workflow, /npm run test:learning/);
   assert.match(workflow, /actions\/upload-artifact@v4/);
   for (const forbiddenPattern of [/pull-requests:/, /issues:/, /\bgh\b/, /\bvercel\b/i, /\bnotion\b/i, /openrouter/i, /curl\s+.*POST/i, /git\s+push/i]) {

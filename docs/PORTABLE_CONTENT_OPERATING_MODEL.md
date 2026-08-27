@@ -25,9 +25,19 @@ The validator categorizes an item as `hold` when a required quality condition fa
 
 ## Portable Hosting Boundary
 
-The static artifact can be served by any ordinary HTTPS host that accepts a built site and supports immutable releases and rollback. Vercel is not encoded in this content operation. Migration away from Vercel therefore consists of selecting an owned target, establishing an immutable deploy path, recording the host-specific rollback method, and moving one noncanonical pilot route before changing any root-domain or nameserver configuration.
+The static artifact can be served by any ordinary HTTPS host that accepts a built site and supports immutable releases and rollback. Vercel is not encoded in this content operation. The currently identified **prospective owned pilot** is existing Hostinger static hosting for `coreweaver.io`, with `pilot.coreweaver.io` as the proposed first hostname. A read-only Hostinger API inventory on 2026-08-27 found an enabled `coreweaver.io` static-hosting resource under account `u622004167`; its read-only subdomain inventory was empty. The read-only DNS inventory showed active apex/`www`, mail, DKIM, SPF, and MX records that a pilot must preserve.
 
-The candidate inventory keeps `deploymentTarget` as `unassigned`. That is intentional: a page remains portable until a named owner explicitly selects a target, exact hostname, certificate method, deployment credentials, and rollback origin. This protects portability without silently converting a local candidate into a public launch.
+| Step | Proposed action | Current state | Boundary and rollback |
+| --- | --- | --- | --- |
+| 1. Build artifact | Check out a reviewed commit, install locked dependencies, run the static build, run content/ledger checks, and archive the generated `dist/` artifact with the commit ID. | Locally reproducible. | No provider call; retain the prior artifact. |
+| 2. Stage pilot host | Create `pilot.coreweaver.io` as a Hostinger website subdomain attached to the existing `coreweaver.io` hosting resource. | Proposed only; no subdomain currently appears in the read-only inventory. | Requires an exact human approval; do not alter apex, `www`, mail, DKIM, SPF, MX, or nameserver records. |
+| 3. Deploy static archive | Use the provider’s static-archive deployment capability against the pilot subdomain only. | Proposed only. | Requires an exact human approval; retain a versioned previous archive for rollback. |
+| 4. Validate public pilot | Observe anonymous HTTP(S) status, canonical behavior, security headers, desktop/mobile rendering, and route integrity at the pilot hostname. | Not started. | Do not describe TLS or a deployment as complete until observed. |
+| 5. Decide migration | Compare pilot behavior with the existing public origin and document a root-domain decision. | Not started. | No root-domain, Vercel, nameserver, or mail change is implied by the pilot. |
+
+This is an exact **migration path**, not an authorization. Creating the host, uploading an artifact, or changing a DNS/TLS setting remains a separate action because it has a public effect. The content portfolio records the same proposal and retains `publicActionPermitted: false`.
+
+The candidate inventory records the Hostinger pilot as a `proposed` deployment decision, not as an active target. A page remains portable until a named owner explicitly authorizes the host, exact hostname, certificate behavior, deployment request, and rollback origin. This protects portability without silently converting a local candidate into a public launch.
 
 ## Current Candidate Set
 

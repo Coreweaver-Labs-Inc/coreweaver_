@@ -1,0 +1,78 @@
+[
+  {
+    "id": "intent:minimal-working-session-launch",
+    "kind": "intent",
+    "version": "1.0.0",
+    "status": "active",
+    "title": "Prepare a minimal Coreweaver working-session launch route",
+    "owner": "Coreweaver Labs",
+    "created_at": "2026-08-27",
+    "updated_at": "2026-08-27",
+    "relationships": [
+      {
+        "verb": "belongs_to",
+        "target_id": "entity:coreweaver-labs",
+        "scope": "A review-branch public-route draft for the commercial method layer."
+      }
+    ],
+    "scope": "Create a reviewable Coreweaver route that explains the human-led working-session method, its output boundary, and a mailto request path; update the home and public route indexes to point to it.",
+    "non_goals": [
+      "Publish or deploy the route without a separate public-impact decision.",
+      "Promise market visibility, revenue, model behavior, technical performance, legal effect, or a customer outcome.",
+      "Create a public price, automatic booking flow, customer-data store, outreach program, or paid campaign."
+    ],
+    "lifecycle_stage": "build"
+  },
+  {
+    "id": "claim:working-session-launch-boundary",
+    "kind": "claim",
+    "version": "1.0.0",
+    "status": "held",
+    "title": "Working-session launch boundary",
+    "owner": "Coreweaver Labs",
+    "created_at": "2026-08-27",
+    "updated_at": "2026-08-27",
+    "relationships": [
+      {
+        "verb": "belongs_to",
+        "target_id": "intent:minimal-working-session-launch",
+        "scope": "Bounds the review-branch route and any future public release."
+      },
+      {
+        "verb": "requires_approval_from",
+        "target_id": "entity:coreweaver-labs",
+        "scope": "A named human must approve exact public route release and deployment target."
+      }
+    ],
+    "claim_class": "proposal",
+    "claim_text": "Coreweaver may present a human-led working session as a bounded method for mapping one entity, evidence, distribution, or measurement constraint. The page must not state or imply a product deployment, customer result, model-control capability, technical assurance, legal effect, or guaranteed commercial outcome.",
+    "evidence_ids": [],
+    "reviewer": "Coreweaver Labs — reviewer to be named before public release",
+    "release_status": "held"
+  },
+  {
+    "id": "artifact:working-session-launch-page",
+    "kind": "artifact",
+    "version": "1.0.0",
+    "status": "framed",
+    "title": "Coreweaver working-session launch page",
+    "owner": "Coreweaver Labs",
+    "created_at": "2026-08-27",
+    "updated_at": "2026-08-27",
+    "relationships": [
+      {
+        "verb": "implements",
+        "target_id": "intent:minimal-working-session-launch",
+        "scope": "Static review-branch route, site entry points, sitemap, and machine-readable route inventory."
+      },
+      {
+        "verb": "governs",
+        "target_id": "claim:working-session-launch-boundary",
+        "scope": "Page copy must remain within the held release boundary."
+      }
+    ],
+    "artifact_type": "web_page",
+    "source_location": "src/pages/working-session.astro; src/pages/index.astro; src/layouts/Layout.astro; src/pages/source-map.astro; public/sitemap.xml; public/llms.txt",
+    "integrity_boundary": "This record identifies a review-branch artifact only. It does not establish production deployment, public availability, visitor use, offer acceptance, or effectiveness."
+  }
+]

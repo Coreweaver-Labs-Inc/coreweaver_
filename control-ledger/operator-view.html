@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="color-scheme" content="light" />
+    <meta name="description" content="A local, derived view of the Coreweaver Control Ledger." />
+    <title>Coreweaver Control Ledger — local view</title>
+    <style>
+      :root { --paper:#f4f0e7; --ink:#17211e; --green:#1f4a45; --vermilion:#b33f2c; --line:#cfc9bd; font-family:ui-sans-serif,system-ui,sans-serif; color:var(--ink); background:var(--paper); }
+      body { max-width:1120px; margin:0 auto; padding:48px 24px; } h1 { max-width:12ch; font:600 clamp(3rem,8vw,7rem)/.86 Georgia,serif; letter-spacing:-.065em; } h1 em { color:var(--green); } .rule { border-left:3px solid var(--vermilion); padding:16px 20px; background:#fbf9f3; max-width:70ch; line-height:1.55; } table { width:100%; border-collapse:collapse; margin-top:36px; background:#fbf9f3; } th,td { padding:14px; border-bottom:1px solid var(--line); text-align:left; vertical-align:top; } th { color:var(--green); font-size:.75rem; letter-spacing:.08em; text-transform:uppercase; } code { color:var(--green); } .status { color:var(--vermilion); font-weight:700; } a { color:var(--green); } @media(max-width:650px){ body{padding:28px 16px;} table{font-size:.85rem;} th,td{padding:9px;} }
+    </style>
+  </head>
+  <body>
+    <p><a href="../COREWEAVER.md">Read the operating kernel</a> · <a href="README.md">Read the ledger guide</a></p>
+    <h1>Coreweaver <em>control ledger.</em></h1>
+    <p class="rule">This is a local, derived view. Its versioned JSON records are canonical. It has no write controls, no provider connection, no CMS access, and no ability to publish, merge, deploy, or change DNS.</p>
+    <div id="summary" aria-live="polite">Loading local records…</div>
+    <table><thead><tr><th>ID</th><th>Kind</th><th>Status</th><th>Title</th><th>Owner</th></tr></thead><tbody id="records"></tbody></table>
+    <script type="module">
+      const summary = document.querySelector('#summary'); const body = document.querySelector('#records');
+      try { const records = await fetch('./records/starter-records.json').then((response) => response.json()); summary.textContent = `${records.length} versioned starter records. All public-impact actions remain blocked.`; body.innerHTML = records.map((record) => `<tr><td><code>${record.id}</code></td><td>${record.kind}</td><td class="status">${record.status}</td><td>${record.title}</td><td>${record.owner}</td></tr>`).join(''); } catch { summary.textContent = 'Start a local static server from the repository root to load the record collection.'; }
+    </script>
+  </body>
+</html>

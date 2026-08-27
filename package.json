@@ -17,7 +17,19 @@
     "smoke:test-content-release": "node scripts/smoke-test-content-release.mjs",
     "validate:notion-release-record": "node scripts/validate-notion-release-record.mjs fixture-notion-release",
     "validate:content-ops": "node scripts/validate-content-ops.mjs fixture-geo-made-simple",
-    "validate:field-index-guides": "node scripts/validate-field-index-guides.mjs"
+    "validate:field-index-guides": "node scripts/validate-field-index-guides.mjs",
+    "learning:audit": "node content-learning/scripts/audit-evidence.mjs",
+    "learning:queue": "node content-learning/scripts/build-release-queue.mjs",
+    "learning:retrospective": "node content-learning/scripts/build-retrospective.mjs",
+    "learning:run": "node content-learning/scripts/run-learning-loop.mjs",
+    "test:learning": "node --test content-learning/test/*.test.mjs",
+    "ledger:validate": "node control-ledger/scripts/validate.mjs",
+    "ledger:queue": "node control-ledger/scripts/build-exception-queue.mjs",
+    "ledger:map": "node control-ledger/scripts/build-operator-view.mjs",
+    "ledger:run": "node control-ledger/scripts/run-ledger.mjs",
+    "ledger:view": "node control-ledger/scripts/serve-view.mjs",
+    "test:ledger": "node --test control-ledger/test/*.test.mjs",
+    "test:ledger-workflow": "node --test control-ledger/test/workflow-policy.test.mjs"
   },
   "dependencies": {
     "@notionhq/client": "^2.2.15",

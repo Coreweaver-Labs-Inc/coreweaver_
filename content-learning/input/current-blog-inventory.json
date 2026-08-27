@@ -1,0 +1,81 @@
+{
+  "snapshotVersion": 1,
+  "auditedAt": "2026-08-27",
+  "source": {
+    "type": "read-only-public-blog-and-cms-metadata-audit",
+    "urls": [
+      "https://coreweaverlabs.com/blog",
+      "https://coreweaverlabs.com/blog/ai-agent-mandate-before-shipping",
+      "https://coreweaverlabs.com/blog/aure-swarm-16-agents-orchestration",
+      "https://coreweaverlabs.com/blog/five-arm-primitives-accountable-ai-agents",
+      "https://coreweaverlabs.com/blog/gbrain-open-source-agentic-brain-layer"
+    ],
+    "limitation": "This snapshot identifies observed public claims and empty CMS control fields. It does not determine whether private evidence exists."
+  },
+  "records": [
+    {
+      "slug": "ai-agent-mandate-before-shipping",
+      "title": "Mandate Before Shipping: Why Every AI Agent Needs a Mission Brief",
+      "statusObserved": "published",
+      "sourceUrlsObserved": 0,
+      "humanReviewerObserved": false,
+      "evidenceCheckedOnObserved": null,
+      "recheckByObserved": null,
+      "claimClassObserved": null,
+      "suggestedQueueState": "hold",
+      "suggestedAction": "rewrite-as-proposal-or-template",
+      "reasons": [
+        "The public page makes universal and time/cost claims without sources, a method, or a review record.",
+        "The underlying CMS record had no source URLs, evidence date, reviewer, or review outcome."
+      ]
+    },
+    {
+      "slug": "aure-swarm-16-agents-orchestration",
+      "title": "Aure Swarm: How 16 Agents Orchestrate a Content Operation",
+      "statusObserved": "published",
+      "sourceUrlsObserved": 0,
+      "humanReviewerObserved": false,
+      "evidenceCheckedOnObserved": null,
+      "recheckByObserved": null,
+      "claimClassObserved": null,
+      "suggestedQueueState": "hold",
+      "suggestedAction": "unpublish-to-review",
+      "reasons": [
+        "The public page makes specific operational architecture and output claims without a public evidence packet.",
+        "The underlying CMS record had no source URLs, evidence date, reviewer, or review outcome."
+      ]
+    },
+    {
+      "slug": "five-arm-primitives-accountable-ai-agents",
+      "title": "The Five ARM Primitives: A Framework for Accountable AI Agents",
+      "statusObserved": "published",
+      "sourceUrlsObserved": 0,
+      "humanReviewerObserved": false,
+      "evidenceCheckedOnObserved": null,
+      "recheckByObserved": null,
+      "claimClassObserved": null,
+      "suggestedQueueState": "hold",
+      "suggestedAction": "rewrite-as-proposed-method",
+      "reasons": [
+        "The public page treats a Coreweaver framework as universal and implemented across every Coreweaver agent without public evidence.",
+        "The underlying CMS record had no source URLs, evidence date, reviewer, or review outcome."
+      ]
+    },
+    {
+      "slug": "gbrain-open-source-agentic-brain-layer",
+      "title": "GBrain: The Open-Source Agentic Brain Layer for Enterprise AI",
+      "statusObserved": "published",
+      "sourceUrlsObserved": 0,
+      "humanReviewerObserved": false,
+      "evidenceCheckedOnObserved": null,
+      "recheckByObserved": null,
+      "claimClassObserved": null,
+      "suggestedQueueState": "hold",
+      "suggestedAction": "unpublish-to-review",
+      "reasons": [
+        "The public page makes open-source, product-readiness, deployment, client, and hallucination-reduction claims without public implementation evidence, a licence link, a method, or a review record.",
+        "The underlying CMS record had no source URLs, evidence date, reviewer, or review outcome."
+      ]
+    }
+  ]
+}

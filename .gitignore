@@ -34,3 +34,6 @@ content-learning/runs/*.json
 # generated Control Ledger reports
 control-ledger/runs/*.json
 !control-ledger/runs/.gitkeep
+
+# generated canonical static release archives
+release-artifacts/

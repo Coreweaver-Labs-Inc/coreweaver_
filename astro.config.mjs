@@ -1,8 +1,10 @@
 import { defineConfig } from 'astro/config';
 import tailwindcss from '@tailwindcss/vite';
 
+const site = process.env.COREWEAVER_PUBLIC_ORIGIN ?? 'https://coreweaverlabs.com';
+
 export default defineConfig({
-  site: 'https://coreweaverlabs.com',
+  site,
   trailingSlash: 'never',
   vite: {
     plugins: [tailwindcss()],

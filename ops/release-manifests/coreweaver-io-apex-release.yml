@@ -1,0 +1,45 @@
+release_id: coreweaver-io-apex-static-v1
+status: prepared-not-approved
+canonical_origin: https://coreweaver.io
+artifact:
+  source_commit: 8fec4b94e4df
+  archive: coreweaver-io-8fec4b94e4df.tar.gz
+  sha256: dbcdc3fc4168005eb3012ca6ac23f8d236d5546457cea87dbdb98581c0f5cb9b
+  route_count: 15
+target:
+  provider: Hostinger static hosting
+  account_username: u622004167
+  hostname: coreweaver.io
+  document_root: /home/u622004167/domains/coreweaver.io/public_html
+  www_behavior:
+    intended: 301 redirect to https://coreweaver.io$request_uri
+    current_observed_behavior: not yet verified
+    prerequisite: Verify the existing Hostinger www site binding and its separate document-root or redirect control before any www configuration change.
+  public_dns_snapshot:
+    apex: ALIAS coreweaver.io.cdn.hstgr.net.
+    www: CNAME www.coreweaver.io.cdn.hstgr.net.
+required_preconditions:
+  - Create and retain a downloadable Hostinger root-content backup with a checksum and timestamp.
+  - Re-read the coreweaver.io DNS zone and stop on any difference from the approved snapshot unless separately approved.
+  - Verify the target remains the Hostinger static-hosting resource owned by u622004167.
+  - Re-run artifact, content, learning, and ledger validation at the source commit.
+  - Require a fresh, literal confirmation of the archive, SHA-256, root deployment, and rollback plan.
+execution_boundary:
+  - Deploy only the named archive to coreweaver.io.
+  - Do not configure www in the apex archive action; www behavior requires its own exact Hostinger control-plane verification and approval.
+  - Do not change MX, SPF, DKIM, DMARC, Google verification, pilot.coreweaver.io, autonomousresourcemanagement.xyz, or any Vercel setting in the same action.
+  - Do not publish a new editorial note, price, campaign, customer claim, or third-party content as part of the cutover.
+post_deploy_validation:
+  - Verify anonymous HTTPS 200 responses for /, /working-session/, /field-index/correction-records/, and /sitemap.xml.
+  - After separately approved www configuration, verify HTTP and HTTPS 301 redirects from www.coreweaver.io to the equivalent https://coreweaver.io path and validate the www certificate before treating the canonical switch as complete.
+  - Verify canonical, Open Graph, JSON-LD, sitemap, robots, and llms references use https://coreweaver.io.
+  - Verify desktop and mobile rendering, content markers, cache headers, and no mixed legacy canonical URLs.
+  - Record the release timestamp, artifact checksum, Hostinger result, DNS snapshot, certificate state, and checks.
+rollback:
+  - Restore the checksum-verified Hostinger root-content backup.
+  - If a separately configured www redirect fails, restore its prior named Hostinger configuration or document root independently; do not substitute an apex rollback for a www rollback.
+  - Keep pilot.coreweaver.io and the current Vercel coreweaverlabs.com production origin unchanged during the root rollback window.
+vercel_exit_sequence:
+  - Treat the coreweaver.io canonical switch as separate from coreweaverlabs.com Vercel removal.
+  - Build and verify an owned-host 301 redirect for coreweaverlabs.com and www.coreweaverlabs.com only after coreweaver.io has passed the validation window.
+  - Retire Vercel custom-domain routing only after redirects, analytics, search discovery, and rollback documentation are independently verified.

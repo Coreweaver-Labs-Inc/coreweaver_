@@ -2,7 +2,7 @@
 
 **Prepared:** 2026-08-27  
 **Current public pilot:** `https://pilot.coreweaver.io`  
-**Scope:** Daily validation and constrained publication for the pilot; planning only for any apex or Vercel cutover.
+**Scope:** Daily validation and constrained publication for the pilot; prepared canonical artifact and approval package for the `.io` apex; planning only for the later Vercel exit.
 
 ## Current Domain Reality
 
@@ -16,26 +16,36 @@ The two requested moves are related but not the same migration.
 
 The static `pilot.coreweaver.io` artifact currently preserves `coreweaverlabs.com` canonical URLs. That is intentional for a pilot. A primary-domain switch to `coreweaver.io` requires a rebuilt artifact with updated canonical, Open Graph, structured-data, sitemap, `llms.txt`, internal absolute links, and redirect policy. It must not be performed merely by pointing a hostname at the existing pilot files.
 
-## Daily Pipeline Options
+## Selected Daily Pipeline and Current Evidence
 
-| Approach | How it runs | Tradeoffs | Cost | Setup complexity |
-| --- | --- | --- | --- |
-| **Repository-native daily release** | A scheduled repository workflow builds, runs the release-candidate checks, creates an immutable archive, deploys only candidates marked `approved-pilot`, records the checksum, and health-checks `pilot.coreweaver.io`. | Low operational friction and durable records. Scheduled workflows run from the repository default branch, so the quality/release pipeline needs an intentionally merged source path. It also requires a Hostinger API credential stored as a repository secret. | No additional hosting service; uses the existing GitHub and Hostinger services. | Moderate, one-time repository-secret and default-branch setup. |
-| **Daily managed-run release** | A daily managed task checks out the named pilot branch, runs the same deterministic build/tests, and deploys only if the release manifest is approved. | Can operate against a non-default release branch but has higher orchestration cost and depends on a durable credential handoff. It should not generate or publish unreviewed editorial copy. | Recurring managed-task usage. | Lower repository configuration, higher ongoing operational cost. |
+Coreweaver selected the **repository-native daily release**. The merged workflow `.github/workflows/daily-pilot-release.yml` is scheduled for 06:15 UTC daily. It checks out the default branch, validates the five release candidates, runs learning and ledger checks, builds the static site with Notion editorial credentials explicitly absent, verifies the named pilot approval record against the complete 15-route build, packages a deterministic archive/checksum, and retains the package artifact for 30 days. Its deploy job is fixed to `pilot.coreweaver.io` and is guarded to `schedule` events when `PILOT_PUBLISH_ENABLED` is exactly `true`.
 
-Both paths should enforce the same rule: **tests run daily; publication occurs only when a deterministic release manifest names `pilot.coreweaver.io`, the content set, the immutable artifact, and the rollback artifact.** The system may package and queue new material daily, but it should not create new claims or publish Notion-backed editorial notes without the specified editorial source and release state.
+| Configuration or evidence | Recorded state | Meaning |
+| --- | --- | --- |
+| Deployment credential | Hostinger API credential exists as a repository secret. | The workflow can request short-lived Hostinger upload credentials without exposing the key in source. |
+| Non-secret variables | `PILOT_HOSTINGER_USERNAME=u622004167` and `PILOT_PUBLISH_ENABLED=true` are configured. | The only automated deployment target is the named pilot account and hostname. |
+| Approved artifact boundary | `pilot-release-approval.json` names five released-pilot candidates and every permitted route in the 15-route static build. | A new, missing, or proposed candidate—or an extra or missing built route—fails the workflow before archive creation and cannot reach the deploy job. |
+| Manual workflow | Run `33117542459`, event `workflow_dispatch`, completed successfully on 2026-08-27. | Validates packaging and quality steps only; it deliberately did **not** enter the schedule-only deploy job. |
+| Schedule-triggered deploy | No run observed yet. | The Hostinger redeploy and its route checks remain **unverified** until the first successful cron event is inspected. |
+
+The boundary remains unchanged: **tests and packaging may run daily, while the fixed pilot deployment can only act on the explicit pilot hostname and named approved static artifact surface.** The pipeline does not generate new claims, include Notion-backed editorial notes, contact audiences, modify DNS, or target the `.io` apex.
+
+### Manual Run Evidence
+
+Run [`33117542459`](https://github.com/Coreweaver-Labs-Inc/coreweaver_/actions/runs/33117542459) ran at commit `8fec4b94e4dff68389be528f03c0e542520c6518` from 21:18:39Z to 21:19:02Z on 2026-08-27. Its **Validate and package static pilot artifact** job completed successfully after dependency install, release-candidate validation, learning tests, ledger validation, static build, immutable archive creation, and artifact upload. Its **Deploy approved daily pilot artifact** job was explicitly skipped because this was `workflow_dispatch`, not the schedule event required by the deployment guard.
 
 ## Full Vercel Exit Critical Path
 
-1. **Choose the primary public identity.** Confirm whether `coreweaver.io` becomes the primary public domain, while `coreweaverlabs.com` redirects, or whether `.com` remains primary on a non-Vercel host. This changes every canonical and redirect decision.
-2. **Choose the production source.** Resolve the current Coreweaver review units into one release branch/artifact. The pilot combines the working-session page, correction-record guide, and quality pipeline locally, but that combined source is not the current default production branch.
-3. **Prepare the apex-safe artifact.** Build the selected source with the chosen primary canonical base and route-preservation map. Keep an immutable archive plus SHA-256 before any apex deployment.
-4. **Read and preserve the apex website state.** Record `coreweaver.io` root content and DNS records, plus `www`, MX, SPF, DKIM, CAA, and nameservers. A Hostinger static deployment must be scoped to the intended root only after this backup/review step.
-5. **Deploy to a noncanonical host and validate.** `pilot.coreweaver.io` is already this proof point. Re-run route, HTTPS, header, mobile, metadata, source-map, and inbound-request checks with the final canonical build.
-6. **Activate the selected apex and `www`.** Apply only the approved website deployment and route/canonical configuration. If `.io` is selected, its existing Hostinger DNS does not require a Vercel migration; if `.com` is selected, new DNS/TLS verification at its registrar/control plane is required.
-7. **Set redirects and monitor.** Preserve meaningful paths, test canonical headers and sitemaps, watch anonymous status/error responses and inquiries, and retain Vercel unchanged through the defined rollback window.
-8. **Retire Vercel last.** Remove the domain association and pause/delete the Vercel project only after the primary public domain is stable, the rollback archive exists, redirect behavior is verified, and a separately approved retirement action names the exact project and domains.
+1. **Use `.io` as the prepared primary candidate.** The review branch `release/coreweaver-io-canonical` contains the prepared source and package. Pull request [#24](https://github.com/Coreweaver-Labs-Inc/coreweaver_/pull/24) is review-only; it does not activate production.
+2. **Preserve the apex root before replacement.** The prepared `.io` archive is `coreweaver-io-8fec4b94e4df.tar.gz` with SHA-256 `dbcdc3fc4168005eb3012ca6ac23f8d236d5546457cea87dbdb98581c0f5cb9b`. Hostinger must provide a file inventory and checksum-recorded root backup before any overwrite; the public `403` result is not an empty-root signal.
+3. **Gain a fresh, named release approval.** The approval must name the archive, checksum, Hostinger account, `coreweaver.io` target, and the restorable backup. It must expressly preserve `.io` DNS, mail, pilot, and the Vercel `.com` service during the action.
+4. **Deploy and validate only the apex static archive.** Confirm HTTPS, route status, canonical/structured metadata, sitemap/robots/llms output, cache behavior, and mobile/desktop rendering. Record the Hostinger result and certificate state with the artifact identity.
+5. **Hold rollback capacity for the agreed validation window.** Preserve the root backup, pilot, and existing Vercel production origin. Restore the backup if the required checks fail.
+6. **Build a separate owned `.com` redirect service.** Establish and verify a rollbackable 301 path for `coreweaverlabs.com` and `www.coreweaverlabs.com` to the chosen `.io` equivalents. This is an independent DNS/TLS/hosting change requiring its own approval.
+7. **Retire Vercel last.** Remove Vercel domain routing, pause, or delete project `prj_nw2PN41WI2gG9Jr4xHw4KnuPC8rg` only after the `.com` redirect is live elsewhere, primary routes and analytics are stable, and a separate retirement action names the exact domains and rollback behavior.
 
-## Required Decisions Before Execution
+## Remaining Requirements Before Execution
 
-The next execution path must identify: (1) the daily runner choice above; (2) the target source branch/default-branch policy; (3) the safe method for a Hostinger API credential in that runner; and (4) whether `coreweaver.io` is the intended new primary domain. No daily schedule, repository secret, apex static deploy, DNS edit, canonical rewrite, Vercel domain removal, Vercel pause, or project deletion is included in this planning document.
+The remaining execution blockers are: (1) a provider-side root inventory and downloadable, checksum-recorded backup for the existing `coreweaver.io` document root; (2) a fresh exact approval for that irreversible root overwrite; and (3) evidence from the first scheduled daily pilot deployment. The complete `.com` redirect and Vercel retirement remain later actions, each requiring an independent design, backup/rollback record, and approval. No apex static deployment, DNS edit, canonical public-host switch, Vercel domain removal, Vercel pause, or project deletion is included in this planning document.
+
+The exact `.io` controls, preconditions, verification steps, and rollback boundary are maintained in [`COREWEAVER_IO_APEX_CUTOVER_PACKAGE.md`](./COREWEAVER_IO_APEX_CUTOVER_PACKAGE.md) and [`coreweaver-io-apex-release.yml`](../ops/release-manifests/coreweaver-io-apex-release.yml).

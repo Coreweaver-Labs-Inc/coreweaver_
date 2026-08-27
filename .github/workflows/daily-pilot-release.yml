@@ -17,6 +17,9 @@ jobs:
     name: Validate and package static pilot artifact
     runs-on: ubuntu-latest
     timeout-minutes: 15
+    env:
+      NOTION_TOKEN: ''
+      NOTION_BLOG_POSTS_DB_ID: ''
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
@@ -28,6 +31,7 @@ jobs:
       - run: npm run test:learning
       - run: npm run ledger:validate
       - run: npm run build
+      - run: npm run content:validate-pilot-release-approval
       - name: Create immutable release archive
         run: |
           mkdir -p release

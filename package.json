@@ -16,7 +16,8 @@
     "score:content-topics": "node scripts/score-content-topics.mjs",
     "smoke:test-content-release": "node scripts/smoke-test-content-release.mjs",
     "validate:notion-release-record": "node scripts/validate-notion-release-record.mjs fixture-notion-release",
-    "validate:content-ops": "node scripts/validate-content-ops.mjs fixture-geo-made-simple"
+    "validate:content-ops": "node scripts/validate-content-ops.mjs fixture-geo-made-simple",
+    "validate:field-index-guides": "node scripts/validate-field-index-guides.mjs"
   },
   "dependencies": {
     "@notionhq/client": "^2.2.15",

@@ -30,6 +30,12 @@
     { "source": "/blog/verification-as-a-service-ai-agents", "destination": "/vaas/", "permanent": true },
     { "source": "/blog/agentic-ai-governance-framework", "destination": "/blog", "permanent": true },
     { "source": "/blog/bft-ai-verification-enterprise", "destination": "/blog", "permanent": true },
-    { "source": "/blog/csrd-carbon-credit-verification", "destination": "/blog", "permanent": true }
+    { "source": "/blog/csrd-carbon-credit-verification", "destination": "/blog", "permanent": true },
+    { "source": "/field-index/", "destination": "/field-index", "permanent": true },
+    { "source": "/field-index/methodology/", "destination": "/field-index/methodology", "permanent": true },
+    { "source": "/field-index/editorial-policy/", "destination": "/field-index/editorial-policy", "permanent": true },
+    { "source": "/field-index/guides/", "destination": "/field-index/guides", "permanent": true },
+    { "source": "/field-index/evaluate-agent-systems/", "destination": "/field-index/evaluate-agent-systems", "permanent": true },
+    { "source": "/field-index/evidence-review-worksheet/", "destination": "/field-index/evidence-review-worksheet", "permanent": true }
   ]
 }

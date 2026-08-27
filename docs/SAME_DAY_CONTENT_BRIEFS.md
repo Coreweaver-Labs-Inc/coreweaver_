@@ -31,6 +31,10 @@ No new visual asset is required. The guide uses an accessible HTML evidence tabl
 
 Coreweaver Labs must assign an accountable content owner and human reviewer before publication. Recheck external sources within six months or earlier if the linked material changes. The pages must not be published by an automated workflow.
 
+## Validation record
+
+The content contract validator passed on 2026-08-27. An isolated Astro build generated the guides hub, evaluation guide, and printable worksheet successfully; canonical routes, `records.json`, and `sitemap.xml` returned `200` in the local exact-build smoke test. axe-core found no violation groups on the three new routes. A three-route Lighthouse lab audit averaged 93 performance, 100 accessibility, 100 best practices, and 92 SEO before the malformed nonstandard `llms-txt` robots directive was removed. The follow-up Lighthouse run found no SEO-category issue after that correction. The branch preview generated from commit `4d38b6d46d5c820603ff183359dde560f2feb069` is ready at `https://coreweaver-labs-3kxrgxn45-coreweaver-labs.vercel.app`; it is non-production and may require authorized Vercel preview access.
+
 ## Sources
 
 [1]: https://www.nist.gov/itl/ai-risk-management-framework "NIST AI Risk Management Framework"

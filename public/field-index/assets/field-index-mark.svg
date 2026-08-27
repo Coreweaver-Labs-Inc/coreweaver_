@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 72 72" role="img" aria-labelledby="title desc">
+  <title id="title">Coreweaver Field Index evidence mark</title>
+  <desc id="desc">An open square evidence frame with a vermilion reference point.</desc>
+  <rect width="72" height="72" rx="4" fill="#f4f0e7"/>
+  <path d="M22 34V22h12M38 22h12v12M50 38v12H38M34 50H22V38" fill="none" stroke="#1f4a45" stroke-width="4" stroke-linecap="square"/>
+  <circle cx="36" cy="36" r="4.5" fill="#c64c36"/>
+</svg>

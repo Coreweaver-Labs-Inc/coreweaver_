@@ -1,0 +1,59 @@
+---
+// Coreweaver Field Index — Evidence Ledger: a standalone light-only Astro route that serves plain semantic HTML and uses no framework client runtime.
+const canonical = 'https://coreweaverlabs.com/field-index';
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'CollectionPage',
+  name: 'Coreweaver Field Index',
+  url: canonical,
+  description: 'A source-led public field index for agentic AI infrastructure, governance, and interoperability.',
+  isPartOf: { '@type': 'WebSite', name: 'Coreweaver Labs', url: 'https://coreweaverlabs.com/' },
+};
+---
+
+<!doctype html>
+<html lang="en" data-field-index-base="/field-index/">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="color-scheme" content="light" />
+    <meta name="theme-color" content="#f4f0e7" />
+    <meta name="description" content="A source-led public field index for agentic AI infrastructure, governance, and interoperability." />
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" />
+    <link rel="canonical" href={canonical} />
+    <link rel="icon" href="/field-index/assets/field-index-mark.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600;700&family=Newsreader:opsz,wght@6..72,500;6..72,600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="/field-index/assets/field-index.css" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Field Index — Coreweaver Labs" />
+    <meta property="og:description" content="A source-led public field index for agentic AI infrastructure, governance, and interoperability." />
+    <meta property="og:url" content={canonical} />
+    <script type="application/ld+json" set:html={JSON.stringify(schema)} />
+    <title>Field Index — Coreweaver Labs</title>
+  </head>
+  <body>
+    <a class="skip-link" href="#field-index">Skip to records</a>
+    <header class="masthead">
+      <a class="wordmark" href="/" aria-label="Coreweaver Labs home"><img src="/field-index/assets/field-index-mark.svg" alt="" width="42" height="42" /><span><strong>COREWEAVER</strong><small>FIELD INDEX / 001</small></span></a>
+      <nav aria-label="Field Index navigation"><a href="#field-index">Index</a><a href="#method">Method</a><a href="#corrections">Corrections</a><a href="/">Coreweaver Labs ↗</a></nav>
+    </header>
+    <main>
+      <section class="hero" aria-labelledby="page-title">
+        <div class="hero__rail" aria-label="Publication metadata"><span class="rail__number">001</span><span class="rail__line"></span><span>PUBLIC FIELD DESK</span></div>
+        <div class="hero__content"><p class="eyebrow">Agentic AI infrastructure / public record</p><h1 id="page-title">A field record,<br /><em>not a league table.</em></h1><p class="hero__standfirst">Coreweaver Field Index maps documented standards, projects, and stewardship contexts that shape agentic systems. Each entry names its source, verification date, relationship boundary, and editorial caveat.</p><a class="text-link" href="#field-index">Inspect the records <span aria-hidden="true">↓</span></a></div>
+        <aside class="hero__note evidence-frame" aria-label="Editorial boundary"><span class="note__label">Editorial boundary</span><p>Inclusion means a public source was reviewed. It does not mean a record is ranked, certified, endorsed, affiliated, or paid for.</p></aside>
+      </section>
+      <section class="index-layout" id="field-index" aria-labelledby="index-title">
+        <aside class="index-rail"><div class="section-kicker"><span>01</span> The Index</div><h2 id="index-title">Find the <em>documented</em> layer.</h2><p>Search public names and summaries, then narrow by record type or primary layer. The filters do not rank what remains.</p><form class="filters" id="filters" novalidate><label class="search-label" for="record-search">Search records</label><input id="record-search" name="query" type="search" placeholder="Protocol, governance, foundation…" autocomplete="off" /><fieldset><legend>Record type</legend><div class="filter-options" id="type-filters"></div></fieldset><fieldset><legend>Primary layer</legend><div class="filter-options" id="layer-filters"></div></fieldset><button class="reset" id="reset-filters" type="reset">Reset filters</button></form></aside>
+        <div class="records-panel"><div class="records-panel__head"><p id="result-count" aria-live="polite">Loading records…</p><p class="source-rule"><span class="correction-dot"></span> Primary source required</p></div><div class="record-list" id="record-list" aria-live="polite"></div><noscript><p class="notice">JavaScript is required for filtering. The public record data remains available at <a href="/field-index/data/records.json">data/records.json</a>.</p></noscript></div>
+      </section>
+      <section class="method" id="method" aria-labelledby="method-title"><div class="section-kicker"><span>02</span> Method</div><div class="method__grid"><h2 id="method-title">A summary is an <em>editorial claim.</em></h2><div><p>Every record carries a primary public source, a date it was last verified, a clear scope note, a caveat, and a visible change log. Where a fact cannot be supported, the record should be narrowed, marked for review, or removed.</p><a class="text-link" href="/field-index/methodology">Read the methodology <span aria-hidden="true">→</span></a></div></div><ol class="method__steps"><li><span>01</span><strong>Trace</strong><p>Start with a named public source that supports a bounded statement.</p></li><li><span>02</span><strong>Label</strong><p>Separate a project, standard, organization, and editorial relationship.</p></li><li><span>03</span><strong>Recheck</strong><p>Date the verification and surface the remaining uncertainty.</p></li><li><span>04</span><strong>Correct</strong><p>Maintain a public path for material errors and updates.</p></li></ol></section>
+      <section class="corrections" id="corrections" aria-labelledby="corrections-title"><div class="corrections__frame evidence-frame"><div><p class="eyebrow eyebrow--vermillion">Correction pathway</p><h2 id="corrections-title">A record can be <em>challenged.</em></h2></div><div><p>If you find a material error, outdated source, mislabeled relationship, or missing caveat, send the record ID, the suggested correction, and a public supporting source. Corrections are reviewed before a dated change log entry is published.</p><a class="button" href="mailto:hello@coreweaverlabs.com?subject=Field%20Index%20correction">Submit a correction <span aria-hidden="true">↗</span></a><a class="text-link" href="/field-index/editorial-policy">Read editorial policy <span aria-hidden="true">→</span></a></div></div></section>
+    </main>
+    <footer><div class="footer__brand"><img src="/field-index/assets/field-index-mark.svg" alt="" width="36" height="36" /><span>COREWEAVER FIELD INDEX / 001</span></div><p>Source-led infrastructure records for an accountable agentic AI field.</p><a href="/">coreweaverlabs.com ↗</a></footer>
+    <dialog id="record-dialog" aria-labelledby="dialog-title"><button class="dialog-close" id="dialog-close" type="button" aria-label="Close record detail">×</button><div id="dialog-content"></div></dialog>
+    <script src="/field-index/assets/field-index.js" type="module"></script>
+  </body>
+</html>

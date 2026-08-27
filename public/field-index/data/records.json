@@ -1,0 +1,158 @@
+[
+  {
+    "id": "nist-ai-rmf",
+    "name": "NIST AI Risk Management Framework",
+    "record_type": "Standard",
+    "primary_layer": "Governance, security & audit",
+    "scope_note": "A public framework used here as a shared vocabulary for discussing governance, mapping, measurement, and management of AI risk.",
+    "summary": "NIST describes the AI RMF as a voluntary framework intended to help organizations incorporate trustworthiness considerations into the design, development, use, and evaluation of AI systems.",
+    "source": {
+      "name": "NIST AI Risk Management Framework",
+      "url": "https://www.nist.gov/itl/ai-risk-management-framework"
+    },
+    "last_verified": "2026-08-27",
+    "status": "Foundation reference",
+    "relationships": [
+      { "record_id": "owasp-agentic-top-10", "label": "Editorial risk-reference crosswalk" },
+      { "record_id": "agent-governance-toolkit", "label": "Editorial governance-reference crosswalk" }
+    ],
+    "caveat": "Inclusion does not claim NIST alignment, certification, or implementation by any other record in this Index.",
+    "change_log": [
+      { "date": "2026-08-27", "note": "Initial public field record created from the named primary source." }
+    ]
+  },
+  {
+    "id": "owasp-agentic-top-10",
+    "name": "OWASP Top 10 for Agentic Applications",
+    "record_type": "Standard",
+    "primary_layer": "Governance, security & audit",
+    "scope_note": "A public security taxonomy used as an editorial reference for agentic-application risk discussions.",
+    "summary": "The OWASP GenAI Security Project publishes this Top 10 as a public risk reference for agentic applications and their autonomous or semi-autonomous behavior.",
+    "source": {
+      "name": "OWASP GenAI Security Project",
+      "url": "https://genai.owasp.org/resource/owasp-top-10-for-agentic-applications-for-2026/"
+    },
+    "last_verified": "2026-08-27",
+    "status": "Foundation reference",
+    "relationships": [
+      { "record_id": "nist-ai-rmf", "label": "Editorial risk-reference crosswalk" },
+      { "record_id": "agent-governance-toolkit", "label": "Editorial governance-reference crosswalk" }
+    ],
+    "caveat": "This record tracks a public risk taxonomy; it does not evaluate, certify, or score any organization or technical implementation.",
+    "change_log": [
+      { "date": "2026-08-27", "note": "Initial public field record created from the named primary source." }
+    ]
+  },
+  {
+    "id": "agentic-ai-foundation",
+    "name": "Agentic AI Foundation",
+    "record_type": "Organization",
+    "primary_layer": "Research & public-interest infrastructure",
+    "scope_note": "A public stewardship context for open agentic infrastructure, working groups, protocols, and projects.",
+    "summary": "The Agentic AI Foundation presents itself as a Linux Foundation project focused on advancing open, interoperable infrastructure for agentic AI.",
+    "source": {
+      "name": "Agentic AI Foundation",
+      "url": "https://aaif.io/"
+    },
+    "last_verified": "2026-08-27",
+    "status": "Foundation reference",
+    "relationships": [
+      { "record_id": "model-context-protocol", "label": "Public ecosystem relationship" },
+      { "record_id": "agent2agent", "label": "Public ecosystem relationship" },
+      { "record_id": "agents-md", "label": "Public ecosystem relationship" }
+    ],
+    "caveat": "The record describes publicly stated stewardship context only. It does not imply that Coreweaver Labs is affiliated with, governed by, or endorsed by the foundation.",
+    "change_log": [
+      { "date": "2026-08-27", "note": "Initial public field record created from the named primary source." }
+    ]
+  },
+  {
+    "id": "model-context-protocol",
+    "name": "Model Context Protocol",
+    "record_type": "Standard",
+    "primary_layer": "Interoperability & protocols",
+    "scope_note": "A publicly documented interface for connecting AI applications to external tools, data sources, and services.",
+    "summary": "The Model Context Protocol describes an open standard for connecting AI applications to tools, data sources, and services through a shared interface.",
+    "source": {
+      "name": "Model Context Protocol",
+      "url": "https://modelcontextprotocol.io/"
+    },
+    "last_verified": "2026-08-27",
+    "status": "Open standard",
+    "relationships": [
+      { "record_id": "agentic-ai-foundation", "label": "Public ecosystem relationship" },
+      { "record_id": "agent2agent", "label": "Boundary distinction: agent-to-tool versus agent-to-agent" },
+      { "record_id": "agents-md", "label": "Project-instruction adjacency" }
+    ],
+    "caveat": "This record describes the protocol’s public role and does not assess any implementation’s security, reliability, maturity, or compatibility.",
+    "change_log": [
+      { "date": "2026-08-27", "note": "Initial public field record created from the named primary source." }
+    ]
+  },
+  {
+    "id": "agent2agent",
+    "name": "Agent2Agent (A2A)",
+    "record_type": "Standard",
+    "primary_layer": "Interoperability & protocols",
+    "scope_note": "A public protocol reference for interactions among independently operating agents.",
+    "summary": "The A2A protocol describes an open approach for agents to discover capabilities, communicate, delegate tasks, and exchange work across systems.",
+    "source": {
+      "name": "A2A at the Agentic AI Foundation",
+      "url": "https://aaif.io/blog/a2a-joins-aaif"
+    },
+    "last_verified": "2026-08-27",
+    "status": "Open standard",
+    "relationships": [
+      { "record_id": "model-context-protocol", "label": "Boundary distinction: agent-to-agent versus agent-to-tool" },
+      { "record_id": "agentic-ai-foundation", "label": "Public ecosystem relationship" }
+    ],
+    "caveat": "The description distinguishes a published protocol purpose; it does not claim interoperability among any particular products or implementations.",
+    "change_log": [
+      { "date": "2026-08-27", "note": "Initial public field record created from the named primary source." }
+    ]
+  },
+  {
+    "id": "agents-md",
+    "name": "AGENTS.md",
+    "record_type": "Standard",
+    "primary_layer": "Interoperability & protocols",
+    "scope_note": "A lightweight, public convention for describing project-specific operating instructions to coding agents.",
+    "summary": "AGENTS.md presents a Markdown-file convention for giving coding agents project-specific instructions and context.",
+    "source": {
+      "name": "AGENTS.md",
+      "url": "https://agents.md/"
+    },
+    "last_verified": "2026-08-27",
+    "status": "Open standard",
+    "relationships": [
+      { "record_id": "agentic-ai-foundation", "label": "Public ecosystem relationship" },
+      { "record_id": "model-context-protocol", "label": "Project-instruction adjacency" }
+    ],
+    "caveat": "The record identifies a public convention; it does not treat the convention as a universal governance control or an assurance of agent behavior.",
+    "change_log": [
+      { "date": "2026-08-27", "note": "Initial public field record created from the named primary source." }
+    ]
+  },
+  {
+    "id": "agent-governance-toolkit",
+    "name": "Agent Governance Toolkit",
+    "record_type": "Project",
+    "primary_layer": "Governance, security & audit",
+    "scope_note": "A public open-source project record concerning runtime security and policy-enforcement concepts for autonomous AI agents.",
+    "summary": "Microsoft Open Source describes the Agent Governance Toolkit as an open-source project for runtime security and policy-enforcement concepts in autonomous AI agent systems.",
+    "source": {
+      "name": "Microsoft Open Source announcement",
+      "url": "https://opensource.microsoft.com/blog/2026/04/02/introducing-the-agent-governance-toolkit-open-source-runtime-security-for-ai-agents/"
+    },
+    "last_verified": "2026-08-27",
+    "status": "Public project",
+    "relationships": [
+      { "record_id": "owasp-agentic-top-10", "label": "Editorial governance-reference crosswalk" },
+      { "record_id": "nist-ai-rmf", "label": "Editorial governance-reference crosswalk" }
+    ],
+    "caveat": "This record captures a vendor’s published project description. It does not independently validate performance, coverage, security efficacy, or organizational adoption.",
+    "change_log": [
+      { "date": "2026-08-27", "note": "Initial public field record created from the named primary source." }
+    ]
+  }
+]

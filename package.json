@@ -30,7 +30,10 @@
     "ledger:run": "node control-ledger/scripts/run-ledger.mjs",
     "ledger:view": "node control-ledger/scripts/serve-view.mjs",
     "test:ledger": "node --test control-ledger/test/*.test.mjs",
-    "test:ledger-workflow": "node --test control-ledger/test/workflow-policy.test.mjs"
+    "test:ledger-workflow": "node --test control-ledger/test/workflow-policy.test.mjs",
+    "prepare:coreweaver-io": "node scripts/prepare-coreweaver-io-artifact.mjs",
+    "validate:coreweaver-io": "node scripts/validate-coreweaver-io-artifact.mjs",
+    "test:canonical-artifact": "node --test scripts/test/canonical-artifact.test.mjs"
   },
   "dependencies": {
     "@notionhq/client": "^2.2.15",

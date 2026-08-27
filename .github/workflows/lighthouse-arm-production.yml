@@ -1,0 +1,49 @@
+name: Audit ARM production page
+
+on:
+  deployment_status:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: lighthouse-arm-production
+  cancel-in-progress: false
+
+jobs:
+  lighthouse:
+    name: Lighthouse performance and accessibility
+    if: >-
+      github.event_name == 'workflow_dispatch' ||
+      (github.event.deployment_status.state == 'success' &&
+      github.event.deployment.environment == 'Production')
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    env:
+      ARM_URL: https://coreweaverlabs.com/autonomous-resource-management
+      REPORT_DIRECTORY: lighthouse-reports
+    steps:
+      - name: Check out source
+        uses: actions/checkout@v4
+      - name: Use Node.js 22
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22.19.0
+      - name: Run Lighthouse against the production ARM URL
+        run: >-
+          npx --yes lighthouse@13.4.1 "$ARM_URL"
+          --only-categories=performance,accessibility
+          --output=json
+          --output=html
+          --output-path="$REPORT_DIRECTORY/arm-production"
+          --no-enable-error-reporting
+          --chrome-flags="--headless --no-sandbox"
+      - name: Upload Lighthouse reports
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: arm-production-lighthouse-${{ github.run_number }}
+          path: ${{ env.REPORT_DIRECTORY }}
+          if-no-files-found: warn
+          retention-days: 30

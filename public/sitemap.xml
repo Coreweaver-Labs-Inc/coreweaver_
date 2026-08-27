@@ -94,6 +94,12 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://coreweaverlabs.com/field-index/correction-records</loc>
+    <lastmod>2026-08-27</lastmod>
+    <changefreq>quarterly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://coreweaverlabs.com/field-index/evidence-review-worksheet</loc>
     <lastmod>2026-08-27</lastmod>
     <changefreq>quarterly</changefreq>

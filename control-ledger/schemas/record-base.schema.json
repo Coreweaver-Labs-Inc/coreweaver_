@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://coreweaverlabs.com/schemas/control-ledger/record-base-1.0.0.json",
+  "title": "Coreweaver Control Ledger Base Record",
+  "type": "object",
+  "required": ["id", "kind", "version", "status", "title", "owner", "created_at", "updated_at", "relationships"],
+  "properties": {
+    "id": { "type": "string", "pattern": "^[a-z]+:[a-z0-9]+(?:-[a-z0-9]+)*$" },
+    "kind": { "type": "string", "enum": ["entity", "intent", "evidence", "claim", "artifact", "decision", "outcome", "maintenance"] },
+    "version": { "type": "string", "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$" },
+    "status": { "type": "string", "enum": ["framed", "active", "held", "retired", "superseded", "unknown"] },
+    "title": { "type": "string", "minLength": 3 },
+    "owner": { "type": "string", "minLength": 3 },
+    "created_at": { "type": "string", "format": "date" },
+    "updated_at": { "type": "string", "format": "date" },
+    "relationships": { "type": "array", "items": { "$ref": "#/$defs/relationship" } },
+    "notes": { "type": "string" }
+  },
+  "$defs": {
+    "relationship": {
+      "type": "object",
+      "required": ["verb", "target_id"],
+      "properties": {
+        "verb": { "type": "string", "enum": ["supports", "limits", "belongs_to", "implements", "governs", "supersedes", "maintains", "observes", "requires_approval_from"] },
+        "target_id": { "type": "string", "pattern": "^[a-z]+:[a-z0-9]+(?:-[a-z0-9]+)*$" },
+        "scope": { "type": "string", "minLength": 3 }
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": true
+}

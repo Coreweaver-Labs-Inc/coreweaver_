@@ -1,0 +1,48 @@
+{
+  "$schema": "./schemas/manifest.schema.json",
+  "id": "ledger:coreweaver-control-ledger",
+  "name": "Coreweaver Control Ledger",
+  "version": "1.0.0",
+  "encoding": "utf-8",
+  "format": "json-and-markdown",
+  "agent_entrypoint": "../COREWEAVER.md",
+  "human_entrypoint": "README.md",
+  "authority_contract": "AUTHORITY.md",
+  "contract_registry": "CONTRACTS.md",
+  "migration_guide": "MIGRATION.md",
+  "record_directories": {
+    "entities": "records/entities",
+    "intents": "records/intents",
+    "evidence": "records/evidence",
+    "claims": "records/claims",
+    "artifacts": "records/artifacts",
+    "decisions": "records/decisions",
+    "outcomes": "records/outcomes",
+    "maintenance": "records/maintenance"
+  },
+  "schema_registry": {
+    "entity": "schemas/entity.schema.json",
+    "intent": "schemas/intent.schema.json",
+    "evidence": "schemas/evidence.schema.json",
+    "claim": "schemas/claim.schema.json",
+    "artifact": "schemas/artifact.schema.json",
+    "decision": "schemas/decision.schema.json",
+    "outcome": "schemas/outcome.schema.json",
+    "maintenance": "schemas/maintenance.schema.json"
+  },
+  "safe_defaults": {
+    "external_provider_calls": false,
+    "cms_writes": false,
+    "git_writes": false,
+    "pull_request_creation": false,
+    "merge": false,
+    "deployment": false,
+    "publishing": false,
+    "dns_changes": false,
+    "deletion": false
+  },
+  "record_id_pattern": "kind:lowercase-hyphenated-name",
+  "status_values": ["framed", "active", "held", "retired", "superseded", "unknown"],
+  "created_at": "2026-08-27",
+  "updated_at": "2026-08-27"
+}

@@ -1,0 +1,32 @@
+name: Control Ledger Check
+
+on:
+  workflow_dispatch:
+  pull_request:
+    paths:
+      - 'COREWEAVER.md'
+      - 'control-ledger/**'
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    name: Validate records and authority boundary
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - run: npm run ledger:run
+      - run: npm run test:ledger
+      - run: npm run test:ledger-workflow
+      - uses: actions/upload-artifact@v4
+        with:
+          name: control-ledger-local-reports
+          path: control-ledger/runs/*.json
+          if-no-files-found: error
+          retention-days: 14

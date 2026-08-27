@@ -1,0 +1,17 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://coreweaverlabs.com/schemas/control-ledger/manifest-1.0.0.json",
+  "title": "Coreweaver Control Ledger Manifest",
+  "type": "object",
+  "required": ["id", "name", "version", "agent_entrypoint", "record_directories", "schema_registry", "safe_defaults"],
+  "properties": {
+    "id": { "const": "ledger:coreweaver-control-ledger" },
+    "name": { "type": "string", "minLength": 3 },
+    "version": { "type": "string", "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$" },
+    "agent_entrypoint": { "type": "string", "minLength": 3 },
+    "record_directories": { "type": "object", "minProperties": 8, "additionalProperties": { "type": "string" } },
+    "schema_registry": { "type": "object", "minProperties": 8, "additionalProperties": { "type": "string" } },
+    "safe_defaults": { "type": "object", "additionalProperties": { "const": false } }
+  },
+  "additionalProperties": true
+}

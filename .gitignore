@@ -30,3 +30,7 @@ content-ops/runs/*.json
 # generated closed-loop learning reports
 content-learning/runs/*.json
 !content-learning/runs/.gitkeep
+
+# generated Control Ledger reports
+control-ledger/runs/*.json
+!control-ledger/runs/.gitkeep

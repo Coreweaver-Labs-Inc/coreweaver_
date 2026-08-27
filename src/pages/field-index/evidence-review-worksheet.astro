@@ -1,0 +1,46 @@
+---
+// Coreweaver Field Index — Evidence Ledger: a light-only printable worksheet with no submission, tracking, or data persistence behavior.
+const canonical = 'https://coreweaverlabs.com/field-index/evidence-review-worksheet';
+---
+
+<!doctype html>
+<html lang="en" data-field-index-base="/field-index/">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="color-scheme" content="light" />
+    <meta name="theme-color" content="#f4f0e7" />
+    <meta name="description" content="A printable, non-submitted worksheet for documenting evidence, owners, boundaries, limits, and decisions when evaluating an agent system." />
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" />
+    <link rel="canonical" href={canonical} />
+    <link rel="icon" href="/field-index/assets/field-index-mark.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600;700&family=Newsreader:opsz,wght@6..72,500;6..72,600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="/field-index/assets/field-index.css" />
+    <title>Evidence Review Worksheet — Coreweaver Field Index</title>
+  </head>
+  <body>
+    <a class="skip-link" href="#worksheet">Skip to worksheet</a>
+    <header class="masthead">
+      <a class="wordmark" href="/field-index"><img src="/field-index/assets/field-index-mark.svg" alt="" width="42" height="42" /><span><strong>COREWEAVER</strong><small>FIELD INDEX / 001</small></span></a>
+      <nav aria-label="Field Index navigation"><a href="/field-index">Index</a><a href="/field-index/guides">Guides</a><a href="/field-index/methodology">Method</a><a href="/field-index/editorial-policy">Policy</a><a href="/">Coreweaver Labs ↗</a></nav>
+    </header>
+    <main class="content-main" id="worksheet">
+      <div class="section-kicker"><span>03.02</span> Working template</div>
+      <h1>Evidence review <em>worksheet.</em></h1>
+      <p class="content-lede">Use this worksheet to prepare an agent-system review. It is a local, printable working aid: it does not submit, store, transmit, score, or decide anything. Keep sensitive information out of this page and place the completed record in your organization’s approved system of record.</p>
+      <aside class="content-block evidence-frame" aria-label="Worksheet boundary"><p class="eyebrow eyebrow--vermillion">Use boundary</p><p>This template helps capture evidence and unresolved questions. It is not a security audit, legal assessment, certification, or automatic go/no-go tool. A blank field is a signal to request evidence, not permission to infer an answer.</p></aside>
+      <section class="content-block"><h2>Before you begin</h2><p>Define the decision first: a research pilot, a production-tool connection, a data access request, a procurement shortlist, or a pause. Then use the <a href="/field-index/evaluate-agent-systems">evaluation guide</a> to distinguish documentation from evidence. The Field Index can provide public context but does not validate an implementation.</p></section>
+      <form class="worksheet" aria-label="Evidence review worksheet" onsubmit="return false">
+        <fieldset class="content-block"><legend>1. Decision and scope</legend><p><label>System, project, or proposal name<br /><input type="text" autocomplete="off" /></label></p><p><label>Decision to make<br /><textarea rows="3" placeholder="For example: whether to permit a limited pilot with named users and no production tool access."></textarea></label></p><p><label>In scope<br /><textarea rows="3"></textarea></label></p><p><label>Explicitly out of scope<br /><textarea rows="3"></textarea></label></p></fieldset>
+        <fieldset class="content-block"><legend>2. Evidence register</legend><p>For each material claim, record the direct source, date, owner, and what the source does not establish.</p><div class="content-table-wrap"><table class="content-table"><thead><tr><th>Claim or question</th><th>Evidence URL or record ID</th><th>Checked on / owner</th><th>Limit or unknown</th></tr></thead><tbody><tr><td><textarea rows="3" aria-label="First claim or question"></textarea></td><td><textarea rows="3" aria-label="First evidence URL or record ID"></textarea></td><td><textarea rows="3" aria-label="First checked date and owner"></textarea></td><td><textarea rows="3" aria-label="First limitation or unknown"></textarea></td></tr><tr><td><textarea rows="3" aria-label="Second claim or question"></textarea></td><td><textarea rows="3" aria-label="Second evidence URL or record ID"></textarea></td><td><textarea rows="3" aria-label="Second checked date and owner"></textarea></td><td><textarea rows="3" aria-label="Second limitation or unknown"></textarea></td></tr><tr><td><textarea rows="3" aria-label="Third claim or question"></textarea></td><td><textarea rows="3" aria-label="Third evidence URL or record ID"></textarea></td><td><textarea rows="3" aria-label="Third checked date and owner"></textarea></td><td><textarea rows="3" aria-label="Third limitation or unknown"></textarea></td></tr></tbody></table></div></fieldset>
+        <fieldset class="content-block"><legend>3. Authority, data, and failure boundary</legend><p><label>What may the system read, write, call, delegate, or transmit?<br /><textarea rows="3"></textarea></label></p><p><label>Which actions require a named human approval, and how is that approval enforced?<br /><textarea rows="3"></textarea></label></p><p><label>What data classifications, connectors, retention rules, and handoffs need confirmation?<br /><textarea rows="3"></textarea></label></p><p><label>What failure, misuse, or rollback scenario still lacks an owner or tested response?<br /><textarea rows="3"></textarea></label></p></fieldset>
+        <fieldset class="content-block"><legend>4. Evaluation and stewardship</legend><p><label>Version and test method reviewed<br /><textarea rows="3"></textarea></label></p><p><label>What did the evaluation not test?<br /><textarea rows="3"></textarea></label></p><p><label>Accountable system owner and human reviewer<br /><textarea rows="3"></textarea></label></p><p><label>Recheck date and correction/rollback path<br /><textarea rows="3"></textarea></label></p></fieldset>
+        <fieldset class="content-block"><legend>5. Next decision</legend><p><label><input type="checkbox" /> Hold: material evidence or owner information is missing.</label></p><p><label><input type="checkbox" /> Narrow: reduce scope, permissions, data access, or claims before further review.</label></p><p><label><input type="checkbox" /> Request evidence: record exactly what source, test, owner, or limitation is needed.</label></p><p><label><input type="checkbox" /> Escalate: route the question to the responsible technical, security, privacy, legal, or operational reviewer.</label></p><p><label><input type="checkbox" /> Proceed to a separately approved decision: only after the stated evidence boundary is complete.</label></p><p><label>Decision rationale and named decision owner<br /><textarea rows="4"></textarea></label></p></fieldset>
+      </form>
+      <section class="content-block"><h2>Sources and limitations</h2><p>The worksheet is a Coreweaver Field Index proposal. It is informed by the public context described in the <a href="/field-index/evaluate-agent-systems">evaluation guide</a>, including NIST’s voluntary AI RMF and OWASP’s agentic threat-modeling material. It does not implement those materials, establish compliance, or replace specialist review.</p><p><a class="text-link" href="/field-index/methodology">Read the Field Index methodology <span aria-hidden="true">→</span></a></p></section>
+    </main>
+    <footer><div class="footer__brand"><img src="/field-index/assets/field-index-mark.svg" alt="" width="36" height="36" /><span>COREWEAVER FIELD INDEX / 001</span></div><p>Source-led infrastructure records for an accountable agentic AI field.</p><a href="/field-index">Return to Index ↗</a></footer>
+  </body>
+</html>

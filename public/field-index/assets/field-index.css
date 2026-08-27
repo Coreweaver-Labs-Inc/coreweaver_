@@ -24,7 +24,7 @@
 html { background: var(--paper); scroll-behavior: smooth; }
 body { margin: 0; min-width: 320px; background: var(--paper); color: var(--ink); font-family: var(--sans); -webkit-font-smoothing: antialiased; }
 a { color: inherit; text-underline-offset: 3px; text-decoration-thickness: 1px; }
-button, input { font: inherit; }
+button, input, textarea { font: inherit; }
 button, a { -webkit-tap-highlight-color: transparent; }
 button { cursor: pointer; }
 :focus-visible { outline: 2px solid var(--vermillion); outline-offset: 3px; }
@@ -165,6 +165,14 @@ dialog::backdrop { background: rgba(23, 33, 30, .46); backdrop-filter: blur(3px)
 .content-table th { padding: 12px; border-bottom: 1px solid var(--green); color: var(--green); font: 500 10px var(--mono); letter-spacing: .07em; text-align: left; text-transform: uppercase; }
 .content-table td { padding: 15px 12px; border-bottom: 1px solid var(--line); color: var(--ink-soft); vertical-align: top; }
 .content-table td:first-child { color: var(--ink); font-weight: 600; }
+.worksheet { max-width: 780px; }
+.worksheet fieldset { min-width: 0; margin: 0 0 62px; padding: 27px 0 0; border: 0; border-top: 1px solid var(--line-deep); }
+.worksheet legend { margin-bottom: 18px; color: var(--ink); font: 600 clamp(26px, 3.4vw, 42px)/1 var(--serif); letter-spacing: -.04em; text-transform: none; }
+.worksheet label { display: grid; gap: 8px; margin: 0 0 18px; color: var(--ink); font-size: 15px; font-weight: 600; line-height: 1.45; }
+.worksheet input[type="text"], .worksheet textarea { width: 100%; border: 1px solid var(--line-deep); border-radius: 0; outline: 0; background: var(--paper-bright); padding: 11px 12px; color: var(--ink); font-size: 15px; font-weight: 400; line-height: 1.5; resize: vertical; transition: border-color 160ms var(--ease-out), box-shadow 160ms var(--ease-out); }
+.worksheet input[type="text"]:focus, .worksheet textarea:focus { border-color: var(--green); box-shadow: 3px 3px 0 var(--green-pale); }
+.worksheet input[type="checkbox"] { width: 17px; height: 17px; margin: 0 3px 0 0; accent-color: var(--green); vertical-align: text-bottom; }
+.worksheet .content-table textarea { min-width: 160px; margin: 0; }
 
 @media (max-width: 940px) {
   .hero { grid-template-columns: 48px 1fr; }
@@ -204,6 +212,17 @@ dialog::backdrop { background: rgba(23, 33, 30, .46); backdrop-filter: blur(3px)
   footer > a { grid-column: auto; }
   .dialog-meta { grid-template-columns: 1fr; }
   .content-main { padding-right: 20px; padding-left: 20px; }
+  .worksheet .content-table textarea { min-width: 130px; }
+}
+
+@media print {
+  html, body { background: #fff; color: #111; }
+  .skip-link, .masthead, footer { display: none; }
+  .content-main { max-width: none; padding: 18mm 14mm; }
+  .content-block, .worksheet fieldset { break-inside: avoid; }
+  .evidence-frame::before, .evidence-frame::after { border-color: #111; }
+  .content-table { min-width: 0; }
+  .worksheet input[type="text"], .worksheet textarea { min-height: 12mm; background: #fff; }
 }
 
 @media (prefers-reduced-motion: no-preference) {

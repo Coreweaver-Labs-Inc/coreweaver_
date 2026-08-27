@@ -23,6 +23,7 @@
     "learning:retrospective": "node content-learning/scripts/build-retrospective.mjs",
     "learning:run": "node content-learning/scripts/run-learning-loop.mjs",
     "content:validate-release-candidates": "node content-learning/scripts/validate-release-candidates.mjs",
+    "content:validate-pilot-release-approval": "node content-learning/scripts/validate-pilot-release-approval.mjs",
     "test:learning": "node --test content-learning/test/*.test.mjs",
     "ledger:validate": "node control-ledger/scripts/validate.mjs",
     "ledger:queue": "node control-ledger/scripts/build-exception-queue.mjs",

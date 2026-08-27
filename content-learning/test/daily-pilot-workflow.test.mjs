@@ -12,6 +12,9 @@ test('daily pilot release is static, fixed-target, guarded, and artifact-backed'
   assert.match(workflow, /npm run content:validate-release-candidates/);
   assert.match(workflow, /npm run test:learning/);
   assert.match(workflow, /npm run ledger:validate/);
+  assert.match(workflow, /npm run content:validate-pilot-release-approval/);
+  assert.match(workflow, /NOTION_TOKEN: ''/);
+  assert.match(workflow, /NOTION_BLOG_POSTS_DB_ID: ''/);
   assert.match(workflow, /retention-days: 30/);
   assert.match(workflow, /github\.event_name == 'schedule' && vars\.PILOT_PUBLISH_ENABLED == 'true'/);
   assert.match(workflow, /https:\/\/pilot\.coreweaver\.io\/working-session\//);

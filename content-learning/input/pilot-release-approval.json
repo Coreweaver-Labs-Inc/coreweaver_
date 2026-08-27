@@ -1,0 +1,38 @@
+{
+  "contractVersion": 1,
+  "decisionId": "release:pilot-coreweaver-io-2026-08-27",
+  "status": "approved-pilot-redeploy",
+  "approvedBy": "Coreweaver Labs",
+  "approvedOn": "2026-08-27",
+  "destination": {
+    "provider": "Hostinger static hosting",
+    "hostname": "pilot.coreweaver.io"
+  },
+  "approvedCandidateIds": [
+    "field-index-evaluation-guide",
+    "field-index-evidence-review-worksheet",
+    "field-index-guides-hub",
+    "coreweaver-working-session",
+    "field-index-correction-records"
+  ],
+  "approvedRoutes": [
+    "/",
+    "/autonomous-operations-energy-systems",
+    "/autonomous-resource-management",
+    "/blog",
+    "/field-index",
+    "/field-index/correction-records",
+    "/field-index/editorial-policy",
+    "/field-index/evaluate-agent-systems",
+    "/field-index/evidence-review-worksheet",
+    "/field-index/guides",
+    "/field-index/methodology",
+    "/mandate",
+    "/source-map",
+    "/vaas",
+    "/working-session"
+  ],
+  "sourceBoundary": "The archive may contain only the listed pre-existing static routes. Notion-backed editorial posts and any new route require a distinct source review and a new named approval record before a scheduled deployment can include them.",
+  "deploymentBoundary": "This permits checksum-recorded redeployment of the listed static artifact surface to pilot.coreweaver.io only after all quality and approval checks pass. It does not permit deployment to the .io apex or www, changes to DNS/TLS/mail/Vercel, publication of new copy, or external communications.",
+  "rollback": "Retain the previous immutable pilot archive and restore it only under an independently approved rollback action."
+}

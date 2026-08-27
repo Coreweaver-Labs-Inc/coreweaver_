@@ -36,6 +36,8 @@ The local canonical artifact was generated at source commit `8fec4b94e4df`. It c
 
 The implementation is reproducible through `npm run prepare:coreweaver-io`, followed by `npm run validate:coreweaver-io`. The generated files under `release-artifacts/` are intentionally release outputs rather than Git-tracked source.
 
+The intended `www.coreweaver.io` state is an HTTPS 301 redirect to the path-equivalent `https://coreweaver.io` URL. It is deliberately **not** part of the apex archive deployment: the existing `www` Hostinger binding, redirect control, certificate status, and previous configuration must be observed and backed up first. The apex action therefore preserves the current `www` state; a later `www` change needs its own narrow approval and validation of both HTTP and HTTPS redirect paths.
+
 ## Exact Future Cutover Sequence
 
 1. **Preflight and backup.** Re-read the Hostinger DNS zone and static-host identity. Create a provider-side backup of the current `.io` document root, download it to a controlled record, compute its SHA-256 hash, and record the timestamp. Stop if no restorable backup exists.

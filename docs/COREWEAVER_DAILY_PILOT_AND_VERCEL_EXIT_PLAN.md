@@ -18,16 +18,17 @@ The static `pilot.coreweaver.io` artifact currently preserves `coreweaverlabs.co
 
 ## Selected Daily Pipeline and Current Evidence
 
-Coreweaver selected the **repository-native daily release**. The merged workflow `.github/workflows/daily-pilot-release.yml` is scheduled for 06:15 UTC daily. It checks out the default branch, validates the five release candidates, runs learning and ledger checks, builds the static site, packages a deterministic archive/checksum, and retains the package artifact for 30 days. Its deploy job is fixed to `pilot.coreweaver.io` and is guarded to `schedule` events when `PILOT_PUBLISH_ENABLED` is exactly `true`.
+Coreweaver selected the **repository-native daily release**. The merged workflow `.github/workflows/daily-pilot-release.yml` is scheduled for 06:15 UTC daily. It checks out the default branch, validates the five release candidates, runs learning and ledger checks, builds the static site with Notion editorial credentials explicitly absent, verifies the named pilot approval record against the complete 15-route build, packages a deterministic archive/checksum, and retains the package artifact for 30 days. Its deploy job is fixed to `pilot.coreweaver.io` and is guarded to `schedule` events when `PILOT_PUBLISH_ENABLED` is exactly `true`.
 
 | Configuration or evidence | Recorded state | Meaning |
 | --- | --- | --- |
 | Deployment credential | Hostinger API credential exists as a repository secret. | The workflow can request short-lived Hostinger upload credentials without exposing the key in source. |
 | Non-secret variables | `PILOT_HOSTINGER_USERNAME=u622004167` and `PILOT_PUBLISH_ENABLED=true` are configured. | The only automated deployment target is the named pilot account and hostname. |
+| Approved artifact boundary | `pilot-release-approval.json` names five released-pilot candidates and every permitted route in the 15-route static build. | A new, missing, or proposed candidate—or an extra or missing built route—fails the workflow before archive creation and cannot reach the deploy job. |
 | Manual workflow | Run `33117542459`, event `workflow_dispatch`, completed successfully on 2026-08-27. | Validates packaging and quality steps only; it deliberately did **not** enter the schedule-only deploy job. |
 | Schedule-triggered deploy | No run observed yet. | The Hostinger redeploy and its route checks remain **unverified** until the first successful cron event is inspected. |
 
-The boundary remains unchanged: **tests and packaging may run daily, while the fixed pilot deployment can only act on the explicit pilot hostname and the already reviewed default-branch source.** The pipeline does not generate new claims, publish Notion-backed editorial notes, contact audiences, modify DNS, or target the `.io` apex.
+The boundary remains unchanged: **tests and packaging may run daily, while the fixed pilot deployment can only act on the explicit pilot hostname and named approved static artifact surface.** The pipeline does not generate new claims, include Notion-backed editorial notes, contact audiences, modify DNS, or target the `.io` apex.
 
 ### Manual Run Evidence
 

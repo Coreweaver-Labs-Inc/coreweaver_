@@ -1,0 +1,28 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Coreweaver Content Learning Configuration",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["version", "safeMode", "sideEffects", "audit", "queue"],
+  "properties": {
+    "version": { "type": "integer", "const": 1 },
+    "safeMode": { "type": "boolean", "const": true },
+    "sideEffects": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["cmsWrites", "providerCalls", "gitWrites", "pullRequests", "merges", "deployments", "publishing", "dnsChanges"],
+      "properties": {
+        "cmsWrites": { "const": false },
+        "providerCalls": { "const": false },
+        "gitWrites": { "const": false },
+        "pullRequests": { "const": false },
+        "merges": { "const": false },
+        "deployments": { "const": false },
+        "publishing": { "const": false },
+        "dnsChanges": { "const": false }
+      }
+    },
+    "audit": { "type": "object" },
+    "queue": { "type": "object" }
+  }
+}

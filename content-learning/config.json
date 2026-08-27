@@ -1,0 +1,44 @@
+{
+  "$schema": "./schemas/learning-config.schema.json",
+  "version": 1,
+  "safeMode": true,
+  "sideEffects": {
+    "cmsWrites": false,
+    "providerCalls": false,
+    "gitWrites": false,
+    "pullRequests": false,
+    "merges": false,
+    "deployments": false,
+    "publishing": false,
+    "dnsChanges": false
+  },
+  "audit": {
+    "minimumSourceCounts": {
+      "first_party_fact": 1,
+      "third_party_fact": 2,
+      "interpretation": 1,
+      "proposal": 0
+    },
+    "requireHumanReviewFor": [
+      "first_party_fact",
+      "third_party_fact"
+    ],
+    "requireEvidenceDate": true,
+    "requireRecheckDateForTimeSensitiveClaims": true,
+    "prohibitedOutcomeTerms": [
+      "guarantee rankings",
+      "guarantee citations",
+      "guarantee traffic",
+      "guarantee leads",
+      "guarantee revenue",
+      "dramatically reduces hallucination",
+      "production-ready",
+      "prevents the most common"
+    ]
+  },
+  "queue": {
+    "defaultActionForBlocked": "hold",
+    "maxNeedsDecision": 5,
+    "manualApprovalRequired": true
+  }
+}

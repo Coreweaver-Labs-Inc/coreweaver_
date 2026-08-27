@@ -1,0 +1,53 @@
+name: Content learning loop
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '17 14 * * *'
+
+permissions:
+  contents: read
+
+jobs:
+  audit:
+    name: Evidence and release-queue audit
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Check out reviewed repository data
+        uses: actions/checkout@v4
+
+      - name: Use Node.js 22
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Install declared dependencies
+        run: npm ci
+
+      - name: Run safe content learning loop
+        run: npm run learning:run -- --output-dir content-learning/out
+
+      - name: Verify loop safety tests
+        run: npm run test:learning
+
+      - name: Publish an exception-only job summary
+        run: |
+          node - <<'NODE' >> "$GITHUB_STEP_SUMMARY"
+          const fs = require('node:fs');
+          const queue = JSON.parse(fs.readFileSync('content-learning/out/release-queue.json', 'utf8'));
+          console.log('# Content learning loop');
+          console.log('');
+          console.log(`This run generated **${queue.summary.hold} hold(s)**, **${queue.summary.needsDecision} decision(s)**, and **${queue.summary.observe} observation(s)**.`);
+          console.log('');
+          console.log('The workflow has read-only repository permission and cannot update a CMS, generate content, create a pull request, merge, deploy, publish, or alter DNS. Review the attached artifact only when a hold or decision needs resolution.');
+          NODE
+
+      - name: Upload private audit artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: content-learning-loop-${{ github.run_id }}
+          path: content-learning/out/
+          if-no-files-found: error
+          retention-days: 30

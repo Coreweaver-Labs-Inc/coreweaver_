@@ -26,3 +26,7 @@ pnpm-debug.log*
 # generated content-operation reports
 content-ops/runs/*.json
 !content-ops/runs/.gitkeep
+
+# generated closed-loop learning reports
+content-learning/runs/*.json
+!content-learning/runs/.gitkeep

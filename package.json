@@ -16,7 +16,12 @@
     "score:content-topics": "node scripts/score-content-topics.mjs",
     "smoke:test-content-release": "node scripts/smoke-test-content-release.mjs",
     "validate:notion-release-record": "node scripts/validate-notion-release-record.mjs fixture-notion-release",
-    "validate:content-ops": "node scripts/validate-content-ops.mjs fixture-geo-made-simple"
+    "validate:content-ops": "node scripts/validate-content-ops.mjs fixture-geo-made-simple",
+    "learning:audit": "node content-learning/scripts/audit-evidence.mjs",
+    "learning:queue": "node content-learning/scripts/build-release-queue.mjs",
+    "learning:retrospective": "node content-learning/scripts/build-retrospective.mjs",
+    "learning:run": "node content-learning/scripts/run-learning-loop.mjs",
+    "test:learning": "node --test content-learning/test/*.test.mjs"
   },
   "dependencies": {
     "@notionhq/client": "^2.2.15",

@@ -89,12 +89,14 @@ async function validateCandidate(candidate, seenQuestions, seenTitles, seenContr
   if (hasText(candidate.sourceFile)) {
     try {
       const source = await readFile(resolve(root, candidate.sourceFile), 'utf8');
+      const usesSharedLayout = /<Layout\b/.test(source);
+      const layoutMetadata = usesSharedLayout && /\btitle=/.test(source) && /\bdescription=/.test(source) && /\bcanonical=/.test(source);
       check(source.includes(`https://coreweaverlabs.com${candidate.route}`), 'missing-canonical-reference', 'Source file does not contain its expected canonical route.');
-      check(/<html\s+lang=["']en["']/.test(source), 'missing-document-language', 'Source file needs an English document language declaration.');
-      check(/<meta\s+name=["']viewport["']/.test(source), 'missing-viewport-meta', 'Source file needs a viewport meta tag.');
-      check(/<meta\s+name=["']description["']/.test(source), 'missing-description-meta', 'Source file needs a meta description.');
-      check(/<meta\s+property=["']og:title["']/.test(source) && /<meta\s+property=["']og:description["']/.test(source), 'missing-open-graph-meta', 'Source file needs Open Graph title and description metadata.');
-      check(/<title>[^<]+<\/title>/.test(source), 'missing-title-element', 'Source file needs a non-empty title element.');
+      check(usesSharedLayout || /<html\s+lang=["']en["']/.test(source), 'missing-document-language', 'Source file needs an English document language declaration or the shared Layout.');
+      check(usesSharedLayout || /<meta\s+name=["']viewport["']/.test(source), 'missing-viewport-meta', 'Source file needs a viewport meta tag or the shared Layout.');
+      check(layoutMetadata || /<meta\s+name=["']description["']/.test(source), 'missing-description-meta', 'Source file needs a meta description.');
+      check(layoutMetadata || (/<meta\s+property=["']og:title["']/.test(source) && /<meta\s+property=["']og:description["']/.test(source)), 'missing-open-graph-meta', 'Source file needs Open Graph title and description metadata.');
+      check(layoutMetadata || /<title>[^<]+<\/title>/.test(source), 'missing-title-element', 'Source file needs a non-empty title element.');
       check(/<main(?:\s|>)/.test(source) && /<h1(?:\s|>)/.test(source), 'missing-main-or-h1', 'Source file needs semantic main content and an H1.');
       check((source.match(/<h1(?:\s|>)/g) ?? []).length === 1, 'multiple-h1-elements', 'Source file must have exactly one H1.');
       check(!/<img\b(?![^>]*\balt=)[^>]*>/i.test(source), 'image-without-alt', 'Every image needs an alt attribute, including an empty alt for decorative images.');

@@ -16,9 +16,9 @@ test('release-candidate validation requires distinct reader questions, source/cl
     const report = JSON.parse(await readFile(output, 'utf8'));
     assert.equal(report.mode, 'safe-no-side-effects');
     assert.equal(report.releaseAllowed, false);
-    assert.equal(report.summary.candidatesAudited, 3);
+    assert.equal(report.summary.candidatesAudited, 5);
     assert.equal(report.summary.hold, 0);
-    assert.equal(report.summary.needsDecision, 3);
+    assert.equal(report.summary.needsDecision, 5);
     assert.equal(report.summary.releaseReady, 0);
     assert.equal(report.candidates.every((candidate) => candidate.publicActionPermitted === false), true);
   } finally {

@@ -26,6 +26,7 @@ These are public working principles, not a certification, a legal conclusion, a 
 - Autonomous Resource Management: https://coreweaverlabs.com/autonomous-resource-management — an applied method page for accountable decisions across constraints, autonomous systems, and human oversight.
 - Autonomous Operations for Energy Systems: https://coreweaverlabs.com/autonomous-operations-energy-systems — an applied method page for examining energy-system decision routes across changing conditions, human authority, and retained records.
 - Working session: https://coreweaverlabs.com/working-session — a human-led, bounded Coreweaver entry point for mapping one entity, evidence, distribution, or measurement constraint; it does not promise a commercial or technical outcome.
+- Field Index correction-record guide: https://coreweaverlabs.com/field-index/correction-records — a source-led framework for documenting a material public correction with context, versioning, ownership, and a review path; it does not control third-party records or outcomes.
 - Field notes: https://coreweaverlabs.com/blog
 - Authority before automation: https://coreweaverlabs.com/mandate
 - Verification limits: https://coreweaverlabs.com/vaas

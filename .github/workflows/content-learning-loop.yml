@@ -29,6 +29,9 @@ jobs:
       - name: Run safe content learning loop
         run: npm run learning:run -- --output-dir content-learning/out
 
+      - name: Validate portable release candidates
+        run: npm run content:validate-release-candidates -- --output content-learning/out/release-candidate-validation.json
+
       - name: Verify loop safety tests
         run: npm run test:learning
 
@@ -40,6 +43,9 @@ jobs:
           console.log('# Content learning loop');
           console.log('');
           console.log(`This run generated **${queue.summary.hold} hold(s)**, **${queue.summary.needsDecision} decision(s)**, and **${queue.summary.observe} observation(s)**.`);
+          console.log('');
+          const candidates = JSON.parse(fs.readFileSync('content-learning/out/release-candidate-validation.json', 'utf8'));
+          console.log(`The candidate-quality check found **${candidates.summary.hold} hold(s)** and **${candidates.summary.needsDecision} decision(s)** across **${candidates.summary.candidatesAudited}** static content candidate(s).`);
           console.log('');
           console.log('The workflow has read-only repository permission and cannot update a CMS, generate content, create a pull request, merge, deploy, publish, or alter DNS. Review the attached artifact only when a hold or decision needs resolution.');
           NODE

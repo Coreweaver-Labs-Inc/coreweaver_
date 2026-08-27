@@ -1,0 +1,51 @@
+{
+  "contractVersion": 1,
+  "snapshotDate": "2026-08-27",
+  "owner": "Coreweaver Labs",
+  "limitation": "This is a repository-local quality inventory. It does not establish that a route is publicly deployed, accepted by an external provider, visited, or effective.",
+  "candidates": [
+    {
+      "id": "field-index-evaluation-guide",
+      "route": "/field-index/evaluate-agent-systems",
+      "sourceFile": "src/pages/field-index/evaluate-agent-systems.astro",
+      "title": "How to evaluate an agent system: an evidence-first guide",
+      "contentClass": "static-framework-guide",
+      "primaryReaderQuestion": "What evidence should I ask for before allowing an agent system to act on data, tools, or workflow?",
+      "singleNextAction": "Open the evidence review worksheet.",
+      "claimMap": [
+        {"id": "proposal-six-part-evidence-frame", "claimClass": "proposal", "statement": "The six-part evidence frame is a Coreweaver Field Index proposal.", "sources": [], "limitation": "It is not a security test, procurement rule, certification, compliance assessment, vendor ranking, or guarantee."},
+        {"id": "fact-nist-ai-rmf", "claimClass": "third_party_fact", "statement": "NIST describes the AI RMF as voluntary guidance for incorporating trustworthiness considerations into AI lifecycle activities.", "sources": ["https://www.nist.gov/itl/ai-risk-management-framework"], "limitation": "It does not establish compliance or suitability of a particular system."}
+      ],
+      "review": {"reviewedBy": "Coreweaver Labs", "evidenceCheckedOn": "2026-08-27", "recheckBy": "2027-02-27"},
+      "release": {"destinationClass": "owned-static-site", "deploymentTarget": "unassigned", "publicActionPermitted": false, "rollback": "Retain the prior static build and documented route inventory until a named deployment owner approves a replacement."}
+    },
+    {
+      "id": "field-index-evidence-review-worksheet",
+      "route": "/field-index/evidence-review-worksheet",
+      "sourceFile": "src/pages/field-index/evidence-review-worksheet.astro",
+      "title": "Evidence review worksheet",
+      "contentClass": "static-framework-template",
+      "primaryReaderQuestion": "How can I capture missing evidence, owners, limitations, and next decisions in one usable review record?",
+      "singleNextAction": "Complete the worksheet and request missing evidence.",
+      "claimMap": [
+        {"id": "proposal-worksheet", "claimClass": "proposal", "statement": "The worksheet is a printable Coreweaver Field Index template for a bounded evidence review.", "sources": [], "limitation": "It is not a security assessment, legal review, certification, or automated go/no-go decision."}
+      ],
+      "review": {"reviewedBy": "Coreweaver Labs", "evidenceCheckedOn": "2026-08-27", "recheckBy": "2027-02-27"},
+      "release": {"destinationClass": "owned-static-site", "deploymentTarget": "unassigned", "publicActionPermitted": false, "rollback": "Retain the prior static build and documented route inventory until a named deployment owner approves a replacement."}
+    },
+    {
+      "id": "field-index-guides-hub",
+      "route": "/field-index/guides",
+      "sourceFile": "src/pages/field-index/guides.astro",
+      "title": "Field Index guides",
+      "contentClass": "static-resource-hub",
+      "primaryReaderQuestion": "Which practical, source-led guide helps me prepare the evidence question in front of me?",
+      "singleNextAction": "Choose the guide matching the immediate decision.",
+      "claimMap": [
+        {"id": "proposal-guides-hub", "claimClass": "proposal", "statement": "The guides hub helps readers choose a Coreweaver Field Index resource for a bounded evidence question.", "sources": [], "limitation": "It is not a vendor directory, ranking, certification, audit, or compliance resource."}
+      ],
+      "review": {"reviewedBy": "Coreweaver Labs", "evidenceCheckedOn": "2026-08-27", "recheckBy": "2027-02-27"},
+      "release": {"destinationClass": "owned-static-site", "deploymentTarget": "unassigned", "publicActionPermitted": false, "rollback": "Retain the prior static build and documented route inventory until a named deployment owner approves a replacement."}
+    }
+  ]
+}

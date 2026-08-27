@@ -29,6 +29,10 @@ Coreweaver selected the **repository-native daily release**. The merged workflow
 
 The boundary remains unchanged: **tests and packaging may run daily, while the fixed pilot deployment can only act on the explicit pilot hostname and the already reviewed default-branch source.** The pipeline does not generate new claims, publish Notion-backed editorial notes, contact audiences, modify DNS, or target the `.io` apex.
 
+### Manual Run Evidence
+
+Run [`33117542459`](https://github.com/Coreweaver-Labs-Inc/coreweaver_/actions/runs/33117542459) ran at commit `8fec4b94e4dff68389be528f03c0e542520c6518` from 21:18:39Z to 21:19:02Z on 2026-08-27. Its **Validate and package static pilot artifact** job completed successfully after dependency install, release-candidate validation, learning tests, ledger validation, static build, immutable archive creation, and artifact upload. Its **Deploy approved daily pilot artifact** job was explicitly skipped because this was `workflow_dispatch`, not the schedule event required by the deployment guard.
+
 ## Full Vercel Exit Critical Path
 
 1. **Use `.io` as the prepared primary candidate.** The review branch `release/coreweaver-io-canonical` contains the prepared source and package. Pull request [#24](https://github.com/Coreweaver-Labs-Inc/coreweaver_/pull/24) is review-only; it does not activate production.

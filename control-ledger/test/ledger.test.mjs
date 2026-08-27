@@ -35,3 +35,8 @@ test('the migration handoff is platform-neutral and carries no credential depend
   const migration = await readFile(new URL('../MIGRATION.md', import.meta.url), 'utf8');
   for (const phrase of ['Clone or copy the repository', 'No service account, API key, database, connector, or agent memory', 'JSON Schema draft 2020-12']) assert.ok(migration.includes(phrase));
 });
+
+test('the repository-level agent handoff directs future agents to the Control Ledger', async () => {
+  const handoff = await readFile(new URL('../../AGENTS.md', import.meta.url), 'utf8');
+  for (const phrase of ['Coreweaver operating kernel', 'COREWEAVER.md', 'Treat a missing source', 'named human approval for the exact action']) assert.ok(handoff.includes(phrase));
+});

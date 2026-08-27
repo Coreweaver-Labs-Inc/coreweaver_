@@ -52,6 +52,39 @@
       "review": {"reviewedBy": "Coreweaver Labs", "evidenceCheckedOn": "2026-08-27", "recheckBy": "2027-02-27"},
       "maintenance": {"owner": "Coreweaver Labs", "recheckTrigger": "2027-02-27 or earlier if a linked guide changes, is retired, or acquires a material claim update.", "nextAction": "Recheck every linked resource, its reader job, and the hub’s no-ranking boundary before retaining the candidate."},
       "release": {"destinationClass": "owned-static-site", "deploymentDecision": {"id": "proposal:coreweaver-io-hostinger-static-pilot", "status": "proposed", "provider": "Hostinger static hosting", "prospectiveHostname": "pilot.coreweaver.io", "resourceEvidence": "Read-only Hostinger API inventory on 2026-08-27 identified enabled static hosting for coreweaver.io under account u622004167; read-only subdomain inventory returned an empty array.", "actionBoundary": "Create a pilot subdomain and deploy an immutable static artifact only after a named owner approves the exact request and rollback plan."}, "publicActionPermitted": false, "rollback": "Retain the current Vercel production origin unchanged; record the static artifact version; remove only the pilot subdomain route after a separately approved rollback action."}
+    },
+    {
+      "id": "coreweaver-working-session",
+      "route": "/working-session",
+      "sourceFile": "src/pages/working-session.astro",
+      "title": "Working session — Coreweaver Labs",
+      "contentClass": "static-applied-method-route",
+      "primaryReaderQuestion": "What must become clearer before a buyer, partner, reviewer, or team can make one accountable next decision?",
+      "distinctContribution": "A bounded, human-led entry point for framing one entity, evidence, distribution, or measurement constraint without promising an outcome.",
+      "singleNextAction": "Request a working session with a defined decision owner and authorized source context.",
+      "claimMap": [
+        {"id": "proposal-working-session", "claimClass": "proposal", "statement": "The working session is a Coreweaver applied method for framing one bounded communication and decision constraint.", "sources": [], "limitation": "It is not a guarantee of visibility, demand, revenue, technical performance, certification, legal position, or system outcome."}
+      ],
+      "review": {"reviewedBy": "Coreweaver Labs", "evidenceCheckedOn": "2026-08-27", "recheckBy": "2027-02-27"},
+      "maintenance": {"owner": "Coreweaver Labs", "recheckTrigger": "Before a material offer, price, scope, outcome, or data-handling change.", "nextAction": "Recheck the request copy, claim boundary, canonical target, and inbound-information notice."},
+      "release": {"destinationClass": "owned-static-site", "deploymentDecision": {"id": "release:pilot-coreweaver-io-2026-08-27", "status": "released-pilot", "provider": "Hostinger static hosting", "prospectiveHostname": "pilot.coreweaver.io", "resourceEvidence": "The immutable 15-route archive with commit 7b5b00156e34 and recorded SHA-256 was accepted and validated at the pilot hostname on 2026-08-27.", "actionBoundary": "Daily redeployment is limited to the fixed pilot hostname, a successful static quality build, and the explicit repository release switch; it cannot target the apex, www, Vercel, or another destination."}, "publicActionPermitted": false, "rollback": "Restore the prior retained pilot archive or remove only the pilot host after an approved rollback action."}
+    },
+    {
+      "id": "field-index-correction-records",
+      "route": "/field-index/correction-records",
+      "sourceFile": "src/pages/field-index/correction-records.astro",
+      "title": "Correction records — Field Index",
+      "contentClass": "static-framework-guide",
+      "primaryReaderQuestion": "How can a material public correction retain source context, version history, ownership, and a review path without claiming control over third-party systems?",
+      "distinctContribution": "A source-led guide that distinguishes a correction record from a legal remedy, model-control mechanism, or outcome guarantee.",
+      "singleNextAction": "Use the guide to prepare a bounded correction record and identify the responsible owner.",
+      "claimMap": [
+        {"id": "proposal-correction-record", "claimClass": "proposal", "statement": "The correction-record structure is a Coreweaver Field Index framework for retaining context, source links, version history, and review ownership.", "sources": [], "limitation": "It does not compel third-party updates, correct model output, create legal rights, or guarantee a reputational or commercial outcome."},
+        {"id": "third-party-fact-c2pa", "claimClass": "third_party_fact", "statement": "C2PA describes a technical standard for recording provenance and edit history in digital content.", "sources": ["https://c2pa.org/"], "limitation": "Provenance records do not by themselves prove truth, ownership, authorization, or a correction outcome."}
+      ],
+      "review": {"reviewedBy": "Coreweaver Labs", "evidenceCheckedOn": "2026-08-27", "recheckBy": "2027-02-27"},
+      "maintenance": {"owner": "Coreweaver Labs", "recheckTrigger": "If C2PA source guidance, correction-record language, or linked resources change materially.", "nextAction": "Recheck primary-source descriptions and remove or revise any implication of third-party model, legal, or record control."},
+      "release": {"destinationClass": "owned-static-site", "deploymentDecision": {"id": "release:pilot-coreweaver-io-2026-08-27", "status": "released-pilot", "provider": "Hostinger static hosting", "prospectiveHostname": "pilot.coreweaver.io", "resourceEvidence": "The correction-record guide was present in the immutable pilot artifact and returned HTTPS 200 in post-release validation on 2026-08-27.", "actionBoundary": "Daily redeployment is limited to the fixed pilot hostname, a successful static quality build, and the explicit repository release switch; it cannot target the apex, www, Vercel, or another destination."}, "publicActionPermitted": false, "rollback": "Restore the prior retained pilot archive or remove only the pilot host after an approved rollback action."}
     }
   ]
 }

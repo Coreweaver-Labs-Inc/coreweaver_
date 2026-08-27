@@ -1,0 +1,67 @@
+name: Daily Coreweaver pilot release
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '15 6 * * *'
+
+permissions:
+  contents: read
+
+concurrency:
+  group: coreweaver-pilot-release
+  cancel-in-progress: false
+
+jobs:
+  validate-and-package:
+    name: Validate and package static pilot artifact
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - run: npm run content:validate-release-candidates
+      - run: npm run test:learning
+      - run: npm run ledger:validate
+      - run: npm run build
+      - name: Create immutable release archive
+        run: |
+          mkdir -p release
+          ARCHIVE="release/coreweaver-pilot-${GITHUB_SHA}.tar.gz"
+          tar --sort=name --mtime='UTC 2026-08-27' --owner=0 --group=0 --numeric-owner -czf "$ARCHIVE" -C dist .
+          sha256sum "$ARCHIVE" | tee "${ARCHIVE}.sha256"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: coreweaver-pilot-${{ github.sha }}
+          path: release/
+          if-no-files-found: error
+          retention-days: 30
+
+  deploy-pilot:
+    name: Deploy approved daily pilot artifact
+    needs: validate-and-package
+    if: github.event_name == 'schedule' && vars.PILOT_PUBLISH_ENABLED == 'true'
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    environment: coreweaver-pilot
+    env:
+      PILOT_PUBLISH_ENABLED: ${{ vars.PILOT_PUBLISH_ENABLED }}
+      PILOT_HOSTINGER_USERNAME: ${{ vars.PILOT_HOSTINGER_USERNAME }}
+      HOSTINGER_API_KEY: ${{ secrets.HOSTINGER_API_KEY }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/download-artifact@v4
+        with:
+          name: coreweaver-pilot-${{ github.sha }}
+          path: release
+      - name: Deploy only to the fixed pilot hostname
+        run: node scripts/deploy-pilot-hostinger.mjs "release/coreweaver-pilot-${GITHUB_SHA}.tar.gz"
+      - name: Verify public pilot routes
+        run: |
+          curl --fail --silent --show-error --max-time 30 https://pilot.coreweaver.io/ | grep -q 'Coreweaver'
+          curl --fail --silent --show-error --max-time 30 https://pilot.coreweaver.io/working-session/ | grep -q 'Find the signal break'
+          curl --fail --silent --show-error --max-time 30 https://pilot.coreweaver.io/field-index/correction-records/ | grep -q 'Correct the record'

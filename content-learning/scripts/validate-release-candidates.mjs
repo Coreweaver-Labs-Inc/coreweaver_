@@ -57,7 +57,7 @@ async function validateCandidate(candidate, seenQuestions, seenTitles, seenContr
   check(hasText(candidate.maintenance?.recheckTrigger), 'missing-maintenance-trigger', 'Candidate needs a maintenance recheck trigger.');
   check(hasText(candidate.maintenance?.nextAction), 'missing-maintenance-next-action', 'Candidate needs a maintenance next action.');
   check(candidate.release?.destinationClass === 'owned-static-site', 'invalid-destination-class', 'Candidate must use the portable owned-static-site destination class.');
-  check(candidate.release?.deploymentDecision?.status === 'proposed', 'missing-deployment-decision', 'Candidate needs an approval-bound proposed deployment decision.');
+  check(['proposed', 'released-pilot'].includes(candidate.release?.deploymentDecision?.status), 'missing-deployment-decision', 'Candidate needs an approval-bound proposed or recorded pilot deployment decision.');
   check(hasText(candidate.release?.deploymentDecision?.provider), 'missing-deployment-provider', 'Candidate needs a named prospective provider.');
   check(/^([a-z0-9-]+\.)+[a-z]{2,}$/i.test(candidate.release?.deploymentDecision?.prospectiveHostname ?? ''), 'invalid-prospective-hostname', 'Candidate needs a valid proposed hostname.');
   check(hasText(candidate.release?.deploymentDecision?.resourceEvidence), 'missing-resource-evidence', 'Candidate needs current resource evidence for the proposed target.');
@@ -97,7 +97,7 @@ async function validateCandidate(candidate, seenQuestions, seenTitles, seenContr
       check(layoutMetadata || /<meta\s+name=["']description["']/.test(source), 'missing-description-meta', 'Source file needs a meta description.');
       check(layoutMetadata || (/<meta\s+property=["']og:title["']/.test(source) && /<meta\s+property=["']og:description["']/.test(source)), 'missing-open-graph-meta', 'Source file needs Open Graph title and description metadata.');
       check(layoutMetadata || /<title>[^<]+<\/title>/.test(source), 'missing-title-element', 'Source file needs a non-empty title element.');
-      check(/<main(?:\s|>)/.test(source) && /<h1(?:\s|>)/.test(source), 'missing-main-or-h1', 'Source file needs semantic main content and an H1.');
+      check((usesSharedLayout || /<main(?:\s|>)/.test(source)) && /<h1(?:\s|>)/.test(source), 'missing-main-or-h1', 'Source file needs semantic main content and an H1, directly or through the shared Layout.');
       check((source.match(/<h1(?:\s|>)/g) ?? []).length === 1, 'multiple-h1-elements', 'Source file must have exactly one H1.');
       check(!/<img\b(?![^>]*\balt=)[^>]*>/i.test(source), 'image-without-alt', 'Every image needs an alt attribute, including an empty alt for decorative images.');
       for (const href of internalLinks(source)) check(await routeExists(href), 'broken-internal-link', `Internal link ${href} does not resolve to an Astro route.`);
